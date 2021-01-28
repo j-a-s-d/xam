@@ -4,7 +4,7 @@ import
   unittest,
   xam
 
-suite "test xam mathematica":
+suite "test xam maths":
 
   test "test floatRound":
     check(floatRound(1.2345, 2) == 1.23)

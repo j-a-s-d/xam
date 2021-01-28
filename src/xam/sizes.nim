@@ -5,7 +5,7 @@
 from strutils import split, toUpper
 
 import
-  mathematica, strings
+  maths, strings
 
 # ORDERS OF MAGNITUDE CONSTANTS
 
