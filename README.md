@@ -17,21 +17,23 @@ a multipurpose productivity library for nim
 
 All the following modules are included in xam (no extra includes are required):
 
-* **ansi**, ansi related routines
-* **bytes**, bytes related constants
-* **callbacks**, common callback declarations
-* **chars**, chars related constants
-* **hex**, hex related constants
-* **htmlcolors**, html colors related constants
-* **maths**, math related constants and routines
-* **multiplatform**, multiplatform aliases (only harmless ones)
-* **parsing**, parsing helper routines
-* **semanticversion**, semantic version object
-* **seqstack**, seq js-like stack routines
-* **sizes**, sizes constants and routines
-* **strings**, strings constants and routines
+* `ansi`, *ansi related routines*
+* `bytes`, *bytes related constants*
+* `callbacks`, *common callback declarations*
+* `chars`, *chars related constants*
+* `hex`, *hex related constants*
+* `htmlcolors`, *html colors related constants*
+* `maths`, *math related constants and routines*
+* `multiplatform`, *multiplatform aliases (only harmless ones)*
+* `parsing`, *parsing helper routines*
+* `semanticversion`, *semantic version object*
+* `seqstack`, *seq js-like stack routines*
+* `sizes`, *sizes constants and routines*
+* `strings`, *strings constants and routines*
 
 ## HISTORY
+* 02-02-21 *[0.1.1]*
+	- added floatIsNaN routine
 * 28-01-21 *[0.1.0]*
 	- first public release
 * 14-01-21 *[0.0.1]*

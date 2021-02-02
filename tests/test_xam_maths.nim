@@ -9,6 +9,12 @@ suite "test xam maths":
   test "test floatRound":
     check(floatRound(1.2345, 2) == 1.23)
 
+  test "test floatIsNaN":
+    let x: float = 1.2345
+    let y: float = NaN
+    check(not floatIsNaN(x))
+    check(floatIsNaN(y))
+
   test "test add":
     check(add(1) == 1)
     check(add(40, 2) == 42)

@@ -122,6 +122,9 @@ proc floatRound*[T: SomeFloat](x: T, places: int): T =
   let m = (if places == 0: 1.0 else: pow(10.0, places.T))
   round(x * m) / m
 
+func floatIsNaN*(x: SomeFloat): bool {.inline.} =
+  x.classify == fcNaN
+
 # NOTE: most of the following routines are adaptations from the Java Ace Toolkit
 
 proc add*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber =
