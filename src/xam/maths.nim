@@ -73,7 +73,44 @@ const
   CF8*: cfloat = 8.0
   CF9*: cfloat = 9.0
   
-  # FACTORS  
+  # COMMON DEGREES
+  F45*: float = 45.0
+  F90*: float = 90.0
+  F135*: float = 135.0
+  F180*: float = 180.0
+  F225*: float = 225.0
+  F270*: float = 270.0
+  F315*: float = 315.0
+  F360*: float = 360.0
+  
+  I45*: int = 45
+  I90*: int = 90
+  I135*: int = 135
+  I180*: int = 180
+  I225*: int = 225
+  I270*: int = 270
+  I315*: int = 315
+  I360*: int = 360
+  
+  CI45*: cint = 45
+  CI90*: cint = 90
+  CI135*: cint = 135
+  CI180*: cint = 180
+  CI225*: cint = 225
+  CI270*: cint = 270
+  CI315*: cint = 315
+  CI360*: cint = 360
+  
+  CF45*: cfloat = 45.0
+  CF90*: cfloat = 90.0
+  CF135*: cfloat = 135.0
+  CF180*: cfloat = 180.0
+  CF225*: cfloat = 225.0
+  CF270*: cfloat = 270.0
+  CF315*: cfloat = 315.0
+  CF360*: cfloat = 360.0
+  
+  # COMMON FACTORS
   FACTOR_SINGLE* = I1
   FACTOR_DOUBLE* = I2
   FACTOR_TRIPLE* = I3
@@ -89,7 +126,7 @@ const
   FACTOR_MEGADRUPLE* = FACTOR_MILLIDRUPLE * FACTOR_MILLIDRUPLE
   FACTOR_GIGADRUPLE* = FACTOR_MEGADRUPLE * FACTOR_MILLIDRUPLE
   
-  # FRACTIONS  
+  # COMMON FRACTIONS
   FRACTION_HALF* = F1 / F2
   FRACTION_THIRD* = F1 / F3
   FRACTION_FOURTH* = F1 / F4
@@ -102,10 +139,11 @@ const
   FRACTION_HUNDREDTH* = 0.01
   FRACTION_THOUSANDTH* = 0.001
   
-  # VALUES  
+  # COMMON VALUES
   VALUE_E* = math.E
   VALUE_LOG10E* = math.log10(math.E)
   VALUE_PI* = math.PI
+  VALUE_2PI* = F2 * math.PI
   VALUE_PIDIV2* = math.PI / F2
   VALUE_PIDIV4* = math.PI / F4
   VALUE_1DIVPI* = F1 / math.PI
