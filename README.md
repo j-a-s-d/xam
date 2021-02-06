@@ -32,6 +32,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 06-02-21 *[0.1.3]*
+	- enhanced xam module pragmas
 * 04-02-21 *[0.1.2]*
 	- added common degrees constants
 * 02-02-21 *[0.1.1]*

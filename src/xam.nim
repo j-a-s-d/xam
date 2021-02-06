@@ -1,9 +1,12 @@
 # xam
 # ===
-# 14.01.2021 - 04.02.2021
+# 14.01.2021 - 06.02.2021
 
 when defined(js):
   {.error: "This library needs to be compiled with a c/cpp-like backend".}
+
+when defined(nimHasUsed):
+  {.used.}
 
 # INTERNAL REEXPORTS
 
@@ -29,7 +32,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 1, 2)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 1, 3)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.
@@ -42,32 +45,34 @@ when not defined(release):
 from os import sleep
 from xam/callbacks import SingleArgProc
 
-proc assigned*[T](things: varargs[T]): bool {.inline.} =
+{.push inline.}
+
+proc assigned*[T](things: varargs[T]): bool =
   ## Returns true if all the arguments are not nil.
   ## NOTE: inspired in Object Pascal's one.
   result = true
   for thing in things:
     result = result and thing != nil
 
-proc halt*() {.inline.} =
+proc halt*() =
   ## Exits with an error code of -1.
   ## NOTE: inspired in Pascal's one.
   quit(-1)
 
-proc exit*(errorCode: int) {.inline.} =
+proc exit*(errorCode: int) =
   ## Exits with the specified error code.
   ## NOTE: inspired in Pascal's one.
   quit(errorCode)
 
-proc nap*(ms: int) {.inline.} =
+proc nap*(ms: int) =
   ## Sleeps the specified amount of milliseconds.
   sleep(ms)
 
-proc ensure*[T](value: T, default: T): T {.inline.} =
+proc ensure*[T](value: T, default: T): T =
   ## Returns the specified value if it is not nil, or the default value otherwise.
   if value != nil: value else: default
 
-proc debug*[T](value: T): T {.inline.} =
+proc debug*[T](value: T): T =
   ## If it is in DEVELOPMENT mode, it echoes the specified value, or does nothing otherwise.
   ## In any case, it returns the specified value.
   ## It's behaviour allows you to intercept values on assignment (ex. var x = debug getX())
@@ -75,7 +80,7 @@ proc debug*[T](value: T): T {.inline.} =
     echo(value)
   value
 
-proc sandboxed*(p: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil): bool {.inline.} =
+proc sandboxed*(p: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil): bool =
   ## Executes the provided proc into a try/except block and returns true
   ## if it executes successfully or false if it fails. On failure, if an
   ## error handler is provided, it will dispatch the current exception
@@ -87,3 +92,6 @@ proc sandboxed*(p: NoArgsProc[void], errorHandler: SingleArgProc[string, void] =
     if errorHandler != nil:
       errorHandler(getCurrentExceptionMsg())
     false
+
+{.pop.}
+
