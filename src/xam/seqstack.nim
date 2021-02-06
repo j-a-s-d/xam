@@ -46,8 +46,15 @@ proc reverse*[T](c: var stack[T]): stack[T] =
 proc clear*[T](c: var stack[T]) =
   c.setLen(0)
 
-# NOTE: this is an extra one
+# NOTE: the following are extra
 proc drop*[T](c: var stack[T], count: int) =
   if c.len() == 0:
     return
-  c.setLen(c.len() - count)
+  c.setLen(max(0, c.len() - count))
+
+proc extract*[T](c: var stack[T], index: int, default: T): T =
+  if index notin low(c)..high(c):
+    return default
+  result = c[index]
+  c.delete(index)
+

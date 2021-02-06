@@ -33,11 +33,13 @@ All the following modules are included in xam (no extra includes are required):
 
 ## HISTORY
 * 06-02-21 *[0.1.3]*
-	- enhanced xam module pragmas
+	- added the seqstack extract routine
+	- improved the seqstack drop routine
+	- improved the xam pragmas
 * 04-02-21 *[0.1.2]*
-	- added common degrees constants
+	- added the maths common degrees constants
 * 02-02-21 *[0.1.1]*
-	- added floatIsNaN routine
+	- added the maths floatIsNaN routine
 * 28-01-21 *[0.1.0]*
 	- first public release
 * 14-01-21 *[0.0.1]*

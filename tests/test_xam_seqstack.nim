@@ -53,3 +53,18 @@ suite "test xam seqstack":
     var k: stack[int] = @[1, 2, 3, 4, 5]
     k.drop(2)
     check(k == @[1, 2, 3])
+    k.drop(4)
+    check(k.len == 0)
+    k.drop(1)
+    check(k.len == 0)
+  
+  test "test extract":
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    var x = k.extract(2, 0)
+    check(x == 3)
+    check(k == @[1, 2, 4, 5])
+    var y = k.extract(-1, 0)
+    check(y == 0)
+    var z = k.extract(4, -1)
+    check(z == -1)
+
