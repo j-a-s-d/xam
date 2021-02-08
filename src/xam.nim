@@ -1,6 +1,6 @@
 # xam
 # ===
-# 14.01.2021 - 06.02.2021
+# 14.01.2021 - 08.02.2021
 
 when defined(js):
   {.error: "This library needs to be compiled with a c/cpp-like backend".}
@@ -19,6 +19,7 @@ reexport(xam/ansi, ansi)
 reexport(xam/bytes, bytes)
 reexport(xam/callbacks, callbacks)
 reexport(xam/chars, chars)
+reexport(xam/datetime, datetime)
 reexport(xam/hex, hex)
 reexport(xam/htmlcolors, htmlcolors)
 reexport(xam/maths, maths)

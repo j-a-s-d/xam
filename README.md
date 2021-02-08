@@ -21,6 +21,7 @@ All the following modules are included in xam (no extra includes are required):
 * `bytes`, *bytes related constants*
 * `callbacks`, *common callback declarations*
 * `chars`, *chars related constants*
+* `datetime`, *datetime related constants and routines*
 * `hex`, *hex related constants*
 * `htmlcolors`, *html colors related constants*
 * `maths`, *math related constants and routines*
@@ -33,6 +34,7 @@ All the following modules are included in xam (no extra includes are required):
 
 ## HISTORY
 * 08-02-21 *[0.1.4]*
+	- added datetime constants and routines
 	- added multiplatform golang-like shorthand variable declaration template
 * 06-02-21 *[0.1.3]*
 	- added the seqstack extract routine
