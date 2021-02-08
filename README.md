@@ -32,6 +32,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 08-02-21 *[0.1.4]*
+	- added multiplatform golang-like shorthand variable declaration template
 * 06-02-21 *[0.1.3]*
 	- added the seqstack extract routine
 	- improved the seqstack drop routine

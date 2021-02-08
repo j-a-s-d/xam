@@ -17,6 +17,10 @@ const
   puts* = echo ## C/Ruby like output
   say* = echo ## AppleScript/Scratch like output
 
+template `:=` (name, value: untyped): untyped =
+  ## Golang-like shorthand variable declaration
+  var name {.inject.} = value
+
 # NOTE: see https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Inline_comments
 
 template `//`*(something: untyped) =
