@@ -24,6 +24,7 @@ All the following modules are included in xam (no extra includes are required):
 * `datetime`, *datetime related constants and routines*
 * `hex`, *hex related constants*
 * `htmlcolors`, *html colors related constants*
+* `looping`, *looping related routines*
 * `maths`, *math related constants and routines*
 * `multiplatform`, *multiplatform aliases (only harmless ones)*
 * `parsing`, *parsing helper routines*
@@ -34,16 +35,17 @@ All the following modules are included in xam (no extra includes are required):
 
 ## HISTORY
 * 08-02-21 *[0.1.4]*
-	- added datetime constants and routines
-	- added multiplatform golang-like shorthand variable declaration template
+	- added `datetime` constants and routines
+	- added `looping` routines
+	- added `multiplatform` golang-like shorthand variable declaration template
 * 06-02-21 *[0.1.3]*
-	- added the seqstack extract routine
-	- improved the seqstack drop routine
-	- improved the xam pragmas
+	- added `seqstack` extract routine
+	- improved `seqstack` drop routine
+	- improved `xam` pragmas
 * 04-02-21 *[0.1.2]*
-	- added the maths common degrees constants
+	- added `maths` common degrees constants
 * 02-02-21 *[0.1.1]*
-	- added the maths floatIsNaN routine
+	- added `maths` floatIsNaN routine
 * 28-01-21 *[0.1.0]*
 	- first public release
 * 14-01-21 *[0.0.1]*
