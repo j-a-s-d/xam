@@ -24,6 +24,7 @@ All the following modules are included in xam (no extra includes are required):
 * `datetime`, *datetime related constants and routines*
 * `hex`, *hex related constants*
 * `htmlcolors`, *html colors related constants*
+* `jsons`, *json related constants and routines*
 * `looping`, *looping related routines*
 * `maths`, *math related constants and routines*
 * `multiplatform`, *multiplatform aliases (only harmless ones)*
@@ -34,6 +35,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 13-02-21 *[0.2.0]*
+	- added `jsons` constants and routines
 * 08-02-21 *[0.1.4]*
 	- added `datetime` constants and routines
 	- added `looping` routines
