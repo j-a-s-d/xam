@@ -35,7 +35,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 2, 0)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 2, 1)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.
@@ -78,23 +78,30 @@ proc ensure*[T](value: T, default: T): T =
 proc debug*[T](value: T): T =
   ## If it is in DEVELOPMENT mode, it echoes the specified value, or does nothing otherwise.
   ## In any case, it returns the specified value.
-  ## It's behaviour allows you to intercept values on assignment (ex. var x = debug getX())
+  ## It's behaviour allows you to intercept values on assignment (ex. var x = debug getX()).
   if DEVELOPMENT:
     echo(value)
   value
 
-proc sandboxed*(p: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil): bool =
+proc sandboxed*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil): bool =
   ## Executes the provided proc into a try/except block and returns true
   ## if it executes successfully or false if it fails. On failure, if an
   ## error handler is provided, it will dispatch the current exception
   ## message to it.
   try:
-    p()
+    procedure()
     true
   except:
     if errorHandler != nil:
       errorHandler(getCurrentExceptionMsg())
     false
+
+proc silent*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil) =
+  ## Executes the provided proc into a try/except block. On failure, if an
+  ## error handler is provided, it will dispatch the current exception
+  ## message to it.
+  ## NOTE: this is a call to the sandboxed routine but discarding the result.
+  discard sandboxed(procedure, errorHandler)
 
 {.pop.}
 

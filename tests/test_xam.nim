@@ -40,6 +40,14 @@ suite "test xam":
   test "test sandboxed":
     check(sandboxed(nothing))
     check(not sandboxed(failure))
+    var msg = ""
+    discard sandboxed(failure, proc (error: string) = (msg = error))
+    check(msg == "Blah")
+
+  test "test silent":
+    var msg = ""
+    silent(failure, proc (error: string) = (msg = error))
+    check(msg == "Blah")
 
   # "suite teardown: run once after the tests"
-  
+

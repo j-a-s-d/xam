@@ -6,20 +6,40 @@
 #       the process of migrating code from other languages.
 #       Besides being harmless in nature, are not meant to
 #       be used in a regular basis. Be wise and translate
-#       the all code you are testing for migration asap.
+#       all the code you are testing for migration asap.
 
 const
-  NULL* = nil ## C++ like null
-  print* = echo ## Fortran/Python/Lua like output
-  println* = echo ## Java/Arduino/Kotlin/Go like output
-  writeln* = echo ## Pascal/D/Dart like output
-  putstrln* = echo ## Haskell like output
-  puts* = echo ## C/Ruby like output
-  say* = echo ## AppleScript/Scratch like output
+  NULL* = nil ## Cpp-like null
+  print* = echo ## Fortran/Python/Lua-like output
+  println* = echo ## Java/Arduino/Kotlin/Go-like output
+  writeln* = echo ## Pascal/D/Dart-like output
+  putstrln* = echo ## Haskell-like output
+  puts* = echo ## C/Ruby-like output
+  say* = echo ## AppleScript/Scratch-like output
 
 template `:=`*(name, value: untyped): untyped =
   ## Golang-like shorthand variable declaration
   var name {.inject.} = value
+
+template `&=`*(a, b: bool): untyped =
+  ## C/Cpp-like and-assign operator
+  a = a and b
+
+template `|=`*(a, b: bool): untyped =
+  ## C/Cpp-like or-assign operator
+  a = a or b
+
+template `&&`*(a, b: bool): bool =
+  ## C/Cpp-like and operator
+  a and b
+
+template `||`*(a, b: bool): bool =
+  ## C/Cpp-like or operator
+  a or b
+
+template `!`*(a: bool): bool =
+  ## C/Cpp-like not operator
+  not a
 
 # NOTE: see https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Inline_comments
 

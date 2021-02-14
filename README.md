@@ -35,6 +35,9 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 14-02-21 *[0.2.1]*
+	- added `xam` silent routine
+	- added `multiplatform` c/cpp-like boolean operators templates
 * 13-02-21 *[0.2.0]*
 	- added `jsons` constants and routines
 * 08-02-21 *[0.1.4]*
