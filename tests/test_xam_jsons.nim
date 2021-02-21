@@ -2,7 +2,7 @@
 
 import
   unittest,
-  json,
+  json, tables,
   xam
 
 suite "test xam json":
@@ -135,3 +135,124 @@ suite "test xam json":
     check(obtainString(o, "/a") == "")
     check(obtainString(o, "/") == "")
     check(obtainString(o, "") == "")
+
+  test "test JArrayBuilder":
+    let b = newJArrayBuilder()
+    check(b != nil)
+    check(b.len == 0)
+    b.add("hello").add(123).add(true).add(nil).append(456.789)
+    check(b.len == 5)
+    check(b.getAsJArray() == %* ["hello", 123, true, nil, 456.789])
+    check(b.getAsString() == """["hello",123,true,null,456.789]""")
+    check(b.getAsPrettyString() == """[
+  "hello",
+  123,
+  true,
+  null,
+  456.789
+]""")
+    check(b.getAsJsonNodeSequence() == @[
+      newJString("hello"), newJInt(123), newJBool(true), newJNull(), newJFloat(456.789)
+    ])
+    check(b.reset().len == 0)
+
+  test "test JObjectBuilder":
+    let b = newJObjectBuilder()
+    check(b != nil)
+    check(b.len == 0)
+    b.set("test1", "hello").set("test2", 123).set("test3", true).set("test4", nil)["test5"] = 456.789
+    check(b.len == 5)
+    check(b.getAsJObject() == %* { "test1": "hello", "test2": 123, "test3": true, "test4": nil, "test5": 456.789 })
+    check(b.getAsString() == """{"test1":"hello","test2":123,"test3":true,"test4":null,"test5":456.789}""")
+    check(b.getAsPrettyString() == """{
+  "test1": "hello",
+  "test2": 123,
+  "test3": true,
+  "test4": null,
+  "test5": 456.789
+}""")
+    var t = initOrderedTable[string, JsonNode]()
+    t.add("test1", newJString("hello"))
+    t.add("test2", newJInt(123))
+    t.add("test3", newJBool(true))
+    t.add("test4", newJNull())
+    t.add("test5", newJFloat(456.789))
+    check(b.getAsNamedJsonNodeOrderedTable() == t)
+    check(b.reset().len == 0)
+
+  test "test JsonModel":
+    let m = newJsonModel()
+    check(m != nil)
+    check(m.getRegisteredDefinitions().len == 0)
+    let v0 = m.validate(%* {})
+    check(v0.success)
+    check(v0.errorKind == jmeNoError)
+    check(v0.errorField == "")
+    m.registerMandatoryInteger("a")
+    check(m.getRegisteredDefinitions().len == 1)
+    let v1 = m.validate(%* {})
+    check(not v1.success)
+    check(v1.errorKind == jmeNotExists)
+    check(v1.errorField == "a")
+    let v2 = m.validate(%* { "a": 456.789 })
+    check(not v2.success)
+    check(v2.errorKind == jmeBadKind)
+    check(v2.errorField == "a")
+    let v3 = m.validate(%* { "a": 123 })
+    check(v3.success)
+    check(v3.errorKind == jmeNoError)
+    check(v3.errorField == "")
+    m.registerOptionalNonEmptyString("b")
+    let v4 = m.validate(%* { "a": 123 })
+    check(v4.success)
+    check(v4.errorKind == jmeNoError)
+    check(v4.errorField == "")
+    let v5 = m.validate(%* { "a": 123, "b": "hello" })
+    check(v5.success)
+    check(v5.errorKind == jmeNoError)
+    check(v5.errorField == "")
+    let v6 = m.validate(%* { "a": 123, "b": "" })
+    check(not v6.success)
+    check(v6.errorKind == jmeIsEmpty)
+    check(v6.errorField == "b")
+    m.registerOptionalNonEmptyArray("c")
+    let v7 = m.validate(%* { "a": 123, "b": "hello" })
+    check(v7.success)
+    check(v7.errorKind == jmeNoError)
+    check(v7.errorField == "")
+    let v8 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123] })
+    check(v8.success)
+    check(v8.errorKind == jmeNoError)
+    check(v8.errorField == "")
+    let v9 = m.validate(%* { "a": 123, "b": "hello", "c": %* [] })
+    check(not v9.success)
+    check(v9.errorKind == jmeIsEmpty)
+    check(v9.errorField == "c")
+    m.registerOptionalNonEmptyObject("d")
+    let v10 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123] })
+    check(v10.success)
+    check(v10.errorKind == jmeNoError)
+    check(v10.errorField == "")
+    let v11 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123], "d": %* { "x": 0 } })
+    check(v11.success)
+    check(v11.errorKind == jmeNoError)
+    check(v11.errorField == "")
+    let v12 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123], "d": %* {} })
+    check(not v12.success)
+    check(v12.errorKind == jmeIsEmpty)
+    check(v12.errorField == "d")
+    m.registerOptionalInteger("d/x")
+    let v13 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123] })
+    check(v13.success)
+    check(v13.errorKind == jmeNoError)
+    check(v13.errorField == "")
+    let v14 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123], "d": %* { "x": 123 } })
+    check(v14.success)
+    check(v14.errorKind == jmeNoError)
+    check(v14.errorField == "")
+    let v15 = m.validate(%* { "a": 123, "b": "hello", "c": %* [123], "d": %* { "x": 456.789 } })
+    check(not v15.success)
+    check(v15.errorKind == jmeBadKind)
+    check(v15.errorField == "d/x")
+    m.reset()
+    check(m.getRegisteredDefinitions().len == 0)
