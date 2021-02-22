@@ -26,7 +26,6 @@ reexport(xam/jsons, jsons)
 reexport(xam/looping, looping)
 reexport(xam/maths, maths)
 reexport(xam/multiplatform, multiplatform)
-reexport(xam/parsing, parsing)
 reexport(xam/semanticversion, semanticversion)
 reexport(xam/seqstack, seqstack)
 reexport(xam/sizes, sizes)
@@ -35,7 +34,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 1)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 0)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.
@@ -104,4 +103,3 @@ proc silent*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, vo
   discard sandboxed(procedure, errorHandler)
 
 {.pop.}
-

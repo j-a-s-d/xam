@@ -7,7 +7,7 @@
 
 from strutils import split
 from strings import STRINGS_PERIOD
-from parsing import tryParseInt
+from maths import tryParseInt
 
 const
   DEFAULT_MAJOR: int = 0

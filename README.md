@@ -36,6 +36,8 @@ All the following modules are included in xam (no extra includes are required):
 
 ## HISTORY
 * 22-02-21 *[0.3.1]*
+	- refactored `maths` into individual includes
+	- included `parsing` into `maths`
 	- added `jsons` tryParseJson routine
 * 21-02-21 *[0.3.0]*
 	- refactored `jsons` into individual includes
