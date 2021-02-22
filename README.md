@@ -35,6 +35,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 22-02-21 *[0.3.1]*
+	- added `jsons` tryParseJson routine
 * 21-02-21 *[0.3.0]*
 	- refactored `jsons` into individual includes
 	- published `jsons` obtainNode* routines

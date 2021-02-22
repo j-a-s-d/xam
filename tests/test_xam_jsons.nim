@@ -7,6 +7,14 @@ import
 
 suite "test xam json":
 
+  test "test tryParseJson":
+    var obj1 = tryParseJson("{\"test\":123}", nil)
+    check(obj1 != nil)
+    var obj2 = tryParseJson("hello", nil)
+    check(obj2 == nil)
+    var obj3 = tryParseJson("hello", JSON_NULL)
+    check(obj3 == JSON_NULL)
+
   test "test wrapInJObject":
     var obj1 = wrapInJObject("test", JSON_NULL)
     check(obj1 != nil)

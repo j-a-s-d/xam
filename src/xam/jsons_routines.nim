@@ -4,6 +4,9 @@
 
 {.push inline.}
 
+proc tryParseJson*(s: string, default: JsonNode): JsonNode =
+  try: parseJson(s) except: default
+
 proc wrapInJObject*(name: string, value: JsonNode): JsonNode =
   ## Wraps the provided value in a json object.
   result = newJObject()
