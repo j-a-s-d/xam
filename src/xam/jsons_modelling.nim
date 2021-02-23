@@ -13,7 +13,7 @@ type
   JsonModel* = ref JModel
 
   JsonModelErrorKind* = enum
-    jmeNoError, jmeNotExists, jmeBadKind, jmeIsEmpty
+    jmeNoError, jmeInvalidNode, jmeNotExists, jmeBadKind, jmeIsEmpty
 
   JsonModelValidationResult* = tuple[success: bool, errorField: string, errorKind: JsonModelErrorKind] # , readFields: OrderedTable[string, JsonNode]
 
@@ -35,11 +35,14 @@ proc validateField(node: JsonNode, definition: JsonModelFieldDefinition): JsonMo
   return jmeNoError
 
 proc validate*(model: JsonModel, node: JsonNode): JsonModelValidationResult =
-  for d in items(model.fields):
-    let e = validateField(node, d)
-    if e != jmeNoError:
-      return (success: false, errorField: d.path, errorKind: e)
-  (success: true, errorField: "", errorKind: jmeNoError)
+  if not isJObject(node):
+    return (success: false, errorField: "", errorKind: jmeInvalidNode)
+  else:
+    for d in items(model.fields):
+      let e = validateField(node, d)
+      if e != jmeNoError:
+        return (success: false, errorField: d.path, errorKind: e)
+  return (success: true, errorField: "", errorKind: jmeNoError)
 
 proc register(model: JsonModel, path: string, kind: JsonNodeKind, mandatory: bool, nonempty: bool) =
   model.fields.add((path: path, kind: kind, mandatory: mandatory, nonempty: nonempty))
@@ -94,7 +97,7 @@ proc registerMandatory*(model: JsonModel, path: string, kind: JsonNodeKind) =
 
 proc registerMandatoryNonEmpty*(model: JsonModel, path: string, kind: JsonNodeKind) =
   ## Registers an mandatory non-empty field in the provided json model.
-  register(model, path, kind, false, true)
+  register(model, path, kind, true, true)
 
 proc registerMandatoryBoolean*(model: JsonModel, path: string) =
   ## Registers a mandatory boolean field in the provided json model.

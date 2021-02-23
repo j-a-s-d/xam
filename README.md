@@ -35,6 +35,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 23-02-21 *[0.3.2]*
+	- added `jsons` jmeInvalidNode error for model
 * 22-02-21 *[0.3.1]*
 	- refactored `maths` into individual includes
 	- included `parsing` into `maths`

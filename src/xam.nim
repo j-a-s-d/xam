@@ -34,7 +34,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 0)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 2)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.
