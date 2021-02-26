@@ -135,12 +135,15 @@ proc obtainString*(node: JsonNode, path: string, default: string = ""): string =
     r.getStr()
 
 proc loadJsonNodeFromFile*(filename: string): JsonNode =
+  ## Loads the json node from the specified file. If it fails, it returns nil.
   try:
     parseJson(readFile(filename))
   except:
     nil
 
 proc saveJsonNodeToFile*(filename: string, node: JsonNode, prettyJson: bool = false): bool =
+  ## Saves the specified json node to the specified file, formatting it in a pretty
+  ## representation if specified. It returns true if the whole operation had success.
   try:
     writeFile(filename, if prettyJson: pretty(node) else: $node)
     true
