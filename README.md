@@ -36,6 +36,7 @@ All the following modules are included in xam (no extra includes are required):
 
 ## HISTORY
 * 26-02-21 *[0.3.3]*
+	- added `jsons` loadJsonNodeFromFile and saveJsonNodeToFile routines
 	- added `xam` catch routine
 * 23-02-21 *[0.3.2]*
 	- added `jsons` jmeInvalidNode error for model

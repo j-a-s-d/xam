@@ -2,7 +2,7 @@
 
 import
   unittest,
-  json, tables,
+  json, tables, os,
   xam
 
 suite "test xam json":
@@ -268,3 +268,21 @@ suite "test xam json":
     check(v15.errorField == "d/x")
     m.reset()
     check(m.getRegisteredDefinitions().len == 0)
+
+  test "test saveJsonNodeToFile":
+    let n = %* { "a": 123 }
+    check(saveJsonNodeToFile("test.json", n))
+    let s1 = readFile("test.json")
+    check(s1 == "{\"a\":123}")
+    check(saveJsonNodeToFile("test.json", n, true))
+    let s2 = readFile("test.json")
+    check(s2 == """{
+  "a": 123
+}""")
+    removeFile("test.json")
+
+  test "test loadJsonNodeFromFile":
+    check(loadJsonNodeFromFile("blah.json") == nil)
+    writeFile("test.json", "{}")
+    check(isJObject(loadJsonNodeFromFile("test.json")))
+    removeFile("test.json")

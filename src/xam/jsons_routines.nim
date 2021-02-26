@@ -133,3 +133,16 @@ proc obtainString*(node: JsonNode, path: string, default: string = ""): string =
     default
   else:
     r.getStr()
+
+proc loadJsonNodeFromFile*(filename: string): JsonNode =
+  try:
+    parseJson(readFile(filename))
+  except:
+    nil
+
+proc saveJsonNodeToFile*(filename: string, node: JsonNode, prettyJson: bool = false): bool =
+  try:
+    writeFile(filename, if prettyJson: pretty(node) else: $node)
+    true
+  except:
+    false
