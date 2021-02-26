@@ -49,5 +49,13 @@ suite "test xam":
     silent(failure, proc (error: string) = (msg = error))
     check(msg == "Blah")
 
+  test "test catch":
+    var err: ref Exception
+    catch(failure, err)
+    check(err != nil)
+    check(err.msg == "Blah")
+    catch(nothing, err)
+    check(err == nil)
+
   # "suite teardown: run once after the tests"
 

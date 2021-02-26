@@ -1,6 +1,6 @@
 # xam
 # ===
-# 14.01.2021 - 22.02.2021
+# 14.01.2021 - 26.02.2021
 
 when defined(js):
   {.error: "This library needs to be compiled with a c/cpp-like backend".}
@@ -34,7 +34,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 2)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 3)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.
@@ -101,5 +101,14 @@ proc silent*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, vo
   ## message to it.
   ## NOTE: this is a call to the sandboxed routine but discarding the result.
   discard sandboxed(procedure, errorHandler)
+
+proc catch*(procedure: NoArgsProc[void], error: var ref Exception) =
+  ## Executes the provided proc into a try/except block. On failure, it
+  ## assigns the current exception to the passed error variable.
+  error = nil
+  try:
+    procedure()
+  except:
+    error = getCurrentException()
 
 {.pop.}
