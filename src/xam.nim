@@ -1,6 +1,6 @@
 # xam
 # ===
-# 14.01.2021 - 26.02.2021
+# 14.01.2021 - 27.02.2021
 
 when defined(js):
   {.error: "This library needs to be compiled with a c/cpp-like backend".}
@@ -21,7 +21,7 @@ reexport(xam/callbacks, callbacks)
 reexport(xam/chars, chars)
 reexport(xam/datetime, datetime)
 reexport(xam/hex, hex)
-reexport(xam/htmlcolors, htmlcolors)
+reexport(xam/html, html)
 reexport(xam/jsons, jsons)
 reexport(xam/looping, looping)
 reexport(xam/maths, maths)
@@ -34,7 +34,7 @@ reexport(xam/strings, strings)
 # GLOBAL CONSTANTS AND VARIABLES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 3, 3)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 4, 0)
 
 var
   DEVELOPMENT*: bool = false ## This is the development flag. False by default, except when "release" is not defined.

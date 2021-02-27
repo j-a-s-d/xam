@@ -1,6 +1,6 @@
 # xam
 # ===
-# HTML COLORS CONSTANTS
+# HTML COLOURS CONSTANTS
 
 const
   HTML_COLORS_MAROON*: string = "#800000"

@@ -10,7 +10,7 @@ a multipurpose productivity library for nim
 * no external dependencies (just nim)
 * self-documenting api (descriptive long proc names)
 * full unit testing
-* markdown documentation (TODO)
+* markdown documentation -- TODO
 > based on my Java Ace project https://github.com/j-a-s-d/ace
 
 ## MODULES
@@ -23,7 +23,7 @@ All the following modules are included in xam (no extra includes are required):
 * `chars`, *chars related constants*
 * `datetime`, *datetime related constants and routines*
 * `hex`, *hex related constants*
-* `htmlcolors`, *html colors related constants*
+* `html`, *html related constants and routines*
 * `jsons`, *json related constants and routines*
 * `looping`, *looping related routines*
 * `maths`, *math related constants and routines*
@@ -35,6 +35,8 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 27-02-21 *[0.4.0]*
+	- refactored `hmtl` into individual includes
 * 26-02-21 *[0.3.3]*
 	- added `jsons` loadJsonNodeFromFile and saveJsonNodeToFile routines
 	- added `xam` catch routine
