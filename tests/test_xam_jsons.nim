@@ -268,6 +268,8 @@ suite "test xam json":
     check(v15.errorField == "d/x")
     m.reset()
     check(m.getRegisteredDefinitions().len == 0)
+    check(m.defineOptionalNonEmptyObject("d") != nil)
+    check(m.defineOptionalInteger("d/x").getRegisteredDefinitions().len == 2)
 
   test "test saveJsonNodeToFile":
     let n = %* { "a": 123 }

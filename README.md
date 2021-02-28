@@ -17,29 +17,35 @@ a multipurpose productivity library for nim
 
 All the following modules are included in xam (no extra includes are required):
 
+* `xam`, *general features*
 * `ansi`, *ansi related routines*
 * `bytes`, *bytes related constants*
 * `callbacks`, *common callback declarations*
 * `chars`, *chars related constants*
 * `datetime`, *datetime related constants and routines*
+* `exceptions`, *exceptions related routines*
 * `hex`, *hex related constants*
 * `html`, *html related constants and routines*
 * `jsons`, *json related constants and routines*
 * `looping`, *looping related routines*
 * `maths`, *math related constants and routines*
 * `multiplatform`, *multiplatform aliases (only harmless ones)*
-* `parsing`, *parsing helper routines*
 * `semanticversion`, *semantic version object*
-* `seqstack`, *seq js-like stack routines*
+* `seqs`, *sequences related routines*
 * `sizes`, *sizes constants and routines*
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 28-02-21 *[0.4.1]*
+	- added `jsons` fluent api for model
+	- refactored `xam` into individual includes
+	- refactored `seqs` into individual includes
+	- refactored `strings` into individual includes
 * 27-02-21 *[0.4.0]*
 	- refactored `hmtl` into individual includes
 * 26-02-21 *[0.3.3]*
 	- added `jsons` loadJsonNodeFromFile and saveJsonNodeToFile routines
-	- added `xam` catch routine
+	- added `exceptions` catch routine
 * 23-02-21 *[0.3.2]*
 	- added `jsons` jmeInvalidNode error for model
 * 22-02-21 *[0.3.1]*
@@ -52,7 +58,7 @@ All the following modules are included in xam (no extra includes are required):
 	- added `jsons` incremental builders for objects and arrays
 	- added `jsons` objects modelling validation
 * 14-02-21 *[0.2.1]*
-	- added `xam` silent routine
+	- added `exceptions` silent routine
 	- added `multiplatform` c/cpp-like boolean operators templates
 * 13-02-21 *[0.2.0]*
 	- added `jsons` constants and routines

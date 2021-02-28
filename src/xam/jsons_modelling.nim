@@ -26,7 +26,7 @@ proc validateField(node: JsonNode, definition: JsonModelFieldDefinition): JsonMo
     if r.kind != definition.kind:
       return jmeBadKind
     if definition.nonempty:
-      if r.kind in [JObject, JArray]:
+      if (r.kind == JObject) or (r.kind == JArray):
         if r.len == 0:
           return jmeIsEmpty
       elif r.kind == JString:
@@ -43,6 +43,98 @@ proc validate*(model: JsonModel, node: JsonNode): JsonModelValidationResult =
       if e != jmeNoError:
         return (success: false, errorField: d.path, errorKind: e)
   return (success: true, errorField: "", errorKind: jmeNoError)
+
+proc define(model: JsonModel, path: string, kind: JsonNodeKind, mandatory: bool, nonempty: bool): JsonModel =
+  model.fields.add((path: path, kind: kind, mandatory: mandatory, nonempty: nonempty))
+  model
+
+proc defineOptional*(model: JsonModel, path: string, kind: JsonNodeKind): JsonModel =
+  ## Fluenty, registers an optional field in the provided json model.
+  define(model, path, kind, false, false)
+
+proc defineOptionalNonEmpty*(model: JsonModel, path: string, kind: JsonNodeKind): JsonModel =
+  ## Fluenty, registers an optional non-empty field in the provided json model.
+  define(model, path, kind, false, true)
+
+proc defineOptionalBoolean*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional boolean field in the provided json model.
+  defineOptional(model, path, JBool)
+
+proc defineOptionalInteger*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional integer field in the provided json model.
+  defineOptional(model, path, JInt)
+
+proc defineOptionalFloat*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional float field in the provided json model.
+  defineOptional(model, path, JFloat)
+
+proc defineOptionalString*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional string field in the provided json model.
+  defineOptional(model, path, JString)
+
+proc defineOptionalNonEmptyString*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional non-empty string field in the provided json model.
+  defineOptionalNonEmpty(model, path, JString)
+
+proc defineOptionalObject*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional object field in the provided json model.
+  defineOptional(model, path, JObject)
+
+proc defineOptionalNonEmptyObject*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional non-empty object field in the provided json model.
+  defineOptionalNonEmpty(model, path, JObject)
+
+proc defineOptionalArray*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional array field in the provided json model.
+  defineOptional(model, path, JArray)
+
+proc defineOptionalNonEmptyArray*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an optional non-empty array field in the provided json model.
+  defineOptionalNonEmpty(model, path, JArray)
+
+proc defineMandatory*(model: JsonModel, path: string, kind: JsonNodeKind): JsonModel =
+  ## Fluenty, registers a mandatory field in the provided json model.
+  define(model, path, kind, true, false)
+
+proc defineMandatoryNonEmpty*(model: JsonModel, path: string, kind: JsonNodeKind): JsonModel =
+  ## Fluenty, registers an mandatory non-empty field in the provided json model.
+  define(model, path, kind, true, true)
+
+proc defineMandatoryBoolean*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory boolean field in the provided json model.
+  defineMandatory(model, path, JBool)
+
+proc defineMandatoryInteger*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory integer field in the provided json model.
+  defineMandatory(model, path, JInt)
+
+proc defineMandatoryFloat*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory float field in the provided json model.
+  defineMandatory(model, path, JFloat)
+
+proc defineMandatoryString*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory string field in the provided json model.
+  defineMandatory(model, path, JString)
+
+proc defineMandatoryNonEmptyString*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers an mandatory non-empty string field in the provided json model.
+  defineMandatoryNonEmpty(model, path, JString)
+
+proc defineMandatoryObject*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory object field in the provided json model.
+  defineMandatory(model, path, JObject)
+
+proc defineMandatoryNonEmptyObject*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory non-empty object field in the provided json model.
+  defineMandatoryNonEmpty(model, path, JObject)
+
+proc defineMandatoryArray*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory array field in the provided json model.
+  defineMandatory(model, path, JArray)
+
+proc defineMandatoryNonEmptyArray*(model: JsonModel, path: string): JsonModel =
+  ## Fluenty, registers a mandatory non-empty array field in the provided json model.
+  defineMandatoryNonEmpty(model, path, JArray)
 
 proc register(model: JsonModel, path: string, kind: JsonNodeKind, mandatory: bool, nonempty: bool) =
   model.fields.add((path: path, kind: kind, mandatory: mandatory, nonempty: nonempty))
