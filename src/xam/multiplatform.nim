@@ -8,6 +8,9 @@
 #       be used in a regular basis. Be wise and translate
 #       all the code you are testing for migration asap.
 
+from sugar import `=>`
+export `=>` ## ES6-like fat arrow functions
+
 const
   NULL* = nil ## Cpp-like null
   print* = echo ## Fortran/Python/Lua-like output

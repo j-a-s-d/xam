@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 03-03-21 *[0.4.2]*
+	- added `multiplatform` sugar's fat arrow functions syntax reexport
+	- added `xam` inlined template
 * 28-02-21 *[0.4.1]*
 	- added `jsons` fluent api for model
 	- refactored `xam` into individual includes

@@ -2,11 +2,6 @@
 # ===
 # INTERNAL REEXPORTS
 
-template reexport*(imported, exported: untyped) =
-  ## reexport template
-  import imported
-  export exported
-
 template reexport_xam_module(module: untyped) =
   reexport(xam/module, module)
 

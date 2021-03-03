@@ -2,6 +2,8 @@
 # ===
 # ANSI ROUTINES
 
+# NOTE: this is a complementary and different approach to the terminal's one.
+
 const
   ANSI_RESET* = "\e[0m"
   ANSI_BOLD* = "\e[1m"
