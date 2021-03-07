@@ -3,7 +3,7 @@
 # VALUES RELATED CONSTANTS AND ROUTINES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(0, 4, 2)
+  VERSION*: SemanticVersion = newSemanticVersion(0, 5, 0)
 
 var
   DEVELOPMENT*: bool = not defined(release) ## This is the development flag. False by default, except when "release" is not defined.
