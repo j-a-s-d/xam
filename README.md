@@ -36,6 +36,10 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 08-03-21 *[0.6.0]*
+	- added `xam` isUndefined, inCompileTime and inRunTime templates
+	- refactored `multiplatform` into individual includes
+	- added `multiplatform` introspection aliases
 * 07-03-21 *[0.5.0]*
     - added `jsons` serialization and deserialization in model
 	- added `jsons` mandatory untyped fields in model
