@@ -1,6 +1,6 @@
 # xam
 # ===
-# MULTIPLATFORM ALIASES
+# MULTIPLATFORM ALIASES AND SHIMS
 
 # NOTE: This multiplatform aliases are intended to help in
 #       the process of migrating code from other languages.
@@ -15,3 +15,4 @@ include multiplatform_constants
 include multiplatform_operators
 include multiplatform_comments
 include multiplatform_introspection
+include multiplatform_shutdown

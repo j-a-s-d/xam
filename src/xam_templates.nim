@@ -13,6 +13,10 @@ template reexport*(imported, exported: untyped) =
   import imported
   export exported
 
+template use*(module, item: untyped) =
+  ## This template performs the import of a single module's element using the from syntax.
+  from module import item
+
 template isUndefined(x: untyped): bool =
   ## Idiomatic version of the `not declaredInScope` check.
   ## It is useful template to check if a variable or proc is defined at compile-time.
@@ -29,3 +33,8 @@ template inRunTime(): bool =
   ## NOTE: use it in if-expressions like `if inRuntime():`.
   not inCompileTime()
 
+use os,sleep
+
+template nap*(ms: int) =
+  ## Sleeps the specified amount of milliseconds.
+  sleep(ms)

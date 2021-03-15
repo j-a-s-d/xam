@@ -1,13 +1,12 @@
 # xam
 # ===
-# MULTIPLATFORM CONSTANTS
+# MULTIPLATFORM CONSTANTS AND ALIASES
 
 const
-  NULL* = nil ## Cpp-like null
-  print* = echo ## Fortran/Python/Lua-like output
-  println* = echo ## Java/Arduino/Kotlin/Go-like output
-  writeln* = echo ## Pascal/D/Dart-like output
-  putstrln* = echo ## Haskell-like output
-  puts* = echo ## C/Ruby-like output
-  say* = echo ## AppleScript/Scratch-like output
-
+  NULL* = nil ## Cpp-like null constant
+  print* = echo ## Fortran/Python/Lua-like output alias
+  println* = echo ## Java/Arduino/Kotlin/Go-like output alias
+  writeln* = echo ## Pascal/D/Dart-like output alias
+  putstrln* = echo ## Haskell-like output alias
+  puts* = echo ## C/Ruby-like output alias
+  say* = echo ## AppleScript/Scratch-like output alias

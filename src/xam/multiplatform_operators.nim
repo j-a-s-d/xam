@@ -3,8 +3,11 @@
 # MULTIPLATFORM OPERATORS
 
 template `:=`*(name, value: untyped): untyped =
-  ## Golang-like shorthand variable declaration
-  var name {.inject.} = value
+  ## Golang-like shorthand variable declaration & Pascal-like variable assignation
+  when not declaredInScope(name):
+    var name {.inject.} = value
+  else:
+    name = value
 
 template `&=`*(a, b: bool): untyped =
   ## C/Cpp-like and-assign operator
@@ -25,4 +28,3 @@ template `||`*(a, b: bool): bool =
 template `!`*(a: bool): bool =
   ## C/Cpp-like not operator
   not a
-

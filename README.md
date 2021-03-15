@@ -36,6 +36,11 @@ All the following modules are included in xam (no extra includes are required):
 * `strings`, *strings constants and routines*
 
 ## HISTORY
+* 15-03-21 *[0.7.0]*
+	- added `xam` use template
+	- refactored `xam`
+	- added `multiplatform` shutdown routines
+	- added `multiplatform` pascal-like variable assignation template
 * 08-03-21 *[0.6.0]*
 	- added `xam` isUndefined, inCompileTime and inRunTime templates
 	- refactored `multiplatform` into individual includes
