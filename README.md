@@ -10,32 +10,35 @@ a multipurpose productivity library for nim
 * no external dependencies (just nim)
 * self-documenting api (descriptive long proc names)
 * full unit testing
-* markdown documentation -- TODO
+* markdown documentation -- *in progress*
 > based on my Java Ace project https://github.com/j-a-s-d/ace
 
 ## MODULES
 
 All the following modules are included in xam (no extra includes are required):
 
-* `xam`, *general features*
-* `ansi`, *ansi related routines*
-* `bytes`, *bytes related constants*
-* `callbacks`, *common callback declarations*
-* `chars`, *chars related constants*
-* `datetime`, *datetime related constants and routines*
-* `exceptions`, *exceptions related routines*
-* `hex`, *hex related constants*
-* `html`, *html related constants and routines*
-* `jsons`, *json related constants and routines*
-* `looping`, *looping related routines*
-* `maths`, *math related constants and routines*
-* `multiplatform`, *multiplatform aliases (only harmless ones)*
-* `semanticversion`, *semantic version object*
-* `seqs`, *sequences related routines*
-* `sizes`, *sizes constants and routines*
-* `strings`, *strings constants and routines*
+* [`xam`](docs/xam.md), *general features*
+* [`ansi`](docs/ansi.md), *ansi related routines*
+* [`bytes`](docs/bytes.md), *bytes related constants*
+* [`callbacks`](docs/callbacks.md), *common callback declarations*
+* [`chars`](docs/chars.md), *chars related constants*
+* [`datetime`](docs/datetime.md), *datetime related constants and routines*
+* [`exceptions`](docs/exceptions.md), *exceptions related routines*
+* [`hex`](docs/hex.md), *hex related constants*
+* [`html`](docs/html.md), *html related constants and routines*
+* [`jsons`](docs/jsons.md), *json related constants and routines*
+* [`looping`](docs/looping.md), *looping related routines*
+* [`maths`](docs/maths.md), *math related constants and routines*
+* [`multiplatform`](docs/multiplatform.md), *multiplatform aliases (only harmless ones)*
+* [`semanticversion`](docs/semanticversion.md), *semantic version object*
+* [`seqs`](docs/seqs.md), *sequences related routines*
+* [`sizes`](docs/sizes.md), *sizes related constants and routines*
+* [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 21-03-21 *[0.7.1]*
+	- added the markdown documentation structure
+	- added `multiplatform` c/pascal/basic-like string concatenation template
 * 15-03-21 *[0.7.0]*
 	- added `xam` use template
 	- refactored `xam`

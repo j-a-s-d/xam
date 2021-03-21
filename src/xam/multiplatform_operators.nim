@@ -18,13 +18,17 @@ template `|=`*(a, b: bool): untyped =
   a = a or b
 
 template `&&`*(a, b: bool): bool =
-  ## C/Cpp-like and operator
+  ## C/Cpp-like and logical operator
   a and b
 
 template `||`*(a, b: bool): bool =
-  ## C/Cpp-like or operator
+  ## C/Cpp-like or logical operator
   a or b
 
 template `!`*(a: bool): bool =
-  ## C/Cpp-like not operator
+  ## C/Cpp-like not logical operator
   not a
+
+template `+`(x, y: string): string =
+  ## C/Pascal/Basic-like string concatenation
+  x & y
