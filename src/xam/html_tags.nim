@@ -1,5 +1,5 @@
 # xam
-#* ===
+# ===
 # HTML TAGS CONSTANTS
 
 const

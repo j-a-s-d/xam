@@ -13,7 +13,7 @@ func concat*(strings: varargs[string]): string =
     result &= s
 
 func enclose*(s: string, chr: char): string =
-  ## Encloses the specified string between the specified char.
+  ## Encloses the specified string between the specified borders char.
   $chr & s & $chr
 
 func enclose*(s: string, borders: string): string =

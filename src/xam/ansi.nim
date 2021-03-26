@@ -42,8 +42,8 @@ const
   ANSI_BG_BRIGHT_CYAN* = "\e[106m"
   ANSI_BG_BRIGHT_WHITE* = "\e[107m"
 
-func ansiResetBefore*(s: string) : string = ANSI_RESET & s
-func ansiResetAfter*(s: string) : string = s & ANSI_RESET
+func ansiResetBefore*(s: string): string = ANSI_RESET & s
+func ansiResetAfter*(s: string): string = s & ANSI_RESET
 func ansiBold*(s: string): string = ansiResetAfter(ANSI_BOLD & s)
 func ansiUnderlined*(s: string): string = ansiResetAfter(ANSI_UNDERLINED & s)
 func ansiReversed*(s: string): string = ansiResetAfter(ANSI_REVERSED & s)

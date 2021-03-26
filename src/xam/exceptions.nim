@@ -43,5 +43,10 @@ proc catch*(procedure: NoArgsProc[void], error: var ref Exception) =
   except:
     error = getCurrentException()
 
+proc throw*(kind: typedesc, msg: string, parent: ref Exception = nil) =
+  ## Throws a new Exception based in the provided typedesc and with
+  ## the specified message, and optionaly with the provided parent.
+  raise newException(kind, msg, parent)
+
 {.pop.}
 

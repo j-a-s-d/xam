@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 26-03-21 *[0.7.2]*
+	- improved the markdown documentation for `xam`, `ansi`, `bytes`, `callbacks`, `chars`, `datetime`, `exceptions`, `hex`, `html`, `looping`, `math`, `sizes` and `strings`
+	- added `exceptions` throw routine
 * 21-03-21 *[0.7.1]*
 	- added the markdown documentation structure
 	- added `multiplatform` c/pascal/basic-like string concatenation template

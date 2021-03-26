@@ -46,7 +46,7 @@ const
 # UNIT FLOAT TUPLES
 
 type
-  SizesFloatUnit* = tuple[bytes: float, suffix: string]
+  SizesFloatUnit* = tuple[bytes: float, suffix: string] ## The sizes float unit type providing the bytes count and the suffix string.
 
 const
   SIZES_BYTE_UNIT*: SizesFloatUnit = (bytes: 1.0, suffix: "bytes")
@@ -80,8 +80,7 @@ func getUnitTupleBySize*(input: float): SizesFloatUnit =
 
 func formatByteSize*(bytes: SomeNumber, decimals: int = 2, space: bool = true, uppercase: bool = false): string =
   ## Formats the specified byte size with the specified options.
-  ##
-  ## Differs from the strutils.formatSize routine in many things
+  ## NOTE: it differs from the strutils.formatSize routine in many things
   ## (for example accepting SomeNumber instead of int64).
   let input = float bytes
   let unit = getUnitTupleBySize(input)

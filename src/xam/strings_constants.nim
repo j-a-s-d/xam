@@ -3,14 +3,15 @@
 # STRINGS CONSTANTS
 
 const
+  # SPECIAL
   STRINGS_EMPTY*: string = ""
   STRINGS_EOL*: string = "\p" # see https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals
-
-  # SYMBOLS
   STRINGS_TAB*: string = "\t"
   STRINGS_LF*: string = "\n"
   STRINGS_CR*: string = "\r"
   STRINGS_SPACE*: string = " "
+
+  # SYMBOLS
   STRINGS_EQUAL*: string = "="
   STRINGS_NUMERAL*: string = "#"
   STRINGS_PIPE*: string = "|"

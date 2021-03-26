@@ -1,4 +1,4 @@
-version     = "0.7.1"
+version     = "0.7.2"
 author      = "Javier Santo Domingo"
 description = "xam"
 license     = "MIT"

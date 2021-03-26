@@ -37,3 +37,8 @@ suite "test xam exceptions":
     catch(nil, err)
     check(err.msg == "Cannot invoke nil")
 
+  test "test throw":
+    try:
+      throw(IOError, "Blah")
+    except:
+      discard

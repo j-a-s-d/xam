@@ -19,7 +19,7 @@ template use*(module, item: untyped) =
 
 template isUndefined(x: untyped): bool =
   ## Idiomatic version of the `not declaredInScope` check.
-  ## It is useful template to check if a variable or proc is defined at compile-time.
+  ## It is a useful template to check if a variable or proc is defined at compile-time.
   ## NOTE: it is inspired in the Underscore.js undefined symbol check function.
   when not declaredInScope(x): true else: false
 
@@ -37,4 +37,5 @@ use os,sleep
 
 template nap*(ms: int) =
   ## Sleeps the specified amount of milliseconds.
+  ## NOTE: it is just a regular sleep alias that does not requires extra imports.
   sleep(ms)
