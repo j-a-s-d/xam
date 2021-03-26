@@ -133,8 +133,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func concat*(strings: varargs[string]): string {.inline.}`
+
 **DESCRIPTION**
 *Concatenates the specified string values.*
+
 **USAGE**
 ```nim
   if concat("a", "b", "c") == "abc":
@@ -145,8 +147,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func enclose*(s: string, chr: char): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between the specified borders char.*
+
 **USAGE**
 ```nim
   if enclose("text", '|') == "|text|":
@@ -157,8 +161,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func enclose*(s: string, borders: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between the specified borders string.*
+
 **USAGE**
 ```nim
   if enclose("text", "|") == "|text|":
@@ -169,8 +175,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func apostrophe*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between apostrophes.*
+
 **USAGE**
 ```nim
   if apostrophe("hello") == "'hello'":
@@ -181,8 +189,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func quote*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between quotes.*
+
 **USAGE**
 ```nim
   if quote("hello") == "\"hello\"":
@@ -193,8 +203,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func brace*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between braces.*
+
 **USAGE**
 ```nim
   if brace("hello") == "{hello}":
@@ -205,8 +217,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func bracketize*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between brackets.*
+
 **USAGE**
 ```nim
   if bracketize("hello") == "[hello]":
@@ -217,8 +231,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func parenthesize*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between parenthesis.*
+
 **USAGE**
 ```nim
   if parenthesize("hello") == "(hello)":
@@ -229,8 +245,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func chevronize*(s: string): string {.inline.}`
+
 **DESCRIPTION**
 *Encloses the specified string between chevrons.*
+
 **USAGE**
 ```nim
   if chevronize("hello") == "<hello>":
@@ -241,8 +259,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func hasContent*(s: string): bool {.inline.}`
+
 **DESCRIPTION**
 *Determines if the specified string is not empty.*
+
 **USAGE**
 ```nim
   if not hasContent(""):
@@ -253,8 +273,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func haveContent*(strings: varargs[string]): bool {.inline.}`
+
 **DESCRIPTION**
 *Determines if the specified strings are not empty.*
+
 **USAGE**
 ```nim
   if not haveContent("1", "22", ""):
@@ -265,9 +287,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func hasText*(s: string): bool {.inline.}`
+
 **DESCRIPTION**
 *Determines if the specified strings have text.*
 *NOTE: white space is ignored.*
+
 **USAGE**
 ```nim
   if not hasText(" "):
@@ -278,9 +302,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func haveText*(strings: varargs[string]): bool {.inline.}`
+
 **DESCRIPTION**
 *Determines if the specified strings have text.*
 *NOTE: white space is ignored.*
+
 **USAGE**
 ```nim
   if not haveText("1", "22", " "):
@@ -291,9 +317,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func leftCount*(s: string, sub: char): int {.inline.}`
+
 **DESCRIPTION**
 *Count the occurrences of the character `sub` in the left size (head) of the string `s`.*
 *NOTE: specialized version of the strutils.count.*
+
 **USAGE**
 ```nim
   if leftCount("00123", '0') == 2:
@@ -304,9 +332,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func rightCount*(s: string, sub: char): int {.inline.}`
+
 **DESCRIPTION**
 *Count the occurrences of the character `sub` in the right side (trail) of the string `s`.*
 *NOTE: specialized version of the strutils.count.*
+
 **USAGE**
 ```nim
   if rightCount("12300", '0') == 2:
@@ -317,8 +347,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func dropLeft*(s: string, amount: int): string {.inline.}`
+
 **DESCRIPTION**
 *Drops the specified `amount` of characters from the left side (head) of the string `s`.*
+
 **USAGE**
 ```nim
   if dropLeft("12345", 1) == "2345":
@@ -329,8 +361,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func dropRight*(s: string, amount: int): string {.inline.}`
+
 **DESCRIPTION**
 *Drops the specified `amount` of characters from the right side (trail) of the string `s`.*
+
 **USAGE**
 ```nim
   if dropRight("12345", 1) == "1234":
@@ -341,8 +375,10 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `func dropBoth*(s: string, amount: int): string {.inline.}`
+
 **DESCRIPTION**
 *Drops the specified `amount` of characters from the both sides (head and trail) of the string `s`.*
+
 **USAGE**
 ```nim
   if dropBoth("12345", 1) == "234":
@@ -353,9 +389,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `proc isNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool`
+
 **DESCRIPTION**
 *Determines if the specified string is numeric.*
 *NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).*
+
 **USAGE**
 ```nim
   if isNumericString("-123.45", {',', '.'}, {'+', '-'}):
@@ -366,9 +404,11 @@ This is the documentation of the strings related constants and routines module o
 
 **SIGNATURE**
 `proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool`
+
 **DESCRIPTION**
 *Determines if the specified string is alphanumeric.*
 *NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).*
+
 **USAGE**
 ```nim
   if isAlphaNumericString("+12345,A.BC", {',', '.'}, {'+', '-'}):

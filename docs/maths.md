@@ -162,8 +162,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc tryParseFloat*(s: string, default: float): float`
+
 **DESCRIPTION**
 *Tries to parse a float value from the provided string, otherwise it returns the provided default value.*
+
 **USAGE**
 ```nim
   if tryParseFloat("1.2345", 0.0) == 1.2345:
@@ -174,8 +176,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc tryParseInt*(s: string, default: int): int`
+
 **DESCRIPTION**
 *Tries to parse an interger value from the provided string, otherwise it returns the provided default value.*
+
 **USAGE**
 ```nim
   if tryParseInt("-12345", 0) == -12345:
@@ -186,8 +190,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc tryParseUInt*(s: string, default: uint): uint`
+
 **DESCRIPTION**
 *Tries to parse an unsigned integer value from the provided string, otherwise it returns the provided default value.*
+
 **USAGE**
 ```nim
   if tryParseUInt("12345", 0) == 12345:
@@ -198,8 +204,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc tryParseBool*(s: string, default: bool): bool`
+
 **DESCRIPTION**
 *Tries to parse a boolean value from the provided string, otherwise it returns the provided default value.*
+
 **USAGE**
 ```nim
   if tryParseBool("True", false) == true:
@@ -210,9 +218,11 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc floatRound*[T: SomeFloat](x: T, places: int): T`
+
 **DESCRIPTION**
 *Alternative float round routine.*
 *NOTE: use it wisely, see https://forum.nim-lang.org/t/4402*
+
 **USAGE**
 ```nim
   if floatRound(1.2345, 2) == 1.23:
@@ -223,8 +233,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `func floatIsNaN*(x: SomeFloat): bool {.inline.}`
+
 **DESCRIPTION**
 *Tests if the specified float is NaN (not-a-number).*
+
 **USAGE**
 ```nim
   if not floatIsNaN(1.2345):
@@ -237,8 +249,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc isEven*(x: SomeInteger): bool {.inline.}`
+
 **DESCRIPTION**
 *Returns true if the provided integer value is even.*
+
 **USAGE**
 ```nim
   if not isEven(1):
@@ -249,8 +263,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc isOdd*(x: SomeInteger): bool {.inline.}`
+
 **DESCRIPTION**
 *Returns true if the provided integer value is odd.*
+
 **USAGE**
 ```nim
   if not isOdd(-2):
@@ -261,8 +277,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc isDivisibleBy*(number, factor: SomeInteger): bool {.inline.}`
+
 **DESCRIPTION**
 *Returns true if the provided integer value is divisible by the provided integer factor.*
+
 **USAGE**
 ```nim
   if not isDivisibleBy(100, 3):
@@ -273,8 +291,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc add*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber`
+
 **DESCRIPTION**
 *Returns the result of adding all the provided numbers.*
+
 **USAGE**
 ```nim
   if add(1, 0, -1) == 0:
@@ -285,8 +305,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc subtract*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber`
+
 **DESCRIPTION**
 *Returns the result of subtracting all the provided numbers.*
+
 **USAGE**
 ```nim
   if subtract(3, 2, 1) == 0:
@@ -297,8 +319,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc minimum*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber`
+
 **DESCRIPTION**
 *Returns the minimum value in the provided numbers.*
+
 **USAGE**
 ```nim
   if minimum(1.1, 2.2, 3.3) == 1.1:
@@ -309,8 +333,10 @@ This is the documentation of the math related constants and routines module of t
 
 **SIGNATURE**
 `proc maximum*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber`
+
 **DESCRIPTION**
 *Returns the maximum value in the provided numbers.*
+
 **USAGE**
 ```nim
   if maximum(1.1, 2.2, 3.3) == 3.3:

@@ -46,6 +46,7 @@ This is the documentation of the sizes related constants and routines module of 
 
 **SIGNATURE**
 `type SizesFloatUnit* = tuple[bytes: float, suffix: string]`
+
 **DESCRIPTION**
 *The sizes float unit type providing the bytes count and the suffix string.*
 
@@ -65,8 +66,10 @@ This is the documentation of the sizes related constants and routines module of 
 
 **SIGNATURE**
 `func getUnitTupleBySize*(input: float): SizesFloatUnit`
+
 **DESCRIPTION**
 *Gets the corresponding SizesFloatUnit tuple for the input provided.*
+
 **USAGE**
 ```nim
   if getUnitTupleBySize(1.0).bytes == SIZES_BYTE_UNIT.bytes:
@@ -77,9 +80,11 @@ This is the documentation of the sizes related constants and routines module of 
 
 **SIGNATURE**
 `func formatByteSize*(bytes: SomeNumber, decimals: int = 2, space: bool = true, uppercase: bool = false): string`
+
 **DESCRIPTION**
 *Formats the specified byte size with the specified options.*
 *NOTE: it differs from the strutils.formatSize routine in many things (for example accepting SomeNumber instead of int64).*
+
 **USAGE**
 ```nim
   if formatByteSize(7 * float SIZES_EXABYTE, 0, true, true) == "7 EB":

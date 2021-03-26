@@ -11,8 +11,10 @@ This is the documentation of the datetime related constants and routines module 
 
 **SIGNATURE**
 `proc getListOfDaysBetween*(dfrom, dto: DateTime): seq[DateTime]`
+
 **DESCRIPTION**
 *Returns a sequence containing the days between the two dates provided (which are included).*
+
 **USAGE**
 ```nim
   let d1 = parse("2020-12-31", DATETIME_FORMAT_YYYYMMDD)

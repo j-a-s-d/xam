@@ -455,6 +455,7 @@ This is the documentation of the html related constants and routines module of t
 &nbsp;&nbsp;&nbsp;&nbsp;`id*: string`
 &nbsp;&nbsp;&nbsp;&nbsp;`classes*: seq[string]`
 `ShorthandInfo* = ref TShorthandInfo`
+
 **DESCRIPTION**
 *This type holds the resulting information of the shorthand notation parsing containing the tag, the id and the classes included in it.*
 
@@ -464,8 +465,10 @@ This is the documentation of the html related constants and routines module of t
 
 **SIGNATURE**
 `proc parseShorthand*(shorthandNotation: string): ShorthandInfo`
+
 **DESCRIPTION**
 *Parses the supplied html shorthand notation string storing the resulting information in a ShorthandInfo instance.*
+
 **USAGE**
 ```nim
     let x = parseShorthand("textarea#hey.classA.classB")
@@ -483,8 +486,10 @@ This is the documentation of the html related constants and routines module of t
 
 **SIGNATURE**
 `proc compileShorthand*(shorthandNotation: string): string`
+
 **DESCRIPTION**
 *Compiles the provided shorthand notation string to an html element without any content.*
+
 **USAGE**
 ```nim
   let node = "<div id=\'test\' class=\'classA classB\'/>"
@@ -496,8 +501,10 @@ This is the documentation of the html related constants and routines module of t
 
 **SIGNATURE**
 `proc compileShorthand*(shorthandNotation: string, content: string): string`
+
 **DESCRIPTION**
 *Compiles the provided shorthand notation string to an html element containing the supplied content.*
+
 **USAGE**
 ```nim
   let node = "<div id=\'test\' class=\'classA classB\'>blah</div>"
