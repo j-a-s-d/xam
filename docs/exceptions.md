@@ -7,13 +7,17 @@ This is the documentation of the exceptions related routines module of the Xam l
 ### SANDBOXED
 
 **SIGNATURE**
+
 `proc sandboxed*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil): bool {.inline.}`
 
 **DESCRIPTION**
+
 *Executes the provided proc into a try/except block and returns true if it executes successfully or false if it fails. On failure, if an error handler is provided, it will dispatch the current exception message to it.*
+
 *NOTE: if the provided procedure is nil, a CatchcableError with message "Cannot invoke nil" will be dispatched to the error handler (if provided).*
 
 **USAGE**
+
 ```nim
     proc failure() =
       raise newException(IOError, "Blah")
@@ -29,13 +33,17 @@ This is the documentation of the exceptions related routines module of the Xam l
 ### SILENT
 
 **SIGNATURE**
+
 `proc silent*(procedure: NoArgsProc[void], errorHandler: SingleArgProc[string, void] = nil) {.inline.}`
 
 **DESCRIPTION**
+
 *Executes the provided proc into a try/except block. On failure, if an error handler is provided, it will dispatch the current exception message to it.*
+
 *NOTE: this is a call to the sandboxed routine but discarding the result.*
 
 **USAGE**
+
 ```nim
     proc failure() =
       raise newException(IOError, "Blah")
@@ -50,13 +58,17 @@ This is the documentation of the exceptions related routines module of the Xam l
 ### CATCH
 
 **SIGNATURE**
+
 `proc catch*(procedure: NoArgsProc[void], error: var ref Exception) {.inline.}`
 
 **DESCRIPTION**
+
 *Executes the provided proc into a try/except block. On failure, it assigns the current exception to the passed error variable.*
+
 *NOTE: if the provided procedure is nil, a CatchcableError with message "Cannot invoke nil" will be assigned to the passed error variable.*
 
 **USAGE**
+
 ```nim
     proc failure() =
       raise newException(IOError, "Blah")
@@ -70,12 +82,15 @@ This is the documentation of the exceptions related routines module of the Xam l
 ### THROW
 
 **SIGNATURE**
+
 `proc throw*(kind: typedesc, msg: string, parent: ref Exception = nil) {.inline.}`
 
 **DESCRIPTION**
+
 *Throws a new Exception based in the provided typedesc and with the specified message, and optionaly with the provided parent.*
 
 **USAGE**
+
 ```nim
   throw(IOError, "Blah")
 ```

@@ -132,12 +132,15 @@ This is the documentation of the strings related constants and routines module o
 ### CONCAT
 
 **SIGNATURE**
+
 `func concat*(strings: varargs[string]): string {.inline.}`
 
 **DESCRIPTION**
+
 *Concatenates the specified string values.*
 
 **USAGE**
+
 ```nim
   if concat("a", "b", "c") == "abc":
     echo "concatenated!"
@@ -146,12 +149,15 @@ This is the documentation of the strings related constants and routines module o
 ### ENCLOSE (WITH CHAR)
 
 **SIGNATURE**
+
 `func enclose*(s: string, chr: char): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between the specified borders char.*
 
 **USAGE**
+
 ```nim
   if enclose("text", '|') == "|text|":
     echo "enclosed!"
@@ -160,12 +166,15 @@ This is the documentation of the strings related constants and routines module o
 ### ENCLOSE (WITH STRING)
 
 **SIGNATURE**
+
 `func enclose*(s: string, borders: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between the specified borders string.*
 
 **USAGE**
+
 ```nim
   if enclose("text", "|") == "|text|":
     echo "enclosed!"
@@ -174,12 +183,15 @@ This is the documentation of the strings related constants and routines module o
 ### APOSTROPHE
 
 **SIGNATURE**
+
 `func apostrophe*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between apostrophes.*
 
 **USAGE**
+
 ```nim
   if apostrophe("hello") == "'hello'":
     echo "apostrophed!"
@@ -188,12 +200,15 @@ This is the documentation of the strings related constants and routines module o
 ### QUOTE
 
 **SIGNATURE**
+
 `func quote*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between quotes.*
 
 **USAGE**
+
 ```nim
   if quote("hello") == "\"hello\"":
     echo "quoted!"
@@ -202,12 +217,15 @@ This is the documentation of the strings related constants and routines module o
 ### BRACE
 
 **SIGNATURE**
+
 `func brace*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between braces.*
 
 **USAGE**
+
 ```nim
   if brace("hello") == "{hello}":
     echo "braced!"
@@ -216,12 +234,15 @@ This is the documentation of the strings related constants and routines module o
 ### BRACKETIZE
 
 **SIGNATURE**
+
 `func bracketize*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between brackets.*
 
 **USAGE**
+
 ```nim
   if bracketize("hello") == "[hello]":
     echo "bracketized!"
@@ -230,12 +251,15 @@ This is the documentation of the strings related constants and routines module o
 ### PARENTHESIZE
 
 **SIGNATURE**
+
 `func parenthesize*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between parenthesis.*
 
 **USAGE**
+
 ```nim
   if parenthesize("hello") == "(hello)":
     echo "parenthesized!"
@@ -244,12 +268,15 @@ This is the documentation of the strings related constants and routines module o
 ### CHEVRONIZE
 
 **SIGNATURE**
+
 `func chevronize*(s: string): string {.inline.}`
 
 **DESCRIPTION**
+
 *Encloses the specified string between chevrons.*
 
 **USAGE**
+
 ```nim
   if chevronize("hello") == "<hello>":
     echo "chevronized!"
@@ -258,12 +285,15 @@ This is the documentation of the strings related constants and routines module o
 ### HASCONTENT
 
 **SIGNATURE**
+
 `func hasContent*(s: string): bool {.inline.}`
 
 **DESCRIPTION**
+
 *Determines if the specified string is not empty.*
 
 **USAGE**
+
 ```nim
   if not hasContent(""):
     echo "it does not has text!"
@@ -272,12 +302,15 @@ This is the documentation of the strings related constants and routines module o
 ### HAVECONTENT
 
 **SIGNATURE**
+
 `func haveContent*(strings: varargs[string]): bool {.inline.}`
 
 **DESCRIPTION**
+
 *Determines if the specified strings are not empty.*
 
 **USAGE**
+
 ```nim
   if not haveContent("1", "22", ""):
     echo "at least one of them does not have content!"
@@ -286,13 +319,17 @@ This is the documentation of the strings related constants and routines module o
 ### HASTEXT
 
 **SIGNATURE**
+
 `func hasText*(s: string): bool {.inline.}`
 
 **DESCRIPTION**
+
 *Determines if the specified strings have text.*
+
 *NOTE: white space is ignored.*
 
 **USAGE**
+
 ```nim
   if not hasText(" "):
     echo "it does not has text!"
@@ -301,13 +338,17 @@ This is the documentation of the strings related constants and routines module o
 ### HAVETEXT
 
 **SIGNATURE**
+
 `func haveText*(strings: varargs[string]): bool {.inline.}`
 
 **DESCRIPTION**
+
 *Determines if the specified strings have text.*
+
 *NOTE: white space is ignored.*
 
 **USAGE**
+
 ```nim
   if not haveText("1", "22", " "):
     echo "at least one of them does not have text!"
@@ -316,13 +357,17 @@ This is the documentation of the strings related constants and routines module o
 ### LEFTCOUNT
 
 **SIGNATURE**
+
 `func leftCount*(s: string, sub: char): int {.inline.}`
 
 **DESCRIPTION**
+
 *Count the occurrences of the character `sub` in the left size (head) of the string `s`.*
+
 *NOTE: specialized version of the strutils.count.*
 
 **USAGE**
+
 ```nim
   if leftCount("00123", '0') == 2:
     echo "counted!"
@@ -331,13 +376,17 @@ This is the documentation of the strings related constants and routines module o
 ### RIGHTCOUNT
 
 **SIGNATURE**
+
 `func rightCount*(s: string, sub: char): int {.inline.}`
 
 **DESCRIPTION**
+
 *Count the occurrences of the character `sub` in the right side (trail) of the string `s`.*
+
 *NOTE: specialized version of the strutils.count.*
 
 **USAGE**
+
 ```nim
   if rightCount("12300", '0') == 2:
     echo "counted!"
@@ -346,12 +395,15 @@ This is the documentation of the strings related constants and routines module o
 ### DROPLEFT
 
 **SIGNATURE**
+
 `func dropLeft*(s: string, amount: int): string {.inline.}`
 
 **DESCRIPTION**
+
 *Drops the specified `amount` of characters from the left side (head) of the string `s`.*
 
 **USAGE**
+
 ```nim
   if dropLeft("12345", 1) == "2345":
     echo "dropped!"
@@ -360,12 +412,15 @@ This is the documentation of the strings related constants and routines module o
 ### DROPRIGHT
 
 **SIGNATURE**
+
 `func dropRight*(s: string, amount: int): string {.inline.}`
 
 **DESCRIPTION**
+
 *Drops the specified `amount` of characters from the right side (trail) of the string `s`.*
 
 **USAGE**
+
 ```nim
   if dropRight("12345", 1) == "1234":
     echo "dropped!"
@@ -374,12 +429,15 @@ This is the documentation of the strings related constants and routines module o
 ### DROPBOTH
 
 **SIGNATURE**
+
 `func dropBoth*(s: string, amount: int): string {.inline.}`
 
 **DESCRIPTION**
+
 *Drops the specified `amount` of characters from the both sides (head and trail) of the string `s`.*
 
 **USAGE**
+
 ```nim
   if dropBoth("12345", 1) == "234":
     echo "dropped!"
@@ -388,13 +446,17 @@ This is the documentation of the strings related constants and routines module o
 ### ISNUMERICSTRING
 
 **SIGNATURE**
+
 `proc isNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool`
 
 **DESCRIPTION**
+
 *Determines if the specified string is numeric.*
+
 *NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).*
 
 **USAGE**
+
 ```nim
   if isNumericString("-123.45", {',', '.'}, {'+', '-'}):
     echo "it is a numeric string"
@@ -403,13 +465,17 @@ This is the documentation of the strings related constants and routines module o
 ### ISALPHANUMERICSTRING
 
 **SIGNATURE**
+
 `proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool`
 
 **DESCRIPTION**
+
 *Determines if the specified string is alphanumeric.*
+
 *NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).*
 
 **USAGE**
+
 ```nim
   if isAlphaNumericString("+12345,A.BC", {',', '.'}, {'+', '-'}):
     echo "it is an alpha numeric string"

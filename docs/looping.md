@@ -7,13 +7,17 @@ This is the documentation of the looping related routines module of the Xam libr
 ### EACH
 
 **SIGNATURE**
+
 `template each*(list, id, code: untyped)`
 
 **DESCRIPTION**
+
 *This template loops the provided collection using the specified id and executing the provided code block.*
+
 *NOTE: It uses the items iterator.*
 
 **USAGE**
+
 ```nim
     var sq = newSeq[int]()
     [1,2,3].each(x):

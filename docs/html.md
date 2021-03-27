@@ -450,6 +450,7 @@ This is the documentation of the html related constants and routines module of t
 ### SHORTHANDINFO
 
 **SIGNATURE**
+
 `TShorthandInfo = object`
 &nbsp;&nbsp;&nbsp;&nbsp;`tag*: string`
 &nbsp;&nbsp;&nbsp;&nbsp;`id*: string`
@@ -457,6 +458,7 @@ This is the documentation of the html related constants and routines module of t
 `ShorthandInfo* = ref TShorthandInfo`
 
 **DESCRIPTION**
+
 *This type holds the resulting information of the shorthand notation parsing containing the tag, the id and the classes included in it.*
 
 ## ROUTINES
@@ -464,12 +466,15 @@ This is the documentation of the html related constants and routines module of t
 ### PARSESHORTHAND
 
 **SIGNATURE**
+
 `proc parseShorthand*(shorthandNotation: string): ShorthandInfo`
 
 **DESCRIPTION**
+
 *Parses the supplied html shorthand notation string storing the resulting information in a ShorthandInfo instance.*
 
 **USAGE**
+
 ```nim
     let x = parseShorthand("textarea#hey.classA.classB")
     if x != nil:
@@ -485,12 +490,15 @@ This is the documentation of the html related constants and routines module of t
 ### COMPILESHORTHAND (WITHOUT CONTENT)
 
 **SIGNATURE**
+
 `proc compileShorthand*(shorthandNotation: string): string`
 
 **DESCRIPTION**
+
 *Compiles the provided shorthand notation string to an html element without any content.*
 
 **USAGE**
+
 ```nim
   let node = "<div id=\'test\' class=\'classA classB\'/>"
   if compileShorthand("div#test.classA.classB") == node:
@@ -500,12 +508,15 @@ This is the documentation of the html related constants and routines module of t
 ### COMPILESHORTHAND (WITH CONTENT)
 
 **SIGNATURE**
+
 `proc compileShorthand*(shorthandNotation: string, content: string): string`
 
 **DESCRIPTION**
+
 *Compiles the provided shorthand notation string to an html element containing the supplied content.*
 
 **USAGE**
+
 ```nim
   let node = "<div id=\'test\' class=\'classA classB\'>blah</div>"
   if compileShorthand("div#test.classA.classB", "blah") == node:
