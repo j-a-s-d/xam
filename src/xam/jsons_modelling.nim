@@ -10,10 +10,10 @@ type
 
   JsonModelFieldsDefinitions* = seq[JsonModelFieldDefinition]
 
-  JModel = object
+  TJModel = object
     fields: JsonModelFieldsDefinitions
 
-  JsonModel* = ref JModel
+  JsonModel* = ref TJModel
 
   JsonModelErrorKind* = enum
     jmeNoError, jmeInvalidNode, jmeNotExists, jmeBadKind, jmeIsEmpty
@@ -87,6 +87,7 @@ proc validateField(node: JsonNode, definition: JsonModelFieldDefinition): JsonMo
   return jmeNoError
 
 proc validate*(model: JsonModel, node: JsonNode): JsonModelValidationResult =
+  ## Validates the provided json node.
   if not isJObject(node):
     return (success: false, errorField: "", errorKind: jmeInvalidNode)
   else:
@@ -305,5 +306,6 @@ proc saveToJArray*(model: JsonModel): JsonNode =
 
 proc newJsonModel*(): JsonModel =
   ## Creates a new json model instance.
-  result = new JModel
+  result = new TJModel
   result.reset()
+

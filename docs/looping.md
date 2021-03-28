@@ -25,3 +25,26 @@ This is the documentation of the looping related routines module of the Xam libr
     if sq.len == 3:
       echo "the sequence has 3 elements"
 ```
+
+### MEACH
+
+**SIGNATURE**
+
+`template meach*(list, id, code: untyped)`
+
+**DESCRIPTION**
+
+*This template loops the provided collection using the specified id and executing the provided code block.*
+
+*NOTE: It uses the mitems iterator.*
+
+**USAGE**
+
+```nim
+    var a = [1,2,3]
+    a.meach(x):
+      if x == 3:
+        x = 4
+    if a[2] == 4:
+      echo "modified!"
+```

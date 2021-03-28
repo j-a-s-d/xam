@@ -7,10 +7,10 @@ import tables
 # JSON ARRAY BUILDER
 
 type
-  XamJArrayBuilder = object
+  TJArrayBuilder = object
     elements: seq[JsonNode]
 
-  JArrayBuilder* = ref XamJArrayBuilder
+  JArrayBuilder* = ref TJArrayBuilder
 
 proc getAsJArray*(builder: JArrayBuilder): JsonNode =
   ## Builds the resulting json array and returns it.
@@ -80,7 +80,7 @@ proc reset*(builder: JArrayBuilder, other: JArrayBuilder = nil): JArrayBuilder =
 
 proc newJArrayBuilder*(other: JArrayBuilder = nil): JArrayBuilder =
   ## Constructor accepting other json array builder instance.
-  result = new XamJArrayBuilder
+  result = new TJArrayBuilder
   result = result.reset(other)
 
 # JSON OBJECT BUILDER

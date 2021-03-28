@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 28-03-21 *[0.7.3]*
+	- improved the markdown documentation for `semanticversion` and `jsons`
+	- added `looping` meach template
 * 26-03-21 *[0.7.2]*
 	- improved the markdown documentation for `xam`, `ansi`, `bytes`, `callbacks`, `chars`, `datetime`, `exceptions`, `hex`, `html`, `looping`, `math`, `sizes` and `strings`
 	- added `exceptions` throw routine
@@ -85,7 +88,7 @@ All the following modules are included in xam (no extra includes are required):
 	- added `jsons` constants and routines
 * 08-02-21 *[0.1.4]*
 	- added `datetime` constants and routines
-	- added `looping` routines
+	- added `looping` templates
 	- added `multiplatform` golang-like shorthand variable declaration template
 * 06-02-21 *[0.1.3]*
 	- added `seqstack` extract routine

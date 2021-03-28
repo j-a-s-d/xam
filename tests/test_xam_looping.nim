@@ -14,3 +14,13 @@ suite "test xam looping":
     check(s[0] == 1)
     check(s[1] == 2)
     check(s[2] == 3)
+
+  test "test meach":
+    var a = [1,2,3]
+    a.meach(x):
+      if x == 3:
+        x = 4
+    check(a[0] == 1)
+    check(a[1] == 2)
+    check(a[2] == 4)
+

@@ -4,7 +4,9 @@
 
 {.push inline.}
 
-proc tryParseJson*(s: string, default: JsonNode): JsonNode =
+proc tryParseJson*(s: string, default: JsonNode = nil): JsonNode =
+  ## Tries to parse the provided string into a valid JsonNode.
+  ## If it fails it returns the provided default value (which is nil by default).
   try: parseJson(s) except: default
 
 proc wrapInJObject*(name: string, value: JsonNode): JsonNode =
@@ -84,23 +86,28 @@ proc mix*(objects: varargs[JsonNode]): JsonNode =
       for key, value in obj:
         result[key] = value
 
-proc obtainNode*(node: JsonNode, path: string): JsonNode =
+proc obtainNode*(node: JsonNode, path: string, separator: char = '/'): JsonNode =
+  ## Obtains the json node at the specified path.
+  ## Optionally you can provide a custom separator to interpreted a custom path style.
   result = node
-  for key in path.split(LEVEL_SEPARATOR):
+  for key in path.split(separator):
     if key.len == 0:
       continue
     if isNil(result) or result.kind != JObject or not result.hasKey(key):
       return nil
     result = result[key]
 
-proc obtainNodeOfKind*(node: JsonNode, kind: JsonNodeKind, path: string): JsonNode =
+proc obtainNodeOfKind*(node: JsonNode, kind: JsonNodeKind, path: string, separator: char = '/'): JsonNode =
+  ## Obtains the json node at the specified path if it is of the specified kind,
+  ## otherwise it returns nil.
+  ## Optionally you can provide a custom separator to interpreted a custom path style.
   result = obtainNode(node, path)
   if result == nil or result.kind != kind:
     return nil
 
 proc obtainBool*(node: JsonNode, path: string, default: bool = false): bool =
   ## Obtains the boolean value at the specified path in the specified json object.
-  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c")
+  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c").
   let r = obtainNodeOfKind(node, JBool, path)
   if r == nil:
     default
@@ -109,7 +116,7 @@ proc obtainBool*(node: JsonNode, path: string, default: bool = false): bool =
 
 proc obtainInt*(node: JsonNode, path: string, default: BiggestInt = -1): BiggestInt =
   ## Obtains the integer value at the specified path in the specified json object.
-  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c")
+  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c").
   let r = obtainNodeOfKind(node, JInt, path)
   if r == nil:
     default
@@ -118,7 +125,7 @@ proc obtainInt*(node: JsonNode, path: string, default: BiggestInt = -1): Biggest
 
 proc obtainFloat*(node: JsonNode, path: string, default: float = -1.0): float =
   ## Obtains the float value at the specified path in the specified json object.
-  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c")
+  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c").
   let r = obtainNodeOfKind(node, JFloat, path)
   if r == nil:
     default
@@ -127,7 +134,7 @@ proc obtainFloat*(node: JsonNode, path: string, default: float = -1.0): float =
 
 proc obtainString*(node: JsonNode, path: string, default: string = ""): string =
   ## Obtains the string value at the specified path in the specified json object.
-  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c")
+  ## NOTE: empty keys are ignored (ex. "/a//b/c/" is equal to "a/b/c").
   let r = obtainNodeOfKind(node, JString, path)
   if r == nil:
     default

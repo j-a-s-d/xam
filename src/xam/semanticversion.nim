@@ -15,23 +15,22 @@ const
   DEFAULT_PATCH: int = 0
 
 type
-  XamSemanticVersion = object
+  TSemanticVersion = object
     major: int
     minor: int
     patch: int
 
-  SemanticVersion* = ref XamSemanticVersion
+  SemanticVersion* = ref TSemanticVersion
 
 proc newSemanticVersion*(maj: int = DEFAULT_MAJOR, min: int = DEFAULT_MINOR, pat: int = DEFAULT_PATCH): SemanticVersion =
   ## Makes a new semantic version object instance from the passed integer values.
-  result = new XamSemanticVersion
+  result = new TSemanticVersion
   result.major = maj
   result.minor = min
   result.patch = pat
 
 proc newSemanticVersion*(value: string): SemanticVersion =
   ## Makes a new semantic version object instance from the passed string value.
-  ##
   ## NOTE: it returns the semantic version object instance created from
   ## the passed string value or an instance equivalent to "0.0.0" if it
   ## fails to convert the passed string.

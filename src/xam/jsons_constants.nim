@@ -2,12 +2,9 @@
 # ===
 # JSON CONSTANTS
 
-const
-  LEVEL_SEPARATOR = '/'
-
 let
-  JSON_NULL* = newJNull()
-  JSON_TRUE* = newJBool(true)
-  JSON_FALSE* = newJBool(false)
-  JSON_EMPTY_OBJECT* = newJObject()
-  JSON_EMPTY_ARRAY* = newJArray()
+  JSON_NULL*: JsonNode = newJNull()
+  JSON_TRUE*: JsonNode = newJBool(true)
+  JSON_FALSE*: JsonNode = newJBool(false)
+  JSON_EMPTY_OBJECT*: JsonNode = newJObject()
+  JSON_EMPTY_ARRAY*: JsonNode = newJArray()
