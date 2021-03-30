@@ -36,6 +36,11 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 30-03-21 *[0.8.0]*
+	- improved the markdown documentation for `seqs`
+	- added `seqs` common types definitions
+	- added `seqs` csv routines
+	- added used pragma to all the templates provided
 * 28-03-21 *[0.7.3]*
 	- improved the markdown documentation for `semanticversion` and `jsons`
 	- added `looping` meach template

@@ -4,7 +4,7 @@ import
   unittest,
   xam
 
-suite "test xam seqstack":
+suite "test xam seqs":
 
   test "test push":
     var k: stack[int] = @[]
@@ -67,4 +67,24 @@ suite "test xam seqstack":
     check(y == 0)
     var z = k.extract(4, -1)
     check(z == -1)
+
+  test "test fromCsvLine (char)":
+    let k = fromCsvLine("a,b,c")
+    check(k == @["a", "b", "c"])
+    let x = fromCsvLine("x;y;z", ';')
+    check(x == @["x", "y", "z"])
+
+  test "test fromCsvLine (set of chars)":
+    let k = fromCsvLine("a,b,c", {','})
+    check(k == @["a", "b", "c"])
+    let x = fromCsvLine("x,y;z", {',', ';'})
+    check(x == @["x", "y", "z"])
+
+  test "test toCsvLine (char)":
+    let x = toCsvLine(@["x", "y", "z"], ';')
+    check(x == "x;y;z")
+
+  test "test toCsvLine (string)":
+    let k = toCsvLine(@["a", "b", "c"], "|")
+    check(k == "a|b|c")
 

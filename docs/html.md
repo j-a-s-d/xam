@@ -451,11 +451,13 @@ This is the documentation of the html related constants and routines module of t
 
 **SIGNATURE**
 
-`TShorthandInfo = object`
-&nbsp;&nbsp;&nbsp;&nbsp;`tag*: string`
-&nbsp;&nbsp;&nbsp;&nbsp;`id*: string`
-&nbsp;&nbsp;&nbsp;&nbsp;`classes*: seq[string]`
-`ShorthandInfo* = ref TShorthandInfo`
+```nim
+  TShorthandInfo = object
+    tag*: string
+    id*: string
+    classes*: seq[string]
+  ShorthandInfo* = ref TShorthandInfo
+```
 
 **DESCRIPTION**
 

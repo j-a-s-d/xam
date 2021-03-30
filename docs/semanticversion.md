@@ -10,11 +10,13 @@ This is the documentation of the semantic version object module of the Xam libra
 
 **SIGNATURE**
 
-`type TSemanticVersion = object`
-&nbsp;&nbsp;&nbsp;&nbsp;`major: int`
-&nbsp;&nbsp;&nbsp;&nbsp;`minor: int`
-&nbsp;&nbsp;&nbsp;&nbsp;`patch: int`
-`SemanticVersion* = ref TSemanticVersion`
+```nim
+  type TSemanticVersion = object
+    major: int
+    minor: int
+    patch: int
+  SemanticVersion* = ref TSemanticVersion
+```
 
 **DESCRIPTION**
 

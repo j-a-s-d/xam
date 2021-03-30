@@ -458,9 +458,11 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`type TJArrayBuilder = object`
-&nbsp;&nbsp;&nbsp;&nbsp;`elements: seq[JsonNode]`
-`JArrayBuilder* = ref TJArrayBuilder`
+```nim
+  type TJArrayBuilder = object
+    elements: seq[JsonNode]
+  JArrayBuilder* = ref TJArrayBuilder
+```
 
 **DESCRIPTION**
 
@@ -641,9 +643,11 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`type TJObjectBuilder = object`
-&nbsp;&nbsp;&nbsp;&nbsp;`fields: OrderedTable[string, JsonNode]`
-`JObjectBuilder* = ref TJObjectBuilder`
+```nim
+  type TJObjectBuilder = object
+    fields: OrderedTable[string, JsonNode]
+  JObjectBuilder* = ref TJObjectBuilder
+```
 
 **DESCRIPTION**
 
@@ -824,9 +828,11 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`TJModel = object`
-&nbsp;&nbsp;&nbsp;&nbsp;`fields: JsonModelFieldsDefinitions`
-`JsonModel* = ref TJModel`
+```nim
+  TJModel = object
+    fields: JsonModelFieldsDefinitions
+  JsonModel* = ref TJModel
+```
 
 **DESCRIPTION**
 
