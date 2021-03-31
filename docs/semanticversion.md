@@ -90,7 +90,7 @@ This is the documentation of the semantic version object module of the Xam libra
   echo sv.getMajor() # 2
 ```
 
-#### GETPATH
+#### GETPATCH
 
 **SIGNATURE**
 

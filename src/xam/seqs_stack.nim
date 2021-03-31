@@ -24,13 +24,25 @@ proc pop*[T](c: var stack[T], default: T): T =
   result = c[^1]
   c.setLen(c.len() - 1)
 
-proc slice*[T](c: var stack[T], index: int): seq[T] =
-  ## Returns a copy of the sequence segment starting at the specified index.
+proc slice*[T](c: var stack[T], index: int = 0): seq[T] =
+  ## Returns a copy of the sequence segment
+  ## starting at the optionally specified index.
   let cln = c.len()
   let st = (if index < 0: cln else: 0) + (if abs(index) > cln: -cln else: index)
   if st > cln:
     return @[]
   c[st..^1]
+
+proc slice*[T](c: var stack[T], index: int, last: int): seq[T] =
+  ## Returns a copy of the sequence segment starting at the specified index
+  ## and ending at an also defined index.
+  let cln = c.len()
+  let st = (if index < 0: cln else: 0) + (if abs(index) > cln: -cln else: index)
+  let en = (if last < 0: abs(last) else: cln - last) + 1
+  if st > cln or en >= cln - 1:
+    @[]
+  else:
+    c[st..^en]
 
 proc shift*[T](c: var stack[T], default: T): T =
   ## Extracts the first element of the sequence,

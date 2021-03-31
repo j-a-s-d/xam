@@ -26,7 +26,28 @@ suite "test xam seqs":
 
   test "test slice":
     var k: stack[int] = @[1, 2, 3, 4, 5]
+    check(k.slice() == @[1, 2, 3, 4, 5])
+    check(k.slice(0) == @[1, 2, 3, 4, 5])
     check(k.slice(3) == @[4, 5])
+    check(k.slice(5).len == 0)
+    check(k.slice(-1) == @[5])
+    check(k.slice(-5) == @[1, 2, 3, 4, 5])
+    check(k.slice(-6) == @[1, 2, 3, 4, 5])
+    check(k.slice(3, -3).len == 0)
+    check(k.slice(3, -2).len == 0)
+    check(k.slice(3, -1) == @[4])
+    check(k.slice(3, 0).len == 0)
+    check(k.slice(3, 1).len == 0)
+    check(k.slice(3, 2).len == 0)
+    check(k.slice(3, 3).len == 0)
+    check(k.slice(3, 4) == @[4])
+    check(k.slice(3, 5) == @[4, 5])
+    check(k.slice(2, -1) == @[3, 4])
+    check(k.slice(2, -2) == @[3])
+    check(k.slice(2, -3).len == 0)
+    check(k.slice(2, -4).len == 0)
+    check(k.slice(2, -5).len == 0)
+    check(k.slice(2, -6).len == 0)
 
   test "test shift":
     var k: stack[int] = @[1, 2, 3, 4, 5]
@@ -81,6 +102,8 @@ suite "test xam seqs":
     check(x == @["x", "y", "z"])
 
   test "test toCsvLine (char)":
+    let k = toCsvLine(@["a", "b", "c"])
+    check(k == "a,b,c")
     let x = toCsvLine(@["x", "y", "z"], ';')
     check(x == "x;y;z")
 

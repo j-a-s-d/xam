@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 31-03-21 *[0.8.1]*
+	- improved the markdown documentation for `seqs`
+	- improved `seqs` js stack-like slice support
 * 30-03-21 *[0.8.0]*
 	- improved the markdown documentation for `seqs`
 	- added `seqs` common types definitions

@@ -48,6 +48,12 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    let k = fromCsvLine("a,b,c", {','})
+    if k == @["a", "b", "c"]:
+      echo "cracked!"
+    let x = fromCsvLine("x,y;z", {',', ';'})
+    if x == @["x", "y", "z"]:
+      echo "cracked!"
 ```
 
 **SIGNATURE**
@@ -61,6 +67,12 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    let k = fromCsvLine("a,b,c")
+    if k == @["a", "b", "c"]:
+      echo "cracked!"
+    let x = fromCsvLine("x;y;z", ';')
+    if x == @["x", "y", "z"]:
+      echo "cracked!"
 ```
 
 **SIGNATURE**
@@ -74,6 +86,9 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    let k = toCsvLine(@["a", "b", "c"], "|")
+    if k == "a|b|c":
+      echo "joined!"
 ```
 
 **SIGNATURE**
@@ -87,6 +102,12 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    let k = toCsvLine(@["a", "b", "c"])
+    if k == "a,b,c":
+      echo "joined!"
+    let x = toCsvLine(@["x", "y", "z"], ';')
+    if x == "x;y;z":
+      echo "joined!"
 ```
 
 ### JS STACK-LIKE ROUTINES
@@ -102,6 +123,13 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[]
+    k.push(1)
+    if k == @[1]:
+      echo "pushed!"
+    k.push(2)
+    if k == @[1, 2]:
+      echo "pushed!"
 ```
 
 **SIGNATURE**
@@ -115,6 +143,12 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1]
+    if k.peek(123) == 1:
+      echo "peeked value!"
+    discard k.pop()
+    if k.peek(123) == 123:
+      echo "got the default value"
 ```
 
 **SIGNATURE**
@@ -128,19 +162,71 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1]
+    if k.pop(123) == 1:
+      echo "popped!"
+    if k.pop(123) == 123:
+      echo "got the default value"
 ```
 
 **SIGNATURE**
 
-`proc slice*[T](c: var stack[T], index: int): seq[T]`
+`proc slice*[T](c: var stack[T], index: int = 0): seq[T]`
 
 **DESCRIPTION**
 
-*Returns a copy of the sequence segment starting at the specified index.*
+*Returns a copy of the sequence segment starting at the optionally specified index (default is 0).*
 
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    if k.slice() == @[1, 2, 3, 4, 5]:
+      echo "sliced!"
+    if k.slice(0) == @[1, 2, 3, 4, 5]:
+      echo "sliced!"
+    if k.slice(3) == @[4, 5]:
+      echo "sliced!"
+    if k.slice(5).len == 0:
+      echo "sliced!"
+    if k.slice(-1) == @[5]:
+      echo "sliced!"
+    if k.slice(-5) == @[1, 2, 3, 4, 5]:
+      echo "sliced!"
+    if k.slice(-6) == @[1, 2, 3, 4, 5]:
+      echo "sliced!"
+```
+
+**SIGNATURE**
+
+`proc slice*[T](c: var stack[T], index: int, last: int): seq[T]`
+
+**DESCRIPTION**
+
+*Returns a copy of the sequence segment starting at the specified index and ending at an also defined index.*
+
+**USAGE**
+
+```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    if k.slice(3, -2).len == 0:
+      echo "sliced!"
+    if k.slice(3, -1) == @[4]:
+      echo "sliced!"
+    if k.slice(3, 0).len == 0:
+      echo "sliced!"
+    if k.slice(3, 3).len == 0:
+      echo "sliced!"
+    if k.slice(3, 4) == @[4]:
+      echo "sliced!"
+    if k.slice(3, 5) == @[4, 5]:
+      echo "sliced!"
+    if k.slice(2, -1) == @[3, 4]:
+      echo "sliced!"
+    if k.slice(2, -2) == @[3]:
+      echo "sliced!"
+    if k.slice(2, -3).len == 0:
+      echo "sliced!"
 ```
 
 **SIGNATURE**
@@ -154,6 +240,12 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    let x = k.shift(123)
+    if x == 1:
+      echo "extracted!"
+    if k == @[2, 3, 4, 5]:
+      echo "shifted!"
 ```
 
 **SIGNATURE**
@@ -162,11 +254,15 @@ This is the documentation of the sequences related routines module of the Xam li
 
 **DESCRIPTION**
 
-*Appends the provided sequence at the beginning of the sequence and returns the final amount of elements in the sequence.*
+*Prepends the provided sequence at the beginning of the sequence and returns the final amount of elements in the sequence.*
 
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3]
+    let l = k.unshift(@[4, 5])
+    if l == 5 and k == @[4, 5, 1, 2, 3]:
+      echo "prepended!"
 ```
 
 **SIGNATURE**
@@ -180,6 +276,9 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    if k.reverse() == @[5, 4, 3, 2, 1]:
+      echo "reversed!"
 ```
 
 **SIGNATURE**
@@ -193,6 +292,10 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    k.clear()
+    if k.len == 0:
+      echo "cleared!"
 ```
 
 ### EXTRA ROUTINES
@@ -208,6 +311,16 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    k.drop(2)
+    if k == @[1, 2, 3]:
+      echo "dropped!"
+    k.drop(4)
+    if k.len == 0:
+      echo "dropped!"
+    k.drop(1)
+    if k.len == 0:
+      echo "dropped!"
 ```
 
 **SIGNATURE**
@@ -221,5 +334,8 @@ This is the documentation of the sequences related routines module of the Xam li
 **USAGE**
 
 ```nim
+    var k: stack[int] = @[1, 2, 3, 4, 5]
+    var x = k.extract(2, 0)
+    if x == 3 and k == @[1, 2, 4, 5]:
+      echo "extracted!"
 ```
-
