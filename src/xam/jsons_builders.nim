@@ -69,14 +69,20 @@ proc append*(builder: JArrayBuilder, value: string) =
   ## Appends the specified string value to the array being built.
   discard builder.add(newJString(value))
 
+proc clear*(builder: JArrayBuilder, other: JArrayBuilder = nil) =
+  ## Resets the content of the builder by assigning the values of the
+  ## specified json array builder instance (if any).
+  builder.elements = if other != nil: other.elements else: @[]
+
+proc reset*(builder: JArrayBuilder, other: JArrayBuilder = nil): JArrayBuilder =
+  ## Resets the content of the builder by assigning the values of the
+  ## specified json array builder instance (if any) and returns the builder instance.
+  builder.elements = if other != nil: other.elements else: @[]
+  builder
+
 proc len*(builder: JArrayBuilder): int =
   ## Returns the current items count of the array being built.
   builder.elements.len
-
-proc reset*(builder: JArrayBuilder, other: JArrayBuilder = nil): JArrayBuilder =
-  ## Resets the content of the builder by assigning the values of the specified json array builder instance (if any).
-  builder.elements = if other != nil: other.elements else: @[]
-  builder
 
 proc newJArrayBuilder*(other: JArrayBuilder = nil): JArrayBuilder =
   ## Constructor accepting other json array builder instance.
@@ -107,25 +113,45 @@ proc getAsNamedJsonNodeOrderedTable*(builder: JObjectBuilder): OrderedTable[stri
   ## Returns the object being built as a ordered table of named JsonNode items.
   builder.fields
 
-proc set*(builder: JObjectBuilder, name: string, node: JsonNode): JObjectBuilder =
+proc put*(builder: JObjectBuilder, name: string, node: JsonNode) =
   ## Adds the specified json node with the specified name.
+  builder.fields[name] = if node != nil: node else: newJNull()
+
+proc put*(builder: JObjectBuilder, name: string, value: bool) =
+  ## Adds the specified boolean value with the specified name.
+  builder.put(name, newJBool(value))
+
+proc put*(builder: JObjectBuilder, name: string, value: BiggestInt) =
+  ## Adds the specified integer value with the specified name.
+  builder.put(name, newJInt(value))
+
+proc put*(builder: JObjectBuilder, name: string, value: float) =
+  ## Adds the specified float value with the specified name.
+  builder.put(name, newJFloat(value))
+
+proc put*(builder: JObjectBuilder, name: string, value: string) =
+  ## Adds the specified string value with the specified name.
+  builder.put(name, newJString(value))
+
+proc set*(builder: JObjectBuilder, name: string, node: JsonNode): JObjectBuilder =
+  ## Adds the specified json node with the specified name and returns the builder instance.
   builder.fields[name] = if node != nil: node else: newJNull()
   builder
 
 proc set*(builder: JObjectBuilder, name: string, value: bool): JObjectBuilder =
-  ## Adds the specified boolean value with the specified name.
+  ## Adds the specified boolean value with the specified name and returns the builder instance.
   builder.set(name, newJBool(value))
 
 proc set*(builder: JObjectBuilder, name: string, value: BiggestInt): JObjectBuilder =
-  ## Adds the specified integer value with the specified name.
+  ## Adds the specified integer value with the specified name and returns the builder instance.
   builder.set(name, newJInt(value))
 
 proc set*(builder: JObjectBuilder, name: string, value: float): JObjectBuilder =
-  ## Adds the specified float value with the specified name.
+  ## Adds the specified float value with the specified name and returns the builder instance.
   builder.set(name, newJFloat(value))
 
 proc set*(builder: JObjectBuilder, name: string, value: string): JObjectBuilder =
-  ## Adds the specified string value with the specified name.
+  ## Adds the specified string value with the specified name and returns the builder instance.
   builder.set(name, newJString(value))
 
 proc `[]=`*(builder: JObjectBuilder, name: string, node: JsonNode) =
@@ -148,14 +174,20 @@ proc `[]=`*(builder: JObjectBuilder, name: string, value: string) =
   ## Adds the specified string value with the specified name.
   builder[name] = newJString(value)
 
+proc clear*(builder: JObjectBuilder, other: JObjectBuilder = nil) =
+  ## Resets the content of the builder by assigning the value of the
+  ## specified json object builder instance (if any).
+  builder.fields = if other != nil: other.fields else: initOrderedTable[string, JsonNode](2)
+
+proc reset*(builder: JObjectBuilder, other: JObjectBuilder = nil): JObjectBuilder =
+  ## Resets the content of the builder by assigning the value of the
+  ## specified json object builder instance (if any) and returns the builder instance.
+  builder.fields = if other != nil: other.fields else: initOrderedTable[string, JsonNode](2)
+  builder
+
 proc len*(builder: JObjectBuilder): int =
   ## Returns the current keys count of the object being built.
   builder.fields.len
-
-proc reset*(builder: JObjectBuilder, other: JObjectBuilder = nil): JObjectBuilder =
-  ## Resets the content of the builder by assigning the value of the specified json object builder instance (if any).
-  builder.fields = if other != nil: other.fields else: initOrderedTable[string, JsonNode](2)
-  builder
 
 proc newJObjectBuilder*(other: JObjectBuilder = nil): JObjectBuilder =
   ## Constructor accepting other json object builder instance.

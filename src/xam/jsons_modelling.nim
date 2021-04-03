@@ -285,9 +285,18 @@ proc registerMandatoryNonEmptyArray*(model: JsonModel, path: string) =
   ## Registers a mandatory non-empty array field in the provided json model.
   registerMandatoryNonEmpty(model, path, JsonArray)
 
-proc reset*(model: JsonModel) =
+proc reset*(model: JsonModel): JsonModel =
+  ## Clears the registered fields in the provided json model and returns this instance back.
+  model.fields = @[]
+  model
+
+proc clear*(model: JsonModel) =
   ## Clears the registered fields in the provided json model.
   model.fields = @[]
+
+proc len*(model: JsonModel): int =
+  ## Returns the number of registered fields in the provided json model.
+  model.fields.len
 
 proc loadFromJArray*(model: JsonModel, node: JsonNode) =
   ## Adds the registered field definitions to the provided json model.
@@ -307,5 +316,4 @@ proc saveToJArray*(model: JsonModel): JsonNode =
 proc newJsonModel*(): JsonModel =
   ## Creates a new json model instance.
   result = new TJModel
-  result.reset()
-
+  result.clear()

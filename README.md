@@ -36,6 +36,11 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 03-04-21 *[0.9.0]*
+	- improved the markdown documentation for `jsons`
+	- added `jsons` model and builders clear routines
+	- added `jsons` model len routine
+	- added `jsons` object builder put routines
 * 31-03-21 *[0.8.1]*
 	- improved the markdown documentation for `seqs`
 	- improved `seqs` js stack-like slice support

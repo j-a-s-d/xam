@@ -163,6 +163,8 @@ suite "test xam json":
       newJString("hello"), newJInt(123), newJBool(true), newJNull(), newJFloat(456.789)
     ])
     check(b.reset().len == 0)
+    b.add("hello again!").clear()
+    check(b.len == 0)
 
   test "test JObjectBuilder":
     let b = newJObjectBuilder()
@@ -187,6 +189,10 @@ suite "test xam json":
     t.add("test5", newJFloat(456.789))
     check(b.getAsNamedJsonNodeOrderedTable() == t)
     check(b.reset().len == 0)
+    b.set("test6", "hello again!").clear()
+    check(b.len == 0)
+    b.put("test7", "and again!!")
+    check(b.len == 1)
 
   test "test JsonModel":
     let m = newJsonModel()
@@ -264,13 +270,12 @@ suite "test xam json":
     check(not v15.success)
     check(v15.errorKind == jmeBadKind)
     check(v15.errorField == "d/x")
-    m.reset()
+    m.clear()
     check(m.defineOptionalNonEmptyObject("d") != nil)
     m.defineOptionalInteger("d/x").registerMandatoryUntyped("e")
     let t = m.saveToJArray()
     check($t == """["optional nonempty object d","optional integer d/x","mandatory untyped e"]""")
-    m.reset()
-    check($m.saveToJArray() == "[]")
+    check($m.reset().saveToJArray() == "[]")
     m.loadFromJArray(t)
     check($m.saveToJArray() == """["optional nonempty object d","optional integer d/x","mandatory untyped e"]""")
     let v16 = m.validate(%* { "e": 123 })

@@ -479,6 +479,36 @@ This is the documentation of the json related constants and routines module of t
 
 *Constructor accepting other json array builder instance.*
 
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### CLEAR
+
+**SIGNATURE**
+
+`proc clear*(builder: JArrayBuilder, other: JArrayBuilder = nil)`
+
+**DESCRIPTION**
+
+*Resets the content of the builder by assigning the values of the specified json array builder instance (if any).*
+
+*NOTE: this is the non-fluent version of reset.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  # add some content to b
+  b.clear()
+  if b.len == 0:
+    echo "no items!"
+```
+
 #### RESET
 
 **SIGNATURE**
@@ -487,7 +517,18 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Resets the content of the builder by assigning the values of the specified json array builder instance (if any).*
+*Resets the content of the builder by assigning the values of the specified json array builder instance (if any) and returns the builder instance.*
+
+*NOTE: this is the fluent version of clear.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  # add some content to b
+  if b.reset().len == 0:
+    echo "no items!"
+```
 
 #### LEN
 
@@ -499,6 +540,14 @@ This is the documentation of the json related constants and routines module of t
 
 *Returns the current items count of the array being built.*
 
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.len == 0:
+    echo "no items!"
+```
+
 #### ADD (NODE)
 
 **SIGNATURE**
@@ -508,6 +557,16 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Adds the specified json node and returns the builder instance.*
+
+*NOTE: this is the fluent version of append.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.add(newJString("hello")).len == 1:
+    echo "added!"
+```
 
 #### ADD (BOOLEAN)
 
@@ -519,6 +578,16 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified boolean value and returns the builder instance.*
 
+*NOTE: this is the fluent version of append.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.add(true).len == 1:
+    echo "added!"
+```
+
 #### ADD (INTEGER)
 
 **SIGNATURE**
@@ -528,6 +597,16 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Adds the specified integer value and returns the builder instance.*
+
+*NOTE: this is the fluent version of append.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.add(123).len == 1:
+    echo "added!"
+```
 
 #### ADD (FLOAT)
 
@@ -539,6 +618,16 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified float value and returns the builder instance.*
 
+*NOTE: this is the fluent version of append.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.add(123.45).len == 1:
+    echo "added!"
+```
+
 #### ADD (STRING)
 
 **SIGNATURE**
@@ -548,6 +637,16 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Adds the specified string value and returns the builder instance.*
+
+*NOTE: this is the fluent version of append.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.add("hello").len == 1:
+    echo "added!"
+```
 
 #### APPEND (NODE)
 
@@ -559,6 +658,17 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified json node to the array being built.*
 
+*NOTE: this is the non-fluent version of add.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.append(newJString("hello"))
+  if b.len == 1:
+    echo "appended!"
+```
+
 #### APPEND (BOOLEAN)
 
 **SIGNATURE**
@@ -568,6 +678,17 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Appends the specified boolean value to the array being built.*
+
+*NOTE: this is the non-fluent version of add.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.append(true)
+  if b.len == 1:
+    echo "appended!"
+```
 
 #### APPEND (INTEGER)
 
@@ -579,6 +700,17 @@ This is the documentation of the json related constants and routines module of t
 
 *Appends the specified integer value to the array being built.*
 
+*NOTE: this is the non-fluent version of add.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.append(123)
+  if b.len == 1:
+    echo "appended!"
+```
+
 #### APPEND (FLOAT)
 
 **SIGNATURE**
@@ -588,6 +720,17 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Appends the specified float value to the array being built.*
+
+*NOTE: this is the non-fluent version of add.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.append(123.45)
+  if b.len == 1:
+    echo "appended!"
+```
 
 #### APPEND (STRING)
 
@@ -599,6 +742,17 @@ This is the documentation of the json related constants and routines module of t
 
 *Appends the specified string value to the array being built.*
 
+*NOTE: this is the non-fluent version of add.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.append("hello")
+  if b.len == 1:
+    echo "appended!"
+```
+
 #### GETASJARRAY
 
 **SIGNATURE**
@@ -608,6 +762,15 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Builds the resulting json array and returns it.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.add("hello").add(123).add(true).add(nil).append(456.789)
+  if b.getAsJArray() == %* ["hello", 123, true, nil, 456.789]:
+    echo "got!"
+```
 
 #### GETASSTRING
 
@@ -619,6 +782,15 @@ This is the documentation of the json related constants and routines module of t
 
 *Builds the resulting json array and returns it as its string representation.*
 
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.add("hello").add(123).add(true).add(nil).append(456.789)
+  if b.getAsString() == """["hello",123,true,null,456.789]""":
+    echo "got!"
+```
+
 #### GETASPRETTYSTRING
 
 **SIGNATURE**
@@ -629,6 +801,21 @@ This is the documentation of the json related constants and routines module of t
 
 *Builds the resulting json array and returns it as its prettily formatted string representation.*
 
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.add("hello").add(123).add(true).add(nil).append(456.789)
+  if b.getAsPrettyString() == """{
+    "test1": "hello",
+    "test2": 123,
+    "test3": true,
+    "test4": null,
+    "test5": 456.789
+  }""":
+    echo "got!"
+```
+
 #### GETASJSONNODESEQUENCE
 
 **SIGNATURE**
@@ -638,6 +825,15 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Returns the array being built as a sequence of JsonNode items.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.add("hello").add(123).add(true).add(nil).append(456.789)
+  if b.getAsJsonNodeSequence() == @[newJString("hello"), newJInt(123), newJBool(true), newJNull(), newJFloat(456.789)]:
+    echo "got!"
+```
 
 ### JOBJECTBUILDER
 
@@ -664,6 +860,36 @@ This is the documentation of the json related constants and routines module of t
 
 *Constructor accepting other json object builder instance.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### CLEAR
+
+**SIGNATURE**
+
+`proc clear*(builder: JArrayBuilder, other: JArrayBuilder = nil)`
+
+**DESCRIPTION**
+
+*Resets the content of the builder by assigning the values of the specified json array builder instance (if any).*
+
+*NOTE: this is the non-fluent version of reset.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  # add some content to b
+  b.clear()
+  if b.len == 0:
+    echo "no items!"
+```
+
 #### RESET
 
 **SIGNATURE**
@@ -672,7 +898,18 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Resets the content of the builder by assigning the value of the specified json object builder instance (if any).*
+*Resets the content of the builder by assigning the value of the specified json object builder instance (if any) and returns the builder instance.*
+
+*NOTE: this is the fluent version of clear.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  # add some content to b
+  if b.reset().len == 0:
+    echo "no items!"
+```
 
 #### LEN
 
@@ -684,6 +921,119 @@ This is the documentation of the json related constants and routines module of t
 
 *Returns the current keys count of the object being built.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.len == 0:
+    echo "no items!"
+```
+
+#### PUT (NODE)
+
+**SIGNATURE**
+
+`proc put*(builder: JObjectBuilder, name: string, node: JsonNode)`
+
+**DESCRIPTION**
+
+*Adds the specified json node with the specified name.*
+
+*NOTE: this is the non-fluent version of set.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.put("test", newJString("hello"))
+  if b.len == 1:
+    echo "it has an item!"
+```
+
+#### PUT (BOOLEAN)
+
+**SIGNATURE**
+
+`proc put*(builder: JObjectBuilder, name: string, value: bool)`
+
+**DESCRIPTION**
+
+*Adds the specified boolean value with the specified name.*
+
+*NOTE: this is the non-fluent version of set.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.put("test", true)
+  if b.len == 1:
+    echo "it has an item!"
+```
+
+#### PUT (INTEGER)
+
+**SIGNATURE**
+
+`proc put*(builder: JObjectBuilder, name: string, value: BiggestInt)`
+
+**DESCRIPTION**
+
+*Adds the specified integer value with the specified name.*
+
+*NOTE: this is the non-fluent version of set.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.put("test", 123)
+  if b.len == 1:
+    echo "it has an item!"
+```
+
+#### PUT (FLOAT)
+
+**SIGNATURE**
+
+`proc put*(builder: JObjectBuilder, name: string, value: float)`
+
+**DESCRIPTION**
+
+*Adds the specified float value with the specified name.*
+
+*NOTE: this is the non-fluent version of set.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.put("test", 123.45)
+  if b.len == 1:
+    echo "it has an item!"
+```
+
+#### PUT (STRING)
+
+**SIGNATURE**
+
+`proc put*(builder: JObjectBuilder, name: string, value: string)`
+
+**DESCRIPTION**
+
+*Adds the specified string value with the specified name.*
+
+*NOTE: this is the non-fluent version of set.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.put("test", "hello")
+  if b.len == 1:
+    echo "it has an item!"
+```
+
 #### SET (NODE)
 
 **SIGNATURE**
@@ -692,7 +1042,17 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Adds the specified json node with the specified name.*
+*Adds the specified json node with the specified name and returns the builder instance.*
+
+*NOTE: this is the fluent version of put.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.set("test", newJString("hello")).len == 1:
+    echo "it has an item!"
+```
 
 #### SET (BOOLEAN)
 
@@ -702,7 +1062,17 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Adds the specified boolean value with the specified name.*
+*Adds the specified boolean value with the specified name and returns the builder instance.*
+
+*NOTE: this is the fluent version of put.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.set("test", true).len == 1:
+    echo "it has an item!"
+```
 
 #### SET (INTEGER)
 
@@ -712,7 +1082,17 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Adds the specified integer value with the specified name.*
+*Adds the specified integer value with the specified name and returns the builder instance.*
+
+*NOTE: this is the fluent version of put.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.set("test", 123).len == 1:
+    echo "it has an item!"
+```
 
 #### SET (FLOAT)
 
@@ -722,7 +1102,17 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Adds the specified float value with the specified name.*
+*Adds the specified float value with the specified name and returns the builder instance.*
+
+*NOTE: this is the fluent version of put.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.set("test", 123.45).len == 1:
+    echo "it has an item!"
+```
 
 #### SET (STRING)
 
@@ -732,7 +1122,17 @@ This is the documentation of the json related constants and routines module of t
 
 **DESCRIPTION**
 
-*Adds the specified string value with the specified name.*
+*Adds the specified string value with the specified name and returns the builder instance.*
+
+*NOTE: this is the fluent version of put.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.set("test", "hello").len == 1:
+    echo "it has an item!"
+```
 
 #### FIELD ACCESSOR (NODE)
 
@@ -744,6 +1144,15 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified json node with the specified name.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b["test"] = newJString("hello")
+  if b.len == 1:
+    echo "it has an item!"
+```
+
 #### FIELD ACCESSOR (BOOLEAN)
 
 **SIGNATURE**
@@ -753,6 +1162,15 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Adds the specified boolean value with the specified name.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b["test"] = true
+  if b.len == 1:
+    echo "it has an item!"
+```
 
 #### FIELD ACCESSOR (INTEGER)
 
@@ -764,6 +1182,15 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified integer value with the specified name.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b["test"] = 123
+  if b.len == 1:
+    echo "it has an item!"
+```
+
 #### FIELD ACCESSOR (FLOAT)
 
 **SIGNATURE**
@@ -773,6 +1200,15 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Adds the specified float value with the specified name.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b["test"] = 123.45
+  if b.len == 1:
+    echo "it has an item!"
+```
 
 #### FIELD ACCESSOR (STRING)
 
@@ -784,6 +1220,15 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the specified string value with the specified name.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b["test"] = "hello"
+  if b.len == 1:
+    echo "it has an item!"
+```
+
 #### GETASJOBJECT
 
 **SIGNATURE**
@@ -793,6 +1238,15 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Builds the resulting json object and returns it.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.set("test1", "hello").set("test2", 123).set("test3", true).set("test4", nil)["test5"] = 456.789
+  if b.getAsJObject() == %* { "test1": "hello", "test2": 123, "test3": true, "test4": nil, "test5": 456.789 }:
+    echo "got!"
+```
 
 #### GETASSTRING
 
@@ -804,6 +1258,15 @@ This is the documentation of the json related constants and routines module of t
 
 *Builds the resulting json object and returns it as its string representation.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.set("test1", "hello").set("test2", 123).set("test3", true).set("test4", nil)["test5"] = 456.789
+  if b.getAsString() == """{"test1":"hello","test2":123,"test3":true,"test4":null,"test5":456.789}""":
+    echo "got!"
+```
+
 #### GETASPRETTYSTRING
 
 **SIGNATURE**
@@ -814,6 +1277,21 @@ This is the documentation of the json related constants and routines module of t
 
 *Builds the resulting json object and returns it as its prettily formatted string representation.*
 
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.set("test1", "hello").set("test2", 123).set("test3", true).set("test4", nil)["test5"] = 456.789
+  if b.getAsPrettyString() == """{
+    "test1": "hello",
+    "test2": 123,
+    "test3": true,
+    "test4": null,
+    "test5": 456.789
+  }""":
+    echo "got!"
+```
+
 #### GETASNAMEDJSONNODEORDEREDTABLE
 
 **SIGNATURE**
@@ -823,6 +1301,21 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Returns the object being built as a ordered table of named JsonNode items.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.set("test1", "hello").set("test2", 123).set("test3", true).set("test4", nil)["test5"] = 456.789
+  var t = initOrderedTable[string, JsonNode]()
+  t.add("test1", newJString("hello"))
+  t.add("test2", newJInt(123))
+  t.add("test3", newJBool(true))
+  t.add("test4", newJNull())
+  t.add("test5", newJFloat(456.789))
+  if b.getAsNamedJsonNodeOrderedTable() == t:
+    echo "got!"
+```
 
 ### JSONMODEL
 
@@ -849,35 +1342,70 @@ This is the documentation of the json related constants and routines module of t
 
 *Creates a new json model instance.*
 
-#### RESET
+**USAGE**
+
+```nim
+  let m = newJsonModel()
+  if m != nil:
+    echo "created!"
+```
+
+#### LEN
 
 **SIGNATURE**
 
-`proc reset*(model: JsonModel)`
+`proc len*(model: JsonModel): int`
+
+**DESCRIPTION**
+
+*Returns the number of registered fields in the provided json model.*
+
+**USAGE**
+
+```nim
+  let m = newJsonModel()
+  if m.len == 0:
+    echo "no items!"
+```
+
+#### CLEAR
+
+**SIGNATURE**
+
+`proc clear*(model: JsonModel)`
 
 **DESCRIPTION**
 
 *Clears the registered fields in the provided json model.*
 
-#### LOADFROMJARRAY
+**USAGE**
+
+```nim
+  let m = newJsonModel()
+  # add some fields to m
+  m.clear()
+  if m.len == 0:
+    echo "no items!"
+```
+
+#### RESET
 
 **SIGNATURE**
 
-`proc loadFromJArray*(model: JsonModel, node: JsonNode)`
+`proc reset*(model: JsonModel): JsonModel`
 
 **DESCRIPTION**
 
-*Adds the registered field definitions to the provided json model.*
+*Clears the registered fields in the provided json model and returns this instance back.*
 
-#### SAVETOJARRAY
+**USAGE**
 
-**SIGNATURE**
-
-`proc saveToJArray*(model: JsonModel): JsonNode`
-
-**DESCRIPTION**
-
-*Gets the registered field definitions in the provided json model as json array.*
+```nim
+  let m = newJsonModel()
+  # add some fields to m
+  if m.reset().len == 0:
+    echo "no items!"
+```
 
 #### DEFINEOPTIONALBOOLEAN
 
@@ -889,6 +1417,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an optional boolean field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEOPTIONALINTEGER
 
 **SIGNATURE**
@@ -898,6 +1431,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers an optional integer field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEOPTIONALFLOAT
 
@@ -909,6 +1447,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an optional float field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEOPTIONALSTRING
 
 **SIGNATURE**
@@ -918,6 +1461,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers an optional string field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEOPTIONALNONEMPTYSTRING
 
@@ -929,6 +1477,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an optional non-empty string field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEOPTIONALOBJECT
 
 **SIGNATURE**
@@ -938,6 +1491,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers an optional object field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEOPTIONALNONEMPTYOBJECT
 
@@ -949,6 +1507,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an optional non-empty object field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEOPTIONALARRAY
 
 **SIGNATURE**
@@ -958,6 +1521,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers an optional array field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEOPTIONALNONEMPTYARRAY
 
@@ -969,6 +1537,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an optional non-empty array field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEMANDATORYUNTYPED
 
 **SIGNATURE**
@@ -978,6 +1551,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers a mandatory untyped field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEMANDATORYBOOLEAN
 
@@ -989,6 +1567,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers a mandatory boolean field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEMANDATORYINTEGER
 
 **SIGNATURE**
@@ -998,6 +1581,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers a mandatory integer field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEMANDATORYFLOAT
 
@@ -1009,6 +1597,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers a mandatory float field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEMANDATORYSTRING
 
 **SIGNATURE**
@@ -1018,6 +1611,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers a mandatory string field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEMANDATORYNONEMPTYSTRING
 
@@ -1029,6 +1627,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers an mandatory non-empty string field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEMANDATORYOBJECT
 
 **SIGNATURE**
@@ -1038,6 +1641,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers a mandatory object field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEMANDATORYNONEMPTYOBJECT
 
@@ -1049,6 +1657,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers a mandatory non-empty object field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### DEFINEMANDATORYARRAY
 
 **SIGNATURE**
@@ -1058,6 +1671,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Fluently, registers a mandatory array field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### DEFINEMANDATORYNONEMPTYARRAY
 
@@ -1069,6 +1687,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Fluently, registers a mandatory non-empty array field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTEROPTIONALBOOLEAN
 
 **SIGNATURE**
@@ -1078,6 +1701,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an optional boolean field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTEROPTIONALINTEGER
 
@@ -1089,6 +1717,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers an optional integer field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTEROPTIONALFLOAT
 
 **SIGNATURE**
@@ -1098,6 +1731,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an optional float field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTEROPTIONALSTRING
 
@@ -1109,6 +1747,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers an optional string field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTEROPTIONALNONEMPTYSTRING
 
 **SIGNATURE**
@@ -1118,6 +1761,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an optional non-empty string field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTEROPTIONALOBJECT
 
@@ -1129,6 +1777,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers an optional object field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTEROPTIONALNONEMPTYOBJECT
 
 **SIGNATURE**
@@ -1138,6 +1791,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an optional non-empty object field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTEROPTIONALARRAY
 
@@ -1149,6 +1807,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers an optional array field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTEROPTIONALNONEMPTYARRAY
 
 **SIGNATURE**
@@ -1158,6 +1821,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an optional non-empty array field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTERMANDATORYUNTYPED
 
@@ -1169,6 +1837,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory untyped field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTERMANDATORYBOOLEAN
 
 **SIGNATURE**
@@ -1178,6 +1851,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers a mandatory boolean field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTERMANDATORYINTEGER
 
@@ -1189,6 +1867,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory integer field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTERMANDATORYFLOAT
 
 **SIGNATURE**
@@ -1198,6 +1881,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers a mandatory float field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTERMANDATORYSTRING
 
@@ -1209,6 +1897,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory string field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTERMANDATORYNONEMPTYSTRING
 
 **SIGNATURE**
@@ -1218,6 +1911,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers an mandatory non-empty string field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTERMANDATORYOBJECT
 
@@ -1229,6 +1927,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory object field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTERMANDATORYNONEMPTYOBJECT
 
 **SIGNATURE**
@@ -1238,6 +1941,11 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Registers a mandatory non-empty object field in the provided json model.*
+
+**USAGE**
+
+```nim
+```
 
 #### REGISTERMANDATORYARRAY
 
@@ -1249,6 +1957,11 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory array field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
 #### REGISTERMANDATORYNONEMPTYARRAY
 
 **SIGNATURE**
@@ -1259,6 +1972,41 @@ This is the documentation of the json related constants and routines module of t
 
 *Registers a mandatory non-empty array field in the provided json model.*
 
+**USAGE**
+
+```nim
+```
+
+#### SAVETOJARRAY
+
+**SIGNATURE**
+
+`proc saveToJArray*(model: JsonModel): JsonNode`
+
+**DESCRIPTION**
+
+*Gets the registered field definitions in the provided json model as json array.*
+
+**USAGE**
+
+```nim
+```
+
+#### LOADFROMJARRAY
+
+**SIGNATURE**
+
+`proc loadFromJArray*(model: JsonModel, node: JsonNode)`
+
+**DESCRIPTION**
+
+*Adds the registered field definitions to the provided json model.*
+
+**USAGE**
+
+```nim
+```
+
 #### VALIDATE
 
 **SIGNATURE**
@@ -1268,3 +2016,8 @@ This is the documentation of the json related constants and routines module of t
 **DESCRIPTION**
 
 *Validates the provided json node.*
+
+**USAGE**
+
+```nim
+```
