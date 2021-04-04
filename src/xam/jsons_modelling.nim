@@ -300,6 +300,7 @@ proc len*(model: JsonModel): int =
 
 proc loadFromJArray*(model: JsonModel, node: JsonNode) =
   ## Adds the registered field definitions to the provided json model.
+  ## NOTE: it does not clears the precedent registered fields.
   if isJArray(node):
     for x in node:
       if isJString(x):

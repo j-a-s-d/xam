@@ -1420,6 +1420,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalBoolean("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALINTEGER
@@ -1435,6 +1438,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalInteger("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALFLOAT
@@ -1450,6 +1456,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalFloat("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALSTRING
@@ -1465,6 +1474,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalString("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALNONEMPTYSTRING
@@ -1480,6 +1492,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalNonEmptyString("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALOBJECT
@@ -1495,6 +1510,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalObject("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALNONEMPTYOBJECT
@@ -1510,6 +1528,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalNonEmptyObject("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALARRAY
@@ -1525,6 +1546,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalArray("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEOPTIONALNONEMPTYARRAY
@@ -1540,6 +1564,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineOptionalNonEmptyArray("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYUNTYPED
@@ -1555,6 +1582,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryUntyped("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYBOOLEAN
@@ -1570,6 +1600,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryBoolean("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYINTEGER
@@ -1585,6 +1618,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryInteger("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYFLOAT
@@ -1600,6 +1636,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryFloat("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYSTRING
@@ -1615,6 +1654,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryString("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYNONEMPTYSTRING
@@ -1630,6 +1672,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryNonEmptyString("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYOBJECT
@@ -1645,6 +1690,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryObject("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYNONEMPTYOBJECT
@@ -1660,6 +1708,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryNonEmptyObject("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYARRAY
@@ -1675,6 +1726,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryArray("abc").len == 1:
+    echo "registered!"
 ```
 
 #### DEFINEMANDATORYNONEMPTYARRAY
@@ -1690,6 +1744,9 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  if m.defineMandatoryNonEmptyArray("abc").len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALBOOLEAN
@@ -1705,6 +1762,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalBoolean("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALINTEGER
@@ -1720,6 +1781,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalInteger("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALFLOAT
@@ -1735,6 +1800,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalFloat("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALSTRING
@@ -1750,6 +1819,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalString("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALNONEMPTYSTRING
@@ -1765,6 +1838,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalNonEmptyString("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALOBJECT
@@ -1780,6 +1857,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalObject("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALNONEMPTYOBJECT
@@ -1795,6 +1876,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalNonEmptyObject("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALARRAY
@@ -1810,6 +1895,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalArray("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTEROPTIONALNONEMPTYARRAY
@@ -1825,6 +1914,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerOptionalNonEmptyArray("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYUNTYPED
@@ -1840,6 +1933,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryUntyped("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYBOOLEAN
@@ -1855,6 +1952,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryBoolean("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYINTEGER
@@ -1870,6 +1971,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryInteger("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYFLOAT
@@ -1885,6 +1990,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryFloat("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYSTRING
@@ -1900,6 +2009,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryString("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYNONEMPTYSTRING
@@ -1915,6 +2028,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryNonEmptyString("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYOBJECT
@@ -1930,6 +2047,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryObject("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYNONEMPTYOBJECT
@@ -1945,6 +2066,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryNonEmptyObject("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYARRAY
@@ -1960,6 +2085,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryArray("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### REGISTERMANDATORYNONEMPTYARRAY
@@ -1975,6 +2104,10 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryNonEmptyArray("abc")
+  if m.len == 1:
+    echo "registered!"
 ```
 
 #### SAVETOJARRAY
@@ -1990,6 +2123,11 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.defineOptionalNonEmptyObject("d").defineOptionalInteger("d/x").registerMandatoryUntyped("e")
+  let t = m.saveToJArray()
+  if $t == """["optional nonempty object d","optional integer d/x","mandatory untyped e"]""":
+    echo "saved!"
 ```
 
 #### LOADFROMJARRAY
@@ -2002,9 +2140,19 @@ This is the documentation of the json related constants and routines module of t
 
 *Adds the registered field definitions to the provided json model.*
 
+*NOTE: it does not clears the precedent registered fields.*
+
 **USAGE**
 
 ```nim
+  let t = newJArray()
+  t.add(newJString("optional nonempty object d"))
+  t.add(newJString("optional integer d/x"))
+  t.add(newJString("mandatory untyped e"))
+  let m = newJsonModel()
+  m.loadFromJArray(t)
+  if $m.saveToJArray() == """["optional nonempty object d","optional integer d/x","mandatory untyped e"]""":
+    echo "loaded!"
 ```
 
 #### VALIDATE
@@ -2020,4 +2168,11 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
+  let m = newJsonModel()
+  m.registerMandatoryInteger("a")
+  let v1 = m.validate(%* { "a": 123 })
+  m.registerOptionalNonEmptyString("b")
+  let v2 = m.validate(%* { "a": 123, "b": "hello" })
+  if v1.success and v2.success:
+    echo "validated!"
 ```

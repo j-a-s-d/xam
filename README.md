@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 04-04-21 *[0.9.1]*
+	- improved the markdown documentation for `jsons`
+	- refactored `ansi` into individual includes
 * 03-04-21 *[0.9.0]*
 	- improved the markdown documentation for `jsons`
 	- added `jsons` model and builders clear routines
