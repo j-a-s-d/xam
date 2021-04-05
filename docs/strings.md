@@ -127,6 +127,13 @@ This is the documentation of the strings related constants and routines module o
 - `const STRINGS_LOWERCASE_Y*: string`
 - `const STRINGS_LOWERCASE_Z*: string`
 
+### NAMESPACED LET
+
+The preceding constants are also grouped into a "let namespaced code constant" under the name of `STRINGS`.
+So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on.
+
+> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
+
 ## ROUTINES
 
 ### CONCAT

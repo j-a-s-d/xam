@@ -54,6 +54,13 @@ This is the documentation of the ansi related routines module of the Xam library
 - `const ANSI_BG_BRIGHT_CYAN*: string`
 - `const ANSI_BG_BRIGHT_WHITE*: string`
 
+### NAMESPACED LET
+
+The preceding constants are also grouped into a "let namespaced code constant" under the name of `ANSI`.
+So you can use `ANSI.RESET` as value equivalent to `ANSI_RESET`, and so on.
+
+> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
+
 ## ROUTINES
 
 ### CONTROL CODES

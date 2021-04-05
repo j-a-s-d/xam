@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 05-04-21 *[0.9.2]*
+	- added test.sh shell script file
+	- added "namespaced let code" constants for all "strongnamed const data" constants in the packages `ansi`, `bytes`, `chars`, `datetime`, `hex`, `html`, `sizes` and `strings`
 * 04-04-21 *[0.9.1]*
 	- improved the markdown documentation for `jsons`
 	- refactored `ansi` into individual includes

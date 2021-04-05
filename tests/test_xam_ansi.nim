@@ -9,9 +9,9 @@ suite "test xam ansi":
   const TEST = "test"
 
   test "test ansiResetBefore":
-    check(ansiResetBefore(TEST) == ANSI_RESET & TEST)
+    check(ansiResetBefore(TEST) == ANSI.RESET & TEST)
   test "test ansiResetAfter":
-    check(ansiResetAfter(TEST) == TEST & ANSI_RESET)
+    check(ansiResetAfter(TEST) == TEST & ANSI.RESET)
 
   test "test ansiBold":
     check(ansiBold(TEST) == ANSI_BOLD & TEST & ANSI_RESET)

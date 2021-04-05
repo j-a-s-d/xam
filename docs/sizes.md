@@ -40,6 +40,13 @@ This is the documentation of the sizes related constants and routines module of 
 - `const SIZES_ZETTABYTE_UNIT*: string`
 - `const SIZES_YOTTABYTE_UNIT*: string`
 
+### NAMESPACED LET
+
+The preceding constants are also grouped into a "let namespaced code constant" under the name of `SIZES`.
+So you can use `SIZES.BIT` as value equivalent to `SIZES_BIT`, and so on.
+
+> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
+
 ## UNIT FLOAT TUPLES
 
 ## TYPES
@@ -61,6 +68,13 @@ This is the documentation of the sizes related constants and routines module of 
 - `const SIZES_TBYTE_UNIT*: SizesFloatUnit`
 - `const SIZES_PBYTE_UNIT*: SizesFloatUnit`
 - `const SIZES_EBYTE_UNIT*: SizesFloatUnit`
+
+### NAMESPACED LET
+
+The preceding constants are also grouped into the "let namespaced constant" under the name of `SIZES`.
+So you can use `SIZES.BYTE_UNIT` as value equivalent to `SIZES_BYTE_UNIT`, and so on.
+
+> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ## ROUTINES
 
