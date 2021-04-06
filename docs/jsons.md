@@ -1317,11 +1317,74 @@ This is the documentation of the json related constants and routines module of t
     echo "got!"
 ```
 
+### JSONMODELERRORKIND
+
+**SIGNATURE**
+
+```nim
+  type JsonModelErrorKind* = enum
+    jmeNoError, jmeInvalidNode, jmeNotExists, jmeBadKind, jmeIsEmpty
+```
+
+**DESCRIPTION**
+
+*This is the json model error kind type.*
+
+### JSONMODELVALIDATIONRESULT
+
+**SIGNATURE**
+
+```nim
+  type JsonModelValidationResult* = tuple[success: bool, errorField: string, errorKind: JsonModelErrorKind]
+```
+
+**DESCRIPTION**
+
+*This is the json model validation result type.*
+
+### JNODEKIND
+
+**SIGNATURE**
+
+```nim
+  type JNodeKind = enum
+    JsonAny, JsonBoolean, JsonInteger, JsonFloat, JsonString, JsonObject, JsonArray
+```
+
+**DESCRIPTION**
+
+*This is the json model node kind type.*
+
+### JSONMODELFIELDSDEFINITION
+
+**SIGNATURE**
+
+```nim
+  type JsonModelFieldDefinition* = tuple[path: string, kind: JNodeKind, mandatory: bool, nonempty: bool]
+```
+
+**DESCRIPTION**
+
+*This is the json model fields definition type.*
+
+### JSONMODELFIELDSDEFINITIONS
+
+**SIGNATURE**
+
+```nim
+  type JsonModelFieldsDefinitions* = seq[JsonModelFieldDefinition]
+```
+
+**DESCRIPTION**
+
+*This is the json model fields definitions type.*
+
 ### JSONMODEL
 
 **SIGNATURE**
 
 ```nim
+type
   TJModel = object
     fields: JsonModelFieldsDefinitions
   JsonModel* = ref TJModel
@@ -2174,5 +2237,8 @@ This is the documentation of the json related constants and routines module of t
   m.registerOptionalNonEmptyString("b")
   let v2 = m.validate(%* { "a": 123, "b": "hello" })
   if v1.success and v2.success:
-    echo "validated!"
+    echo "also validated!"
+  let v3 = m.validate(%* { "b": "hello" })
+  if not v3.success and v3.errorKind != jmeNoError and v3.errorField != "":
+    echo "not validated!"
 ```

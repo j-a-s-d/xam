@@ -10,7 +10,7 @@ a multipurpose productivity library for nim
 * no external dependencies (just nim)
 * self-documenting api (descriptive long proc names)
 * full unit testing
-* markdown documentation -- *in progress*
+* markdown documentation
 > based on my Java Ace project https://github.com/j-a-s-d/ace
 
 ## MODULES
@@ -36,6 +36,9 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 06-04-21 *[1.0.0]*
+	- improved the markdown documentation for `multiplatform` and `jsons`
+	- added `multiplatform` more "nil constant"-like aliases
 * 05-04-21 *[0.9.2]*
 	- added test.sh shell script file
 	- added "namespaced let code" constants for all "strongnamed const data" constants in the packages `ansi`, `bytes`, `chars`, `datetime`, `hex`, `html`, `sizes` and `strings`

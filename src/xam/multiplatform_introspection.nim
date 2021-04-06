@@ -36,7 +36,7 @@ template `?FUNCTION_NAME`*: string {.used.} =
   ## NOTE: it has to be called with the backticks
   getCurrentProcName()
 
-# NOTE: the following aliases can not be included due to the underscore naming
+# NOTE: the following aliases can not be included yet due to the underscore naming
 #
 #template __name__*: string {.used.} =
 #  ## Python-like special-attribute template
