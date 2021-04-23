@@ -36,6 +36,8 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 
 ## HISTORY
+* 23-04-21 *[1.0.1]*
+	- adjusted the primary source structure since `nimble check` did not recognized the includes
 * 06-04-21 *[1.0.0]*
 	- improved the markdown documentation for `multiplatform` and `jsons`
 	- added `multiplatform` more "nil constant"-like aliases
