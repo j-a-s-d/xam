@@ -34,8 +34,19 @@ All the following modules are included in xam (no extra includes are required):
 * [`seqs`](docs/seqs.md), *sequences related routines*
 * [`sizes`](docs/sizes.md), *sizes related constants and routines*
 * [`strings`](docs/strings.md), *strings related constants and routines*
+* [`temp`](docs/temp.md), *temporary files related constants and routines*
+
+## RELATED
+
+Also check my projects which use `xam` as a dependency:
+
+* [`rodster`](https://github.com/j-a-s-d/rodster), my application framework for nim
+* [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 22-05-21 *[1.1.0]*
+	- added `temp` constants and routines
+	- added `semanticversion` equalsTo, isNewewThan and isOlderThan string overloads
 * 23-04-21 *[1.0.1]*
 	- adjusted the primary source structure since `nimble check` did not recognized the includes
 * 06-04-21 *[1.0.0]*

@@ -4,8 +4,8 @@ This is the documentation of the datetime related constants and routines module 
 
 ## CONSTANTS
 
-- `DATETIME_FORMAT_DDMMYYYY*: string`
-- `DATETIME_FORMAT_YYYYMMDD*: string`
+- `const DATETIME_FORMAT_DDMMYYYY*: string`
+- `const DATETIME_FORMAT_YYYYMMDD*: string`
 
 ### NAMESPACED LET
 
@@ -15,6 +15,8 @@ So you can use `DATETIME.FORMAT_DDMMYYYY` as value equivalent to `DATETIME_FORMA
 > REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ## ROUTINES
+
+### GETLISTOFDAYSBETWEEN
 
 **SIGNATURE**
 

@@ -124,7 +124,7 @@ This is the documentation of the semantic version object module of the Xam libra
   echo $sv # 3.2.1
 ```
 
-#### EQUALSTO
+#### EQUALSTO (SEMANTICVERSION)
 
 **SIGNATURE**
 
@@ -143,7 +143,24 @@ This is the documentation of the semantic version object module of the Xam libra
     echo "the versions are equal"
 ```
 
-#### ISNEWERTHAN
+#### EQUALSTO (STRING)
+
+**SIGNATURE**
+
+`proc equalsTo*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if they are equal.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 2, 1).isEqualTo("3.2.1"):
+    echo "the versions are equal"
+```
+
+#### ISNEWERTHAN (SEMANTICVERSION)
 
 **SIGNATURE**
 
@@ -162,7 +179,24 @@ This is the documentation of the semantic version object module of the Xam libra
     echo "the version supplied version is newer"
 ```
 
-#### ISOLDERTHAN
+#### ISNEWERTHAN (STRING)
+
+**SIGNATURE**
+
+`proc isNewerThan*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if it is newer.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 2, 2).isNewerThan("3.2.1"):
+    echo "the version supplied version is newer"
+```
+
+#### ISOLDERTHAN (SEMANTICVERSION)
 
 **SIGNATURE**
 
@@ -178,5 +212,22 @@ This is the documentation of the semantic version object module of the Xam libra
   let sv1 = newSemanticVersion(3, 2, 0)
   let sv2 = newSemanticVersion("3.2.1")
   if sv1.isOlderThan(sv2):
+    echo "the version supplied version is older"
+```
+
+#### ISOLDERTHAN (STRING)
+
+**SIGNATURE**
+
+`proc isOlderThan*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if it is older.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 2, 0).isOlderThan("3.2.1"):
     echo "the version supplied version is older"
 ```

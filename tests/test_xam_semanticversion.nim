@@ -34,9 +34,15 @@ suite "test xam semanticversion":
   test "test equalsTo":
     check(newSemanticVersion(1, 0, 0).equalsTo(newSemanticVersion(1, 0, 0)))
     check(not newSemanticVersion(1, 0, 0).equalsTo(newSemanticVersion(1, 1, 1)))
+    check(newSemanticVersion(1, 0, 0).equalsTo("1.0.0"))
+    check(not newSemanticVersion(1, 0, 0).equalsTo("1.1.1"))
   test "test isNewerThan":
     check(newSemanticVersion(1, 0, 0).isNewerThan(newSemanticVersion(0, 1, 0)))
     check(not newSemanticVersion(1, 0, 0).isNewerThan(newSemanticVersion(1, 1, 0)))
+    check(newSemanticVersion(1, 0, 0).isNewerThan("0.1.0"))
+    check(not newSemanticVersion(1, 0, 0).isNewerThan("1.1.0"))
   test "test isOlderThan":
     check(newSemanticVersion(1, 0, 0).isOlderThan(newSemanticVersion(1, 1, 0)))
     check(not newSemanticVersion(1, 0, 0).isOlderThan(newSemanticVersion(0, 1, 0)))
+    check(newSemanticVersion(1, 0, 0).isOlderThan("1.1.0"))
+    check(not newSemanticVersion(1, 0, 0).isOlderThan("0.1.0"))

@@ -87,16 +87,31 @@ func compareVersionsAsStrings(version1, version2: string): int {.inline.} =
     i2l = i < arr2.len
 
 proc equalsTo*(sv, other: SemanticVersion): bool =
-  # Compares the first semantic version against the second and returns
-  # true if they are equal.
+  ## Compares the first semantic version against the second and returns
+  ## true if they are equal.
   compareVersionsAsStrings($sv, $other) == 0
 
+proc equalsTo*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if they are equal.
+  compareVersionsAsStrings($sv, other) == 0
+
 proc isNewerThan*(sv, other: SemanticVersion): bool =
-  # Compares the first semantic version against the second and returns
-  # true if it is newer.
+  ## Compares the first semantic version against the second and returns
+  ## true if it is newer.
   compareVersionsAsStrings($sv, $other) == 1
 
+proc isNewerThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is newer.
+  compareVersionsAsStrings($sv, other) == 1
+
 proc isOlderThan*(sv, other: SemanticVersion): bool =
-  # Compares the first semantic version against the second and returns
-  # true if it is older.
+  ## Compares the first semantic version against the second and returns
+  ## true if it is older.
   compareVersionsAsStrings($sv, $other) == -1
+
+proc isOlderThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is older.
+  compareVersionsAsStrings($sv, other) == -1
