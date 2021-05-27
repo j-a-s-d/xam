@@ -83,14 +83,38 @@ This is the documentation of the exceptions related routines module of the Xam l
 
 **SIGNATURE**
 
-`proc throw*(kind: typedesc, msg: string, parent: ref Exception = nil) {.inline.}`
+`proc throw*(kind: typedesc, msg: string = "", parent: ref Exception = nil) {.inline.}`
 
 **DESCRIPTION**
 
-*Throws a new Exception based in the provided typedesc and with the specified message, and optionaly with the provided parent.*
+*Throws a new Exception based in the provided typedesc and optionally with the specified message, and optionaly with the provided parent.*
 
 **USAGE**
 
 ```nim
-  throw(IOError, "Blah")
+    throw(IOError, "Blah")
+```
+
+## TEMPLATES
+
+### TRYIT
+
+**SIGNATURE**
+
+`template tryIt*(code: untyped): bool`
+
+**DESCRIPTION**
+
+*Executes the provided code block into a try/except block and returns true if it executes successfully or false if it fails. On failure, errors will be ignored.*
+
+*NOTE: this is a call to the sandboxed routine but not providing an error handler.*
+
+**USAGE**
+
+```nim
+    var x = 0
+    let r = tryIt:
+      x += 1
+    if r:
+      echo "success!"
 ```

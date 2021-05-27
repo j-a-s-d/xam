@@ -42,3 +42,17 @@ suite "test xam exceptions":
       throw(IOError, "Blah")
     except:
       discard
+    try:
+      throw IOError
+    except:
+      discard
+
+  test "test tryIt":
+    var x = 0
+    let r0 = tryIt:
+      x += 1
+    check(r0)
+    check(x == 1)
+    let r1 = tryIt:
+      failure()
+    check(not r1)

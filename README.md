@@ -44,6 +44,9 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 26-05-21 *[1.1.1]*
+	- added `exceptions` throw procedure overload with empty message
+	- added `exceptions` tryIt template
 * 22-05-21 *[1.1.0]*
 	- added `temp` constants and routines
 	- added `semanticversion` equalsTo, isNewewThan and isOlderThan string overloads

@@ -43,10 +43,16 @@ proc catch*(procedure: NoArgsProc[void], error: var ref Exception) =
   except:
     error = getCurrentException()
 
-proc throw*(kind: typedesc, msg: string, parent: ref Exception = nil) =
-  ## Throws a new Exception based in the provided typedesc and with
-  ## the specified message, and optionaly with the provided parent.
+proc throw*(kind: typedesc, msg: string = "", parent: ref Exception = nil) =
+  ## Throws a new Exception based in the provided typedesc and optionally
+  ## with the specified message, and optionaly with the provided parent.
   raise newException(kind, msg, parent)
 
 {.pop.}
 
+template tryIt*(code: untyped): bool =
+  ## Executes the provided code block into a try/except block and returns
+  ## true if it executes successfully or false if it fails. On failure,
+  ## errors will be ignored.
+  ## NOTE: this is a call to the sandboxed routine but not providing an error handler.
+  sandboxed proc () = code
