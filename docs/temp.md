@@ -31,7 +31,7 @@ So you can use `TMP.EXTENSION` as value equivalent to `TMP_EXTENSION`, and so on
 **USAGE**
 
 ```nim
-  echo makeTempFilename()
+  echo getNewTempFilename()
 ```
 
 ### MAKETEMPFILE
@@ -47,5 +47,5 @@ So you can use `TMP.EXTENSION` as value equivalent to `TMP_EXTENSION`, and so on
 **USAGE**
 
 ```nim
-  echo newTempFile()
+  echo makeTempFile()
 ```

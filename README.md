@@ -44,6 +44,8 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 30-05-21 *[1.2.0]*
+	- added `files` routines
 * 26-05-21 *[1.1.1]*
 	- added `exceptions` throw procedure overload with empty message
 	- added `exceptions` tryIt template
