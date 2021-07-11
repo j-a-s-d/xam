@@ -124,4 +124,31 @@ proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[c
   ## Determines if the specified string is alphanumeric.
   ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
   isNumericString(s, Letters + additional, leading)
-  
+
+# CSV RELATED
+
+proc csv*(strings: varargs[string], separator: char, quoted: bool): string =
+  ## Generates a CSV string with the provided strings, the specified separator char and with quoted values if specified.
+  result = STRINGS_EMPTY
+  let sep = $separator
+  for s in strings:
+    if result != STRINGS_EMPTY:
+      result &= sep
+    if quoted:
+      result &= quote s
+    else:
+      result &= s
+
+proc csv*(strings: varargs[string], separator: char): string =
+  ## Generates a CSV string with the provided strings and the specified separator char.
+  csv(strings, separator, false)
+
+proc csv*(strings: varargs[string]): string =
+  ## Generates a CSV string with the provided strings.
+  ## NOTE: a comma will be used as separator.
+  csv(strings, ',', false)
+
+proc csv*(strings: varargs[string], quoted: bool): string =
+  ## Generates a CSV string with the provided strings and quoted values if specified.
+  ## NOTE: a comma will be used as separator.
+  csv(strings, ',', quoted)

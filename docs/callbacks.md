@@ -65,3 +65,7 @@ This is the documentation of the common callbacks declarations module of the Xam
 - `CUintSeqFunc*[T] = proc (parameter: seq[cuint]): T {.noSideEffect.}`
 - `CIntSeqFunc*[T] = proc (parameter: seq[cint]): T {.noSideEffect.}`
 - `CFloatSeqFunc*[T] = proc (parameter: seq[cfloat]): T {.noSideEffect.}`
+
+### OTHER CALLBACK DEFINITIONS
+
+- `JsonNodeFunc*[T] = proc (parameter: JsonNode): T {.noSideEffect.}`

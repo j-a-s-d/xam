@@ -136,8 +136,8 @@ This is the documentation of the json related constants and routines module of t
 **USAGE**
 
 ```nim
-    var arr = wrapInJArray(%1, %"2")
-    if arr2.len == 3:
+    var arr = wrapInJArray(%1, %"2", JSON_NULL)
+    if arr.len == 3:
       echo "wrapped!"
 ```
 

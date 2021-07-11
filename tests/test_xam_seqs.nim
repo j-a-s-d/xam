@@ -111,3 +111,20 @@ suite "test xam seqs":
     let k = toCsvLine(@["a", "b", "c"], "|")
     check(k == "a|b|c")
 
+  test "test remove":
+    var a = @["1", "2", "3", "4", "5"]
+    a.remove(["2", "4"])
+    check(a == @["1", "3", "5"])
+    a.remove(@["5"])
+    check(a == @["1", "3"])
+    a.remove(@["5"])
+    check(a == @["1", "3"])
+    var b = @["1", "2", "3", "2"]
+    b.remove("2")
+    check(b == @["1", "3"])
+    b.remove("2")
+    check(b == @["1", "3"])
+
+  test "test concrete-type constructor":
+    check(newStringSeq() == newSeq[string]())
+    check(newStringSeq("a", "b", "c") == @["a", "b", "c"])

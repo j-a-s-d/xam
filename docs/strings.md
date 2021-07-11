@@ -487,3 +487,79 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
   if isAlphaNumericString("+12345,A.BC", {',', '.'}, {'+', '-'}):
     echo "it is an alpha numeric string"
 ```
+
+### CSV (WITH CUSTOMIZABLE SEPARATOR AND QUOTED FLAG)
+
+**SIGNATURE**
+
+`proc csv*(strings: varargs[string], separator: char, quoted: bool): string`
+
+**DESCRIPTION**
+
+*Generates a CSV string with the provided strings, the specified separator char and with quoted values if specified.*
+
+**USAGE**
+
+```nim
+  let c = csv("abc", "def", "ghi", ';', true)
+  if c == "\"abc\";\"def\";\"ghi\"":
+    echo "generated!"
+```
+
+### CSV (WITH CUSTOMIZABLE SEPARATOR)
+
+**SIGNATURE**
+
+`proc csv*(strings: varargs[string], separator: char): string`
+
+**DESCRIPTION**
+
+*Generates a CSV string with the provided strings and the specified separator char.*
+
+**USAGE**
+
+```nim
+  let c = csv("abc", "def", "ghi", '|')
+  if c == "abc|def|ghi":
+    echo "generated!"
+```
+
+### CSV (WITH DEFAULT SEPARATOR)
+
+**SIGNATURE**
+
+`proc csv*(strings: varargs[string]): string`
+
+**DESCRIPTION**
+
+*Generates a CSV string with the provided strings.*
+
+*NOTE: a comma will be used as separator.*
+
+**USAGE**
+
+```nim
+  let c = csv("abc", "def", "ghi")
+  if c == "abc,def,ghi":
+    echo "generated!"
+```
+
+### CSV (WITH DEFAULT SEPARATOR AND QUOTED FLAG)
+
+**SIGNATURE**
+
+`proc csv*(strings: varargs[string], quoted: bool): string`
+
+**DESCRIPTION**
+
+*Generates a CSV string with the provided strings and quoted values if specified.*
+
+*NOTE: a comma will be used as separator.*
+
+**USAGE**
+
+```nim
+  let c = csv("abc", "def", "ghi", true)
+  if c == "\"abc\",\"def\",\"ghi\"":
+    echo "generated!"
+```

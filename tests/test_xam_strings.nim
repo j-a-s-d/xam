@@ -74,3 +74,9 @@ suite "test xam strings":
     check(isAlphaNumericString("12345-ABC") == false)
     check(isAlphaNumericString("+12345,A.BC", {',', '.'}, {'+', '-'}) == true)
     check(isAlphaNumericString("+12345,A.BC", {',', '.'}, {'*'}) == false)
+
+  test "test csv":
+    check(csv("abc", "def", "ghi") == "abc,def,ghi")
+    check(csv("abc", "def", "ghi", '|') == "abc|def|ghi")
+    check(csv("abc", "def", "ghi", true) == "\"abc\",\"def\",\"ghi\"")
+    check(csv("abc", "def", "ghi", ';', true) == "\"abc\";\"def\";\"ghi\"")

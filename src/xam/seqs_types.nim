@@ -26,3 +26,28 @@ type
   CUintSeq* = seq[cuint]
   CIntSeq* = seq[cint]
   CFloatSeq* = seq[cfloat]
+
+# CONCRETE-TYPE SEQUENCE CONSTRUCTORS
+
+proc newFloatSeq*(values: varargs[float]): FloatSeq = (result = @[]; for v in values: result.add v)
+proc newFloat32Seq*(values: varargs[float32]): Float32Seq = (result = @[]; for v in values: result.add v)
+proc newFloat64Seq*(values: varargs[float64]): Float64Seq = (result = @[]; for v in values: result.add v)
+proc newIntSeq*(values: varargs[int]): IntSeq = (result = @[]; for v in values: result.add v)
+proc newInt8Seq*(values: varargs[int8]): Int8Seq = (result = @[]; for v in values: result.add v)
+proc newInt16Seq*(values: varargs[int16]): Int16Seq = (result = @[]; for v in values: result.add v)
+proc newInt32Seq*(values: varargs[int32]): Int32Seq = (result = @[]; for v in values: result.add v)
+proc newInt64Seq*(values: varargs[int64]): Int64Seq = (result = @[]; for v in values: result.add v)
+proc newUIntSeq*(values: varargs[uint]): UIntSeq = (result = @[]; for v in values: result.add v)
+proc newUInt8Seq*(values: varargs[uint8]): UInt8Seq = (result = @[]; for v in values: result.add v)
+proc newUInt16Seq*(values: varargs[uint16]): UInt16Seq = (result = @[]; for v in values: result.add v)
+proc newUInt32Seq*(values: varargs[uint32]): UInt32Seq = (result = @[]; for v in values: result.add v)
+proc newUInt64Seq*(values: varargs[uint64]): UInt64Seq = (result = @[]; for v in values: result.add v)
+proc newBoolSeq*(values: varargs[bool]): BoolSeq = (result = @[]; for v in values: result.add v)
+proc newCharSeq*(values: varargs[char]): CharSeq = (result = @[]; for v in values: result.add v)
+proc newStringSeq*(values: varargs[string]): StringSeq = (result = @[]; for v in values: result.add v)
+proc newPtrSeq*(values: varargs[ptr]): PtrSeq = (result = @[]; for v in values: result.add v)
+proc newCStringSeq*(values: varargs[cstring]): CStringSeq = (result = @[]; for v in values: result.add v)
+proc newCCharSeq*(values: varargs[cchar]): CCharSeq = (result = @[]; for v in values: result.add v)
+proc newCUintSeq*(values: varargs[cuint]): CUIntSeq = (result = @[]; for v in values: result.add v)
+proc newCIntSeq*(values: varargs[cint]): CIntSeq = (result = @[]; for v in values: result.add v)
+proc newCFloatSeq*(values: varargs[cfloat]): CFloatSeq = (result = @[]; for v in values: result.add v)

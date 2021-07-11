@@ -16,3 +16,12 @@ proc extract*[T](c: var seq[T], index: int, default: T): T =
     return default
   result = c[index]
   c.delete(index)
+
+from sequtils import filter
+
+func remove*[T](a: var seq[T], s: T) =
+  a = a.filter(proc (x: T): bool = x != s)
+
+func remove*[T](a: var seq[T], s: openArray[T]) =
+  for x in s:
+    a.remove(x)

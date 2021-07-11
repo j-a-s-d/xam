@@ -35,7 +35,34 @@ This is the documentation of the sequences related routines module of the Xam li
 
 ## ROUTINES
 
+### CONCRETE-TYPE SEQUENCE CONSTRUCTORS
+
+- `proc newFloatSeq*(values: varargs[float]): FloatSeq`
+- `proc newFloat32Seq*(values: varargs[float32]): Float32Seq`
+- `proc newFloat64Seq*(values: varargs[float64]): Float64Seq`
+- `proc newIntSeq*(values: varargs[int]): IntSeq`
+- `proc newInt8Seq*(values: varargs[int8]): Int8Seq`
+- `proc newInt16Seq*(values: varargs[int16]): Int16Seq`
+- `proc newInt32Seq*(values: varargs[int32]): Int32Seq`
+- `proc newInt64Seq*(values: varargs[int64]): Int64Seq`
+- `proc newUIntSeq*(values: varargs[uint]): UIntSeq`
+- `proc newUInt8Seq*(values: varargs[uint8]): UInt8Seq`
+- `proc newUInt16Seq*(values: varargs[uint16]): UInt16Seq`
+- `proc newUInt32Seq*(values: varargs[uint32]): UInt32Seq`
+- `proc newUInt64Seq*(values: varargs[uint64]): UInt64Seq`
+- `proc newBoolSeq*(values: varargs[bool]): BoolSeq`
+- `proc newCharSeq*(values: varargs[char]): CharSeq`
+- `proc newStringSeq*(values: varargs[string]): StringSeq`
+- `proc newPtrSeq*(values: varargs[ptr]): PtrSeq`
+- `proc newCStringSeq*(values: varargs[cstring]): CStringSeq`
+- `proc newCCharSeq*(values: varargs[cchar]): CCharSeq`
+- `proc newCUintSeq*(values: varargs[cuint]): CUIntSeq`
+- `proc newCIntSeq*(values: varargs[cint]): CIntSeq`
+- `proc newCFloatSeq*(values: varargs[cfloat]): CFloatSeq`
+
 ### CSV RELATED ROUTINES
+
+#### FROMCSVLINE
 
 **SIGNATURE**
 
@@ -56,6 +83,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "cracked!"
 ```
 
+#### FROMCSVLINE
+
 **SIGNATURE**
 
 `proc fromCsvLine*(csv: string, separator: char = ','): seq[string] {.inline.}`
@@ -75,6 +104,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "cracked!"
 ```
 
+#### TOCSVLINE
+
 **SIGNATURE**
 
 `proc toCsvLine*(ss: seq[string], separator: string): string {.inline.}`
@@ -90,6 +121,8 @@ This is the documentation of the sequences related routines module of the Xam li
     if k == "a|b|c":
       echo "joined!"
 ```
+
+#### TOCSVLINE
 
 **SIGNATURE**
 
@@ -112,6 +145,8 @@ This is the documentation of the sequences related routines module of the Xam li
 
 ### JS STACK-LIKE ROUTINES
 
+#### PUSH
+
 **SIGNATURE**
 
 `proc push*[T](c: var stack[T], value: T)`
@@ -132,6 +167,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "pushed!"
 ```
 
+#### PEEK
+
 **SIGNATURE**
 
 `proc peek*[T](c: var stack[T], default: T): T`
@@ -151,6 +188,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "got the default value"
 ```
 
+#### POP
+
 **SIGNATURE**
 
 `proc pop*[T](c: var stack[T], default: T): T`
@@ -168,6 +207,8 @@ This is the documentation of the sequences related routines module of the Xam li
     if k.pop(123) == 123:
       echo "got the default value"
 ```
+
+#### SLICE (INDEX)
 
 **SIGNATURE**
 
@@ -196,6 +237,8 @@ This is the documentation of the sequences related routines module of the Xam li
     if k.slice(-6) == @[1, 2, 3, 4, 5]:
       echo "sliced!"
 ```
+
+#### SLICE (INDEX AND LAST)
 
 **SIGNATURE**
 
@@ -229,6 +272,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "sliced!"
 ```
 
+#### SHIFT
+
 **SIGNATURE**
 
 `proc shift*[T](c: var stack[T], default: T): T`
@@ -248,6 +293,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "shifted!"
 ```
 
+#### UNSHIFT
+
 **SIGNATURE**
 
 `proc unshift*[T](c: var stack[T], m: stack[T]): int`
@@ -265,6 +312,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "prepended!"
 ```
 
+#### REVERSE
+
 **SIGNATURE**
 
 `proc reverse*[T](c: var stack[T]): stack[T]`
@@ -280,6 +329,8 @@ This is the documentation of the sequences related routines module of the Xam li
     if k.reverse() == @[5, 4, 3, 2, 1]:
       echo "reversed!"
 ```
+
+#### CLEAR
 
 **SIGNATURE**
 
@@ -299,6 +350,8 @@ This is the documentation of the sequences related routines module of the Xam li
 ```
 
 ### EXTRA ROUTINES
+
+#### DROP
 
 **SIGNATURE**
 
@@ -323,6 +376,8 @@ This is the documentation of the sequences related routines module of the Xam li
       echo "dropped!"
 ```
 
+#### EXTRACT
+
 **SIGNATURE**
 
 `proc extract*[T](c: var seq[T], index: int, default: T): T`
@@ -338,4 +393,42 @@ This is the documentation of the sequences related routines module of the Xam li
     var x = k.extract(2, 0)
     if x == 3 and k == @[1, 2, 4, 5]:
       echo "extracted!"
+```
+
+#### REMOVE (ITEM)
+
+**SIGNATURE**
+
+`func remove*[T](c: var seq[T], s: T)`
+
+**DESCRIPTION**
+
+*Removes the specified item of the provided sequence.*
+
+**USAGE**
+
+```nim
+  var a = @["1", "2", "3"]
+  a.remove("2")
+  if a == @["1", "3"]:
+    echo "removed!"
+```
+
+#### REMOVE (ITEMS)
+
+**SIGNATURE**
+
+`func remove*[T](a: var seq[T], s: openArray[T])`
+
+**DESCRIPTION**
+
+*Removes the specified item sequence of the provided open array.*
+
+**USAGE**
+
+```nim
+  var a = @["1", "2", "3", "4", "5"]
+  a.remove(["2", "4"])
+  if a == @["1", "3", "5"]:
+    echo "removed!"
 ```
