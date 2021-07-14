@@ -2,7 +2,7 @@
 # ===
 # STRINGS ROUTINES
 
-from strutils import Digits, Letters, strip
+from strutils import Digits, Letters, strip, find, rfind
 
 {.push inline.}
 
@@ -106,6 +106,21 @@ func dropBoth*(s: string, amount: int): string =
     s[amount..^(amount + 1)]
   else:
     STRINGS_EMPTY
+
+proc between*(s, start, ending: string, firstEnding: bool = false): string =
+  ## Returns the string contained between the specified start string
+  ## and the specified ending string, which can be the first match
+  ## of it if specified, otherwise is the last match by default.
+  ## NOTE: if matching fails, empty string an will be returned.
+  let sl = start.len()
+  let el = ending.len()
+  if sl > 0 and el > 0:
+    let st = s.find(start)
+    if st > -1:
+      let ss = st + sl
+      let en = if firstEnding: s.find(ending) else: s.rfind(ending)
+      if en > -1 and ss <= en:
+        result = s[ss..<en]
 
 {.pop.}
 

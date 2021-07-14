@@ -69,3 +69,5 @@ This is the documentation of the common callbacks declarations module of the Xam
 ### OTHER CALLBACK DEFINITIONS
 
 - `JsonNodeFunc*[T] = proc (parameter: JsonNode): T {.noSideEffect.}`
+- `Taker*[T] = NoArgsProc[T]`
+- `Treater*[T] = SingleArgProc[T, T]`

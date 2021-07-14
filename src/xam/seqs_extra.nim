@@ -20,8 +20,17 @@ proc extract*[T](c: var seq[T], index: int, default: T): T =
 from sequtils import filter
 
 func remove*[T](a: var seq[T], s: T) =
+  ## Removes the specified item of the provided sequence.
   a = a.filter(proc (x: T): bool = x != s)
 
 func remove*[T](a: var seq[T], s: openArray[T]) =
+  ## Removes the specified item sequence of the provided open array.
   for x in s:
     a.remove(x)
+
+from callbacks import Treater
+
+func treat*[T](a: var seq[T], t: Treater[T]) =
+  ## Treats each element of the specified sequence with the provided treater callback.
+  for x in mitems(a):
+    x = t(x)

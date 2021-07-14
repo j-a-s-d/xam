@@ -128,3 +128,9 @@ suite "test xam seqs":
   test "test concrete-type constructor":
     check(newStringSeq() == newSeq[string]())
     check(newStringSeq("a", "b", "c") == @["a", "b", "c"])
+
+  test "test treat":
+    let increment: Treater[uint8] = proc (p: uint8): uint8 = p + 1
+    var bytes: UInt8Seq = @[BYTES_12, BYTES_34, BYTES_56, BYTES_78, BYTES_90]
+    treat(bytes, increment)
+    check(bytes == @[BYTES_13, BYTES_35, BYTES_57, BYTES_79, BYTES_91])

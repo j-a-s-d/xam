@@ -450,6 +450,27 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
     echo "dropped!"
 ```
 
+### BETWEEN
+
+**SIGNATURE**
+
+`proc between*(s, start, ending: string, firstEnding: bool = false): string {.inline.}`
+
+**DESCRIPTION**
+
+*Returns the string contained between the specified start string and the specified ending string, which can be the first match of it if specified, otherwise is the last match by default.*
+
+*NOTE: if matching fails, empty string an will be returned.*
+
+**USAGE**
+
+```nim
+  if between("ab12de34de", "a", "e") == "b12de34d":
+    echo "cutted!"
+  if between("ab12de34de", "a", "e", true) == "b12d":
+    echo "cutted!"
+```
+
 ### ISNUMERICSTRING
 
 **SIGNATURE**

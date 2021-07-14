@@ -57,6 +57,13 @@ suite "test xam strings":
     check(dropBoth("12345", 1) == "234")
     check(dropBoth("12345", 10) == "")
     check(dropBoth("12345", 0) == "12345")
+  test "test between":
+    check(between("ab12de", "a", "") == "")
+    check(between("ab12de", "", "e") == "")
+    check(between("ab12de", "a", "a") == "")
+    check(between("ab12de", "e", "e") == "")
+    check(between("ab12de34de", "a", "e") == "b12de34d")
+    check(between("ab12de34de", "a", "e", true) == "b12d")
 
   test "test isNumericString":
     check(isNumericString("12345") == true)

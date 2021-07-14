@@ -16,6 +16,58 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 *ES6-like fat arrow functions*
 
+## TYPES
+
+### JAVA/C#-LIKE BYTE
+
+**SIGNATURE**
+
+`type byte* = uint8`
+
+**DESCRIPTION**
+
+*Java/C#-like "uint8 type"-like alias*
+
+### C#-LIKE BYTE
+
+**SIGNATURE**
+
+`type sbyte* = int8`
+
+**DESCRIPTION**
+
+*C#-like "int8 type"-like signed byte alias*
+
+### JAVA/PASCAL-LIKE BOOLEAN
+
+**SIGNATURE**
+
+`type boolean* = bool`
+
+**DESCRIPTION**
+
+*Java/Pascal-like "bool type"-like alias*
+
+### PASCAL-LIKE INTEGER
+
+**SIGNATURE**
+
+`type integer* = int`
+
+**DESCRIPTION**
+
+*Pascal-like "int type"-like alias*
+
+### PASCAL-LIKE REAL
+
+**SIGNATURE**
+
+`type real* = float`
+
+**DESCRIPTION**
+
+*Pascal-like "float type"-like alias*
+
 ## CONSTANTS
 
 ### JAVA/C#-LIKE NIL

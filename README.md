@@ -45,6 +45,12 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 14-07-21 *[1.4.0]*
+	- added `callbacks` taker and treater callback definitions
+	- added `looping` forever, times and json array each/meach templates
+	- added `multiplatform` type aliases
+	- added `seqs` treat routine
+	- added `strings` between routine
 * 11-07-21 *[1.3.0]*
 	- added `callbacks` json node callback definition
 	- added `seqs` remove routines

@@ -432,3 +432,22 @@ This is the documentation of the sequences related routines module of the Xam li
   if a == @["1", "3", "5"]:
     echo "removed!"
 ```
+
+#### TREAT
+
+**SIGNATURE**
+
+`func treat*[T](a: var seq[T], t: Treater[T])`
+
+**DESCRIPTION**
+
+*Treats each element of the specified sequence with the provided treater callback.*
+
+**USAGE**
+
+```nim
+  let increment: Treater[uint8] = proc (p: uint8): uint8 = p + 1
+  var bytes: UInt8Seq = @[BYTES_12, BYTES_34, BYTES_56, BYTES_78, BYTES_90]
+  treat(bytes, increment)
+  check(bytes == @[BYTES_13, BYTES_35, BYTES_57, BYTES_79, BYTES_91])
+```

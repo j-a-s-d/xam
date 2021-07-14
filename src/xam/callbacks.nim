@@ -14,7 +14,7 @@ type
   QuintupleArgsProc*[V, W, X, Y, Z, T] = proc (param1: V, param2: W, param3: X, param4: Y, param5: Z): T
   SextupleArgsProc*[U, V, W, X, Y, Z, T] = proc (param1: U, param2: V, param3: W, param4: X, param5: Y, param6: Z): T
   VarArgsProc*[Z, T] = proc (params: varargs[Z]): T
-  
+
   # SINGLE CONCRETE-TYPE PARAMETER FUNC CALLBACK DEFINITIONS
   NoArgsFunc*[T] = proc (): T {.noSideEffect.}
   FloatFunc*[T] = proc (parameter: float): T {.noSideEffect.}
@@ -39,7 +39,7 @@ type
   CUintFunc*[T] = proc (parameter: cuint): T {.noSideEffect.}
   CIntFunc*[T] = proc (parameter: cint): T {.noSideEffect.}
   CFloatFunc*[T] = proc (parameter: cfloat): T {.noSideEffect.}
-  
+
   # SEQUENCE CONCRETE-TYPE PARAMETER FUNC CALLBACK DEFINITIONS
   FloatSeqFunc*[T] = proc (parameter: seq[float]): T {.noSideEffect.}
   Float32SeqFunc*[T] = proc (parameter: seq[float32]): T {.noSideEffect.}
@@ -63,7 +63,7 @@ type
   CUintSeqFunc*[T] = proc (parameter: seq[cuint]): T {.noSideEffect.}
   CIntSeqFunc*[T] = proc (parameter: seq[cint]): T {.noSideEffect.}
   CFloatSeqFunc*[T] = proc (parameter: seq[cfloat]): T {.noSideEffect.}
- 
+
   # NOTE: following, which relay on ranges, are not working propertly on nim 1.0.6
   # ARRAY CONCRETE-TYPE PARAMETER FUNC CALLBACK DEFINITIONS
   #FloatArrayFunc*[R, T] = proc (parameter: array[R, float]): T {.noSideEffect.}
@@ -91,3 +91,5 @@ type
 
   # OTHER CALLBACK DEFINITIONS
   JsonNodeFunc*[T] = proc (parameter: JsonNode): T {.noSideEffect.}
+  Taker*[T] = NoArgsProc[T] # func (): T
+  Treater*[T] = SingleArgProc[T, T] # func (param: T): T

@@ -18,3 +18,4 @@ include multiplatform_operators
 include multiplatform_comments
 include multiplatform_introspection
 include multiplatform_shutdown
+include multiplatform_types
