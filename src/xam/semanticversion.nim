@@ -57,61 +57,97 @@ proc `$`*(sv: SemanticVersion): string {.inline.} =
   ## Returns the string representation of the current semantic version.
   $sv.major & STRINGS_PERIOD & $sv.minor & STRINGS_PERIOD & $sv.patch
 
-func compareVersionsAsStrings(version1, version2: string): int {.inline.} =
-  result = 0
-  let arr1 = version1.split(STRINGS_PERIOD)
-  let arr2 = version2.split(STRINGS_PERIOD)
-  var i = 0
-  var i1l = i < arr1.len
-  var i2l = i < arr2.len
+func compareVersionsAsStrings(version1, version2: string): tuple[r: int, i: int] {.inline.} =
+  result.r = 0
+  result.i = 0
+  let a1 = version1.split(STRINGS_PERIOD)
+  let a2 = version2.split(STRINGS_PERIOD)
+  let l1 = len(a1)
+  let l2 = len(a2)
+  var i1l = result.i < l1
+  var i2l = result.i < l2
   while i1l or i2l:
-    let x1 = tryParseInt(arr1[i], 0)
-    let x2 = tryParseInt(arr2[i], 0)
+    let x1 = tryParseInt(a1[result.i], 0)
+    let x2 = tryParseInt(a2[result.i], 0)
     if i1l and i2l:
       if x1 < x2:
-        result = -1
+        result.r = -1
         break
       if x1 > x2:
-        result = 1
+        result.r = 1
         break
     elif i1l:
       if x1 != 0:
-        result = 1
+        result.r = 1
         break
     elif i2l:
       if x2 != 0:
-        result = -1
+        result.r = -1
         break
-    inc i
-    i1l = i < arr1.len
-    i2l = i < arr2.len
+    inc(result.i)
+    i1l = result.i < len(a1)
+    i2l = result.i < len(a2)
 
 proc equalsTo*(sv, other: SemanticVersion): bool =
   ## Compares the first semantic version against the second and returns
   ## true if they are equal.
-  compareVersionsAsStrings($sv, $other) == 0
+  compareVersionsAsStrings($sv, $other).r == 0
 
 proc equalsTo*(sv: SemanticVersion, other: string): bool =
   ## Compares the semantic version against the provided version number and returns
   ## true if they are equal.
-  compareVersionsAsStrings($sv, other) == 0
-
-proc isNewerThan*(sv, other: SemanticVersion): bool =
-  ## Compares the first semantic version against the second and returns
-  ## true if it is newer.
-  compareVersionsAsStrings($sv, $other) == 1
-
-proc isNewerThan*(sv: SemanticVersion, other: string): bool =
-  ## Compares the semantic version against the provided version number and returns
-  ## true if it is newer.
-  compareVersionsAsStrings($sv, other) == 1
+  compareVersionsAsStrings($sv, other).r == 0
 
 proc isOlderThan*(sv, other: SemanticVersion): bool =
   ## Compares the first semantic version against the second and returns
   ## true if it is older.
-  compareVersionsAsStrings($sv, $other) == -1
+  compareVersionsAsStrings($sv, $other).r == -1
 
 proc isOlderThan*(sv: SemanticVersion, other: string): bool =
   ## Compares the semantic version against the provided version number and returns
   ## true if it is older.
-  compareVersionsAsStrings($sv, other) == -1
+  compareVersionsAsStrings($sv, other).r == -1
+
+proc isNewerThan*(sv, other: SemanticVersion): bool =
+  ## Compares the first semantic version against the second and returns
+  ## true if it is newer.
+  compareVersionsAsStrings($sv, $other).r == 1
+
+proc isNewerThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is newer.
+  compareVersionsAsStrings($sv, other).r == 1
+
+template isLevelNewerThan(sv: SemanticVersion, other: string, level: int): bool =
+  let c = compareVersionsAsStrings($sv, other)
+  c.r == 1 and c.i == level
+
+proc isMajorNewerThan*(sv, other: SemanticVersion): bool =
+  ## Compares the first semantic version against the second and returns
+  ## true if it is newer at major level.
+  sv.isLevelNewerThan($other, 0)
+
+proc isMajorNewerThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is newer at major level.
+  sv.isLevelNewerThan(other, 0)
+
+proc isMinorNewerThan*(sv, other: SemanticVersion): bool =
+  ## Compares the first semantic version against the second and returns
+  ## true if it is newer at minor level.
+  sv.isLevelNewerThan($other, 1)
+
+proc isMinorNewerThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is newer at minor level.
+  sv.isLevelNewerThan(other, 1)
+
+proc isPatchNewerThan*(sv, other: SemanticVersion): bool =
+  ## Compares the first semantic version against the second and returns
+  ## true if it is newer at patch level.
+  sv.isLevelNewerThan($other, 2)
+
+proc isPatchNewerThan*(sv: SemanticVersion, other: string): bool =
+  ## Compares the semantic version against the provided version number and returns
+  ## true if it is newer at patch level.
+  sv.isLevelNewerThan(other, 2)

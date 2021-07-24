@@ -45,6 +45,8 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 24-07-21 *[1.4.1]*
+	- added `semanticversion` isMajorNewerThan, isMinorNewerThan and isPatchNewerThan routines
 * 14-07-21 *[1.4.0]*
 	- added `callbacks` taker and treater callback definitions
 	- added `looping` forever, times and json array each/meach templates
@@ -64,7 +66,7 @@ Also check my projects which use `xam` as a dependency:
 	- added `exceptions` tryIt template
 * 22-05-21 *[1.1.0]*
 	- added `temp` constants and routines
-	- added `semanticversion` equalsTo, isNewewThan and isOlderThan string overloads
+	- added `semanticversion` equalsTo, isNewerThan and isOlderThan string overloads
 * 23-04-21 *[1.0.1]*
 	- adjusted the primary source structure since `nimble check` did not recognized the includes
 * 06-04-21 *[1.0.0]*

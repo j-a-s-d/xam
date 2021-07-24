@@ -160,6 +160,42 @@ This is the documentation of the semantic version object module of the Xam libra
     echo "the versions are equal"
 ```
 
+#### ISOLDERTHAN (SEMANTICVERSION)
+
+**SIGNATURE**
+
+`proc isOlderThan*(sv, other: SemanticVersion): bool`
+
+**DESCRIPTION**
+
+*Compares the first semantic version against the second and returns true if it is older.*
+
+**USAGE**
+
+```nim
+  let sv1 = newSemanticVersion(3, 2, 0)
+  let sv2 = newSemanticVersion("3.2.1")
+  if sv1.isOlderThan(sv2):
+    echo "the version supplied version is older"
+```
+
+#### ISOLDERTHAN (STRING)
+
+**SIGNATURE**
+
+`proc isOlderThan*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if it is older.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 2, 0).isOlderThan("3.2.1"):
+    echo "the version supplied version is older"
+```
+
 #### ISNEWERTHAN (SEMANTICVERSION)
 
 **SIGNATURE**
@@ -196,38 +232,110 @@ This is the documentation of the semantic version object module of the Xam libra
     echo "the version supplied version is newer"
 ```
 
-#### ISOLDERTHAN (SEMANTICVERSION)
+#### ISMAJORNEWERTHAN (SEMANTICVERSION)
 
 **SIGNATURE**
 
-`proc isOlderThan*(sv, other: SemanticVersion): bool`
+`proc isMajorNewerThan*(sv, other: SemanticVersion): bool`
 
 **DESCRIPTION**
 
-*Compares the first semantic version against the second and returns true if it is older.*
+*Compares the first semantic version against the second and returns true if it is newer at major level.*
 
 **USAGE**
 
 ```nim
-  let sv1 = newSemanticVersion(3, 2, 0)
+  let sv1 = newSemanticVersion(4, 0, 0)
   let sv2 = newSemanticVersion("3.2.1")
-  if sv1.isOlderThan(sv2):
-    echo "the version supplied version is older"
+  if sv1.isMajorNewerThan(sv2):
+    echo "the version supplied version is newer at major level"
 ```
 
-#### ISOLDERTHAN (STRING)
+#### ISMAJORNEWERTHAN (STRING)
 
 **SIGNATURE**
 
-`proc isOlderThan*(sv: SemanticVersion, other: string): bool`
+`proc isMajorNewerThan*(sv: SemanticVersion, other: string): bool`
 
 **DESCRIPTION**
 
-*Compares the semantic version against the provided version number and returns true if it is older.*
+*Compares the semantic version against the provided version number and returns true if it is newer at major level.*
 
 **USAGE**
 
 ```nim
-  if newSemanticVersion(3, 2, 0).isOlderThan("3.2.1"):
-    echo "the version supplied version is older"
+  if newSemanticVersion(4, 0, 0).isMajorNewerThan("3.2.1"):
+    echo "the version supplied version is newer at major level"
+```
+
+#### ISMINORNEWERTHAN (SEMANTICVERSION)
+
+**SIGNATURE**
+
+`proc isMinorNewerThan*(sv, other: SemanticVersion): bool`
+
+**DESCRIPTION**
+
+*Compares the first semantic version against the second and returns true if it is newer at minor level.*
+
+**USAGE**
+
+```nim
+  let sv1 = newSemanticVersion(3, 3, 0)
+  let sv2 = newSemanticVersion("3.2.1")
+  if sv1.isMinorNewerThan(sv2):
+    echo "the version supplied version is newer at minor level"
+```
+
+#### ISMINORNEWERTHAN (STRING)
+
+**SIGNATURE**
+
+`proc isMinorNewerThan*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if it is newer at minor level.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 3, 0).isMinorNewerThan("3.2.1"):
+    echo "the version supplied version is newer at minor level"
+```
+
+#### ISPATCHNEWERTHAN (SEMANTICVERSION)
+
+**SIGNATURE**
+
+`proc isPatchNewerThan*(sv, other: SemanticVersion): bool`
+
+**DESCRIPTION**
+
+*Compares the first semantic version against the second and returns true if it is newer at patch level.*
+
+**USAGE**
+
+```nim
+  let sv1 = newSemanticVersion(3, 2, 2)
+  let sv2 = newSemanticVersion("3.2.1")
+  if sv1.isPatchNewerThan(sv2):
+    echo "the version supplied version is newer at patch level"
+```
+
+#### ISPATCHNEWERTHAN (STRING)
+
+**SIGNATURE**
+
+`proc isPatchNewerThan*(sv: SemanticVersion, other: string): bool`
+
+**DESCRIPTION**
+
+*Compares the semantic version against the provided version number and returns true if it is newer at patch level.*
+
+**USAGE**
+
+```nim
+  if newSemanticVersion(3, 2, 2).isPatchNewerThan("3.2.1"):
+    echo "the version supplied version is newer at patch level"
 ```
