@@ -45,6 +45,8 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 01-08-21 *[1.4.2]*
+	- added `jsons` ensureJObject and ensureJArray routines
 * 24-07-21 *[1.4.1]*
 	- added `semanticversion` isMajorNewerThan, isMinorNewerThan and isPatchNewerThan routines
 * 14-07-21 *[1.4.0]*

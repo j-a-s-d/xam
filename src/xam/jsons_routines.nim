@@ -41,6 +41,16 @@ proc wrapInJArray*(nodes: varargs[JsonNode]): JsonNode =
   for node in nodes:
     result.add(node)
 
+proc ensureJObject*(node: JsonNode): JsonNode =
+  ## If the provided json node is a json object, it is returned.
+  ## Otherwise a new json object is returned.
+  if node != nil and node.kind == JObject: node else: newJObject()
+
+proc ensureJArray*(node: JsonNode): JsonNode =
+  ## If the provided json node is a json array, it is returned.
+  ## Otherwise a new json array is returned.
+  if node != nil and node.kind == JArray: node else: newJArray()
+
 proc isJArray*(node: JsonNode): bool =
   ## Tests if the provided json node is a json array.
   node != nil and node.kind == JArray

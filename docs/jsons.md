@@ -141,6 +141,42 @@ This is the documentation of the json related constants and routines module of t
       echo "wrapped!"
 ```
 
+### ENSUREJOBJECT
+
+**SIGNATURE**
+
+`proc ensureJObject*(node: JsonNode): JsonNode`
+
+**DESCRIPTION**
+
+*If the provided json node is a json object, it is returned.*
+*Otherwise a new json object is returned.*
+
+**USAGE**
+
+```nim
+  if ensureJObject(%* { "a": 1, "b": 2, "c": 3 }).len == 3 and ensureJObject(newJNull()).len == 0:
+    echo "ensured!"
+```
+
+### ENSUREJARRAY
+
+**SIGNATURE**
+
+`proc ensureJArray*(node: JsonNode): JsonNode`
+
+**DESCRIPTION**
+
+*If the provided json node is a json array, it is returned.*
+*Otherwise a new json array is returned.*
+
+**USAGE**
+
+```nim
+  if ensureJArray(%* ["hello", 123, true, nil, 456.789]).len == 5 and ensureJArray(newJNull()).len == 0:
+    echo "ensured!"
+```
+
 ### ISJARRAY
 
 **SIGNATURE**

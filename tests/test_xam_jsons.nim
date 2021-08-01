@@ -51,6 +51,23 @@ suite "test xam json":
     check(arr2.kind == JArray)
     check(arr2.len == 3)
 
+  test "test ensureJObject":
+    let a = %* { "a": 1, "b": 2, "c": 3 }
+    check(ensureJObject(a).len == 3)
+    check(ensureJObject(a)["c"].getInt() == 3)
+    let b = newJNull()
+    check(ensureJObject(b).len == 0)
+    let c = newJString("blah")
+    check(ensureJObject(c).len == 0)
+
+  test "test ensureJArray":
+    let a = %* ["hello", 123, true, nil, 456.789]
+    check(ensureJArray(a).len == 5)
+    let b = newJNull()
+    check(ensureJArray(b).len == 0)
+    let c = newJString("blah")
+    check(ensureJArray(c).len == 0)
+
   test "test isJArray":
     check(isJArray(newJArray()))
     check(not isJArray(JSON_NULL))
