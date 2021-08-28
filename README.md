@@ -22,7 +22,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`bytes`](docs/bytes.md), *bytes related constants*
 * [`callbacks`](docs/callbacks.md), *common callback declarations*
 * [`chars`](docs/chars.md), *chars related constants*
-* [`datetime`](docs/datetime.md), *datetime related constants and routines*
+* [`time`](docs/time.md), *datetime related constants and routines*
 * [`exceptions`](docs/exceptions.md), *exceptions related routines*
 * [`files`](docs/files.md), *files related routines*
 * [`hex`](docs/hex.md), *hex related constants*
@@ -45,6 +45,10 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 28-08-21 *[1.5.0]*
+	- added `time` constants and routines
+	- added `chronometer` into `time`
+	- included `datetime` into `time`
 * 01-08-21 *[1.4.2]*
 	- added `jsons` ensureJObject and ensureJArray routines
 * 24-07-21 *[1.4.1]*

@@ -9,7 +9,7 @@ reexport_xam_module ansi
 reexport_xam_module bytes
 reexport_xam_module callbacks
 reexport_xam_module chars
-reexport_xam_module datetime
+reexport_xam_module time
 reexport_xam_module exceptions
 reexport_xam_module files
 reexport_xam_module hex
