@@ -4,6 +4,17 @@ This is the documentation of the common callbacks declarations module of the Xam
 
 ## TYPES
 
+### VOID PROC CALLBACK DEFINITIONS
+
+- `NoArgsVoidProc* = proc ()`
+- `SingleArgVoidProc*[Z] = proc (param: Z)`
+- `DoubleArgsVoidProc*[Y, Z] = proc (param1: Y, param2: Z)`
+- `TripleArgsVoidProc*[X, Y, Z] = proc (param1: X, param2: Y, param3: Z)`
+- `QuadrupleArgsVoidProc*[W, X, Y, Z] = proc (param1: W, param2: X, param3: Y, param4: Z)`
+- `QuintupleArgsVoidProc*[V, W, X, Y, Z] = proc (param1: V, param2: W, param3: X, param4: Y, param5: Z)`
+- `SextupleArgsVoidProc*[U, V, W, X, Y, Z] = proc (param1: U, param2: V, param3: W, param4: X, param5: Y, param6: Z)`
+- `VarArgsVoidProc*[Z] = proc (params: varargs[Z])`
+
 ### PROC CALLBACK DEFINITIONS
 
 - `NoArgsProc*[T] = proc (): T`

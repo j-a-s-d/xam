@@ -2,6 +2,9 @@
 # ===
 # MULTIPLATFORM OPERATORS
 
+from sugar import `=>`
+export `=>` ## ES6-like fat arrow functions
+
 template `:=`*(name, value: untyped): untyped {.used.} =
   ## Golang-like shorthand variable declaration & Pascal-like variable assignation
   when not declaredInScope(name):
@@ -29,6 +32,6 @@ template `!`*(a: bool): bool {.used.} =
   ## C/Cpp-like not logical operator
   not a
 
-template `+`(x, y: string): string {.used.} =
+template `+`*(x, y: string): string {.used.} =
   ## C/Pascal/Basic-like string concatenation
   x & y

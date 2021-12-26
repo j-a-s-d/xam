@@ -18,6 +18,7 @@ reexport_xam_module jsons
 reexport_xam_module looping
 reexport_xam_module maths
 reexport_xam_module multiplatform
+reexport_xam_module nimlang
 reexport_xam_module semanticversion
 reexport_xam_module seqs
 reexport_xam_module sizes

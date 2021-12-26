@@ -15,6 +15,7 @@ RUN_TEST test_xam_html
 RUN_TEST test_xam_jsons
 RUN_TEST test_xam_looping
 RUN_TEST test_xam_maths
+RUN_TEST test_xam_nimlang
 RUN_TEST test_xam_semanticversion
 RUN_TEST test_xam_seqs
 RUN_TEST test_xam_sizes

@@ -433,6 +433,68 @@ This is the documentation of the sequences related routines module of the Xam li
     echo "removed!"
 ```
 
+### APPEND
+
+**SIGNATURE**
+
+`func append*[T](a: var seq[T], b: openArray[T])`
+
+**DESCRIPTION**
+
+*Appends the provided open array in the specified sequence.*
+
+**USAGE**
+
+```nim
+  var k = @[1, 2, 3, 4, 5]
+  let l = [6, 7, 8]
+  append(k, l)
+  if k == @[1, 2, 3, 4, 5, 6, 7, 8]:
+    echo "appended!"
+```
+
+### ISEMPTY
+
+**SIGNATURE**
+
+`func isEmpty*[T](a: seq[T]): bool`
+
+**DESCRIPTION**
+
+*Determines if the specified sequence is empty.*
+
+**USAGE**
+
+```nim
+  let k: seq[int] = @[]
+  if isEmpty(k):
+    echo "is empty!"
+  let l: seq[int] = @[1, 2, 3]
+  if not isEmpty(l):
+    echo "not is empty!"
+```
+
+### HASCONTENT
+
+**SIGNATURE**
+
+`func hasContent*[T](a: seq[T]): bool`
+
+**DESCRIPTION**
+
+*Determines if the specified sequence is not empty.*
+
+**USAGE**
+
+```nim
+  let k: seq[int] = @[]
+  if not hasContent(k):
+    echo "not has content!"
+  let l: seq[int] = @[1, 2, 3]
+  if hasContent(l):
+    echo "has content!"
+```
+
 #### TREAT
 
 **SIGNATURE**

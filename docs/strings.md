@@ -289,6 +289,40 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
     echo "chevronized!"
 ```
 
+### ISEMPTY
+
+**SIGNATURE**
+
+`func isEmpty*(s: string): bool {.inline.}`
+
+**DESCRIPTION**
+
+*Determines if the specified string is empty.*
+
+**USAGE**
+
+```nim
+  if isEmpty(""):
+    echo "it is empty!"
+```
+
+### AREEMPTY
+
+**SIGNATURE**
+
+`func areEmpty*(strings: varargs[string]): bool {.inline.}`
+
+**DESCRIPTION**
+
+*Determines if the specified strings are empty.*
+
+**USAGE**
+
+```nim
+  if areEmpty("", ""):
+    echo "they are empty!"
+```
+
 ### HASCONTENT
 
 **SIGNATURE**
@@ -359,6 +393,40 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
 ```nim
   if not haveText("1", "22", " "):
     echo "at least one of them does not have text!"
+```
+
+### STRIPLEFT
+
+**SIGNATURE**
+
+`func stripLeft*(s: string): string {.inline.}`
+
+**DESCRIPTION**
+
+*Strips leading whitespace characters from s and returns the resulting string.*
+
+**USAGE**
+
+```nim
+  if stripLeft("  test") == "test":
+    echo "stripped!"
+```
+
+### STRIPRIGHT
+
+**SIGNATURE**
+
+`func stripRight*(s: string): string {.inline.}`
+
+**DESCRIPTION**
+
+*Strips trailing whitespace characters from s and returns the resulting string.*
+
+**USAGE**
+
+```nim
+  if stripRight("test  ") == "test":
+    echo "stripped!"
 ```
 
 ### LEFTCOUNT

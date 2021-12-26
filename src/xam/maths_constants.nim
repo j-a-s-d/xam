@@ -142,6 +142,7 @@ const
   VALUE_LOG10E*: float = math.log10(math.E)
   VALUE_PI*: float = math.PI
   VALUE_2PI*: float = F2 * math.PI
+  VALUE_TAU*: float = VALUE_2PI
   VALUE_PIDIV2*: float = math.PI / F2
   VALUE_PIDIV4*: float = math.PI / F4
   VALUE_1DIVPI*: float = F1 / math.PI

@@ -83,6 +83,56 @@ It's behaviour allows you to intercept values on assignment (ex. var x = debug g
   let msg = debug getMessage()
 ```
 
+### NOOP
+
+**SIGNATURE**
+
+`func noop*`
+
+**DESCRIPTION**
+
+*Does nothing.*
+
+**USAGE**
+
+```nim
+  noop()
+```
+
+### TRUTHY
+
+**SIGNATURE**
+
+`func truthy*: bool`
+
+**DESCRIPTION**
+
+*Returns true.*
+
+**USAGE**
+
+```nim
+  if truthy():
+    echo "true"
+```
+
+### FALSY
+
+**SIGNATURE**
+
+`func falsy*: bool`
+
+**DESCRIPTION**
+
+*Returns false.*
+
+**USAGE**
+
+```nim
+  if falsy():
+    echo "false"
+```
+
 ## TEMPLATES
 
 ### INLINED

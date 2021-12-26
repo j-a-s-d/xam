@@ -71,7 +71,7 @@ suite "test xam seqs":
     check(k.len == 0)
 
   test "test drop":
-    var k: stack[int] = @[1, 2, 3, 4, 5]
+    var k = @[1, 2, 3, 4, 5]
     k.drop(2)
     check(k == @[1, 2, 3])
     k.drop(4)
@@ -80,7 +80,7 @@ suite "test xam seqs":
     check(k.len == 0)
   
   test "test extract":
-    var k: stack[int] = @[1, 2, 3, 4, 5]
+    var k = @[1, 2, 3, 4, 5]
     var x = k.extract(2, 0)
     check(x == 3)
     check(k == @[1, 2, 4, 5])
@@ -88,6 +88,28 @@ suite "test xam seqs":
     check(y == 0)
     var z = k.extract(4, -1)
     check(z == -1)
+
+  test "test append":
+    var k = @[1, 2, 3, 4, 5]
+    let l = @[6, 7, 8]
+    append(k, l)
+    check(k == @[1, 2, 3, 4, 5, 6, 7, 8])
+    append(k, [9])
+    check(k == @[1, 2, 3, 4, 5, 6, 7, 8, 9])
+    append(k, @[])
+    check(k == @[1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+  test "test isEmpty":
+    let k: seq[int] = @[]
+    let l: seq[int] = @[1, 2, 3]
+    check(isEmpty(k))
+    check(not isEmpty(l))
+
+  test "test hasContent":
+    let k: seq[int] = @[]
+    let l: seq[int] = @[1, 2, 3]
+    check(not hasContent(k))
+    check(hasContent(l))
 
   test "test fromCsvLine (char)":
     let k = fromCsvLine("a,b,c")

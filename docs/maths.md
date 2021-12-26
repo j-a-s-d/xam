@@ -147,6 +147,7 @@ This is the documentation of the math related constants and routines module of t
 - `const VALUE_LOG10E*: float`
 - `const VALUE_PI*: float`
 - `const VALUE_2PI*: float`
+- `const VALUE_TAU*: float`
 - `const VALUE_PIDIV2*: float`
 - `const VALUE_PIDIV4*: float`
 - `const VALUE_1DIVPI*: float`

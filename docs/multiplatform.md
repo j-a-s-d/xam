@@ -414,3 +414,108 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 **DESCRIPTION**
 
 *Forth-like line comment*
+
+### KEYWORDS
+
+### PYTHON/BOO/GDSCRIPT-LIKE PASS
+
+**SIGNATURE**
+
+`template pass* = discard`
+`template pass*(something: untyped = nil): untyped`
+
+**DESCRIPTION**
+
+*Python/Boo/GDScript-like discard aliases*
+
+### RUBY-LIKE UNLESS
+
+**SIGNATURE**
+
+`template unless*(expr, body: untyped): untyped`
+
+**DESCRIPTION**
+
+*Ruby unless-like alias*
+
+### STRINGS
+
+### PASCAL/C#-LIKE LENGTH
+
+**SIGNATURE**
+
+`template length*(s: string): int`
+
+**DESCRIPTION**
+
+*Pascal/C#-like len alias*
+
+### PASCAL/C#-LIKE POS
+
+**SIGNATURE**
+
+`template pos*(s, sub: string, offset: int = 0): int`
+
+**DESCRIPTION**
+
+*Pascal/C#-like find alias*
+
+### JAVASCRIPT-LIKE INDEXOF
+
+**SIGNATURE**
+
+`template indexOf*(s, sub: string, fromIndex: int = 0): int`
+
+**DESCRIPTION**
+
+*Javascript-like find alias*
+
+### PASCAL/C#/JAVASCRIPT-LIKE TRIM
+
+**SIGNATURE**
+
+`template trim*(s: string): string`
+
+**DESCRIPTION**
+
+*Pascal/C#/Javascript/etc-like trim alias*
+
+### PASCAL/JAVASCRIPT-LIKE TRIMLEFT
+
+**SIGNATURE**
+
+`template trimLeft*(s: string): string`
+
+**DESCRIPTION**
+
+*Pascal/Javascript/etc-like trimLeft alias*
+
+### PASCAL/JAVASCRIPT-LIKE TRIMRIGHT
+
+**SIGNATURE**
+
+`template trimRight*(s: string): string`
+
+**DESCRIPTION**
+
+*Pascal/Javascript/etc-like trimRight alias*
+
+### C#/JAVASCRIPT-LIKE TRIMSTART
+
+**SIGNATURE**
+
+`template trimStart*(s: string): string`
+
+**DESCRIPTION**
+
+*C#/Javascript/etc-like trimStart alias*
+
+### C#/JAVASCRIPT-LIKE TRIMEND
+
+**SIGNATURE**
+
+`template trimEnd*(s: string): string`
+
+**DESCRIPTION**
+
+*C#/Javascript/etc-like trimEnd alias*

@@ -28,6 +28,24 @@ suite "test xam strings":
   test "test chevronize":
     check(chevronize("hello") == "<hello>")
 
+  test "test isEmpty":
+    check(isEmpty(""))
+    check(not isEmpty(" "))
+    check(not isEmpty("1"))
+  test "test hasContent":
+    check(hasContent("1"))
+    check(hasContent(" "))
+    check(not hasContent(""))
+  test "test hasText":
+    check(hasText("1"))
+    check(not hasText(""))
+    check(not hasText(" "))
+
+  test "test areEmpty":
+    check(areEmpty(""))
+    check(areEmpty("", ""))
+    check(not areEmpty("1"))
+    check(not areEmpty("1", "2"))
   test "test haveContent":
     check(haveContent("1", "22", " "))
     check(not haveContent("1", "22", ""))
@@ -35,6 +53,16 @@ suite "test xam strings":
     check(haveText("1", "22"))
     check(not haveText("1", "22", " "))
     check(not haveText("1", "22", ""))
+
+  test "test stripLeft":
+    check(stripLeft("  test") == "test")
+    check(stripLeft("  ") == "")
+    check(stripLeft("") == "")
+
+  test "test stripRight":
+    check(stripRight("test  ") == "test")
+    check(stripRight("  ") == "")
+    check(stripRight("") == "")
 
   test "test leftCount":
     check(leftCount("00123", '0') == 2)

@@ -44,6 +44,16 @@ func chevronize*(s: string): string =
   ## Encloses the specified string between chevrons.
   concat(STRINGS_MINOR, s, STRINGS_MAJOR)
 
+func isEmpty*(s: string): bool =
+  ## Determines if the specified string is empty.
+  s.len == 0
+
+func areEmpty*(strings: varargs[string]): bool =
+  ## Determines if the specified strings are empty.
+  result = strings.len > 0
+  for s in strings:
+    result = result and isEmpty(s)
+
 func hasContent*(s: string): bool =
   ## Determines if the specified string is not empty.
   s.len > 0
@@ -65,6 +75,14 @@ func haveText*(strings: varargs[string]): bool =
   result = strings.len > 0
   for s in strings:
     result = result and hasText(s)
+
+func stripLeft*(s: string): string =
+  ## Strips leading whitespace characters from s and returns the resulting string.
+  s.strip(trailing = false)
+
+func stripRight*(s: string): string =
+  ## Strips trailing whitespace characters from s and returns the resulting string.
+  s.strip(leading = false)
 
 func leftCount*(s: string, sub: char): int =
   ## Count the occurrences of the character `sub` in the left size (head) of the string `s`.

@@ -10,12 +10,11 @@
 #       regular basis. Be wise and translate all the code
 #       you are testing for migration asap.
 
-from sugar import `=>`
-export `=>` ## ES6-like fat arrow functions
-
 include multiplatform_constants
 include multiplatform_operators
 include multiplatform_comments
 include multiplatform_introspection
 include multiplatform_shutdown
 include multiplatform_types
+include multiplatform_keywords
+include multiplatform_strings

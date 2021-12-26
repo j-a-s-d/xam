@@ -22,7 +22,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`bytes`](docs/bytes.md), *bytes related constants*
 * [`callbacks`](docs/callbacks.md), *common callback declarations*
 * [`chars`](docs/chars.md), *chars related constants*
-* [`time`](docs/time.md), *datetime related constants and routines*
+* [`time`](docs/time.md), *time related constants and routines*
 * [`exceptions`](docs/exceptions.md), *exceptions related routines*
 * [`files`](docs/files.md), *files related routines*
 * [`hex`](docs/hex.md), *hex related constants*
@@ -31,6 +31,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`looping`](docs/looping.md), *looping related routines*
 * [`maths`](docs/maths.md), *math related constants and routines*
 * [`multiplatform`](docs/multiplatform.md), *multiplatform aliases (only harmless ones)*
+* [`nimlang`](docs/nimlang.md), *nimlang related constants and routines*
 * [`semanticversion`](docs/semanticversion.md), *semantic version object*
 * [`seqs`](docs/seqs.md), *sequences related routines*
 * [`sizes`](docs/sizes.md), *sizes related constants and routines*
@@ -45,6 +46,16 @@ Also check my projects which use `xam` as a dependency:
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
 
 ## HISTORY
+* 26-12-21 *[1.6.0]*
+	- added `xam` noop, truthy and falsy dummy functions
+	- added `nimlang` constants and routines
+	- added `math` VALUE_TAU constant
+	- added `callbacks` void proc callback definitions
+	- added `seqs` append, isEmpty and hasContent routines
+	- added `strings` stripLeft, stripRight, isEmpty and areEmpty routines
+	- added `multiplatform` ruby-like unless template
+	- added `multiplatform` pyhton/boo/gdscript-like pass template
+	- added `multiplatform` some pascal/c#/js-like string manipulation templates
 * 28-08-21 *[1.5.0]*
 	- added `time` constants and routines
 	- added `chronometer` into `time`

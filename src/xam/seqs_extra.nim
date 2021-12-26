@@ -28,6 +28,19 @@ func remove*[T](a: var seq[T], s: openArray[T]) =
   for x in s:
     a.remove(x)
 
+func append*[T](a: var seq[T], b: openArray[T]) =
+  ## Appends the provided open array in the specified sequence.
+  for t in b:
+    insert(a, t, a.len)
+
+func isEmpty*[T](a: seq[T]): bool =
+  ## Determines if the specified sequence is empty.
+  a.len == 0
+
+func hasContent*[T](a: seq[T]): bool =
+  ## Determines if the specified sequence is not empty.
+  a.len > 0
+
 from callbacks import Treater
 
 func treat*[T](a: var seq[T], t: Treater[T]) =
