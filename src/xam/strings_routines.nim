@@ -2,7 +2,7 @@
 # ===
 # STRINGS ROUTINES
 
-from strutils import Digits, Letters, strip, find, rfind
+from strutils import Digits, Letters, strip, find, rfind, join
 
 {.push inline.}
 
@@ -185,3 +185,19 @@ proc csv*(strings: varargs[string], quoted: bool): string =
   ## Generates a CSV string with the provided strings and quoted values if specified.
   ## NOTE: a comma will be used as separator.
   csv(strings, ',', quoted)
+
+proc piped*(strings: varargs[string]): string =
+  ## Generates a string with the provided strings using a pipe ('|') as separator.
+  strings.join(STRINGS_PIPE)
+
+proc tabbed*(strings: varargs[string]): string =
+  ## Generates a string with the provided strings using a tab as separator.
+  strings.join(STRINGS_TAB)
+
+proc spaced*(strings: varargs[string]): string =
+  ## Generates a string with the provided strings using a space as separator.
+  strings.join(STRINGS_SPACE)
+
+proc lined*(strings: varargs[string]): string =
+  ## Generates a string with the provided strings using a pipe '|' as separator.
+  strings.join(STRINGS_EOL)

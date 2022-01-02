@@ -8,7 +8,7 @@ function RUN_TEST {
 cd tests
 RUN_TEST test_xam
 RUN_TEST test_xam_ansi
-RUN_TEST test_xam_datetime
+RUN_TEST test_xam_time
 RUN_TEST test_xam_exceptions
 RUN_TEST test_xam_files
 RUN_TEST test_xam_html

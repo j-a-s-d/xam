@@ -135,6 +135,25 @@ It's behaviour allows you to intercept values on assignment (ex. var x = debug g
 
 ## TEMPLATES
 
+### WITHIT
+
+**SIGNATURE**
+
+`template withIt(definition, code: untyped)`
+
+**DESCRIPTION**
+
+*This template treats as 'it' the specified definition in the specified code block.*
+
+**USAGE**
+
+```nim
+import strtabs
+withIt newStringTable():
+  it["city"] = "Monaco"
+  echo it # {city: Monaco}
+```
+
 ### INLINED
 
 **SIGNATURE**

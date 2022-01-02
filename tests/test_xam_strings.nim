@@ -112,6 +112,18 @@ suite "test xam strings":
 
   test "test csv":
     check(csv("abc", "def", "ghi") == "abc,def,ghi")
-    check(csv("abc", "def", "ghi", '|') == "abc|def|ghi")
+    check(csv("abc", "def", "ghi", '+') == "abc+def+ghi")
     check(csv("abc", "def", "ghi", true) == "\"abc\",\"def\",\"ghi\"")
     check(csv("abc", "def", "ghi", ';', true) == "\"abc\";\"def\";\"ghi\"")
+
+  test "test tabbed":
+    check(tabbed("abc", "def", "ghi") == "abc\tdef\tghi")
+
+  test "test piped":
+    check(piped("abc", "def", "ghi") == "abc|def|ghi")
+
+  test "test spaced":
+    check(spaced("abc", "def", "ghi") == "abc def ghi")
+
+  test "test lined":
+    check(lined("abc", "def", "ghi") == "abc\ndef\nghi")

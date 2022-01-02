@@ -44,8 +44,12 @@ Also check my projects which use `xam` as a dependency:
 
 * [`rodster`](https://github.com/j-a-s-d/rodster), my application framework for nim
 * [`webrod`](https://github.com/j-a-s-d/webrod), my http server for nim
+* [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 02-01-21 *[1.6.1]*
+	- added `xam` withIt template
+	- added `strings` piped, tabbed, spaced and lined routines
 * 26-12-21 *[1.6.0]*
 	- added `xam` noop, truthy and falsy dummy functions
 	- added `nimlang` constants and routines

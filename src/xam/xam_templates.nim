@@ -2,6 +2,11 @@
 # ===
 # USEFUL TEMPLATES
 
+template withIt(definition, code: untyped) {.used.} =
+  ## This template treats as 'it' the specified definition in the specified code block.
+  let it {.inject.} = definition
+  code
+
 template inlined*(procs: untyped) {.used.} =
   ## This template includes the push/pop pragmas for inline multiple procs.
   {.push inline.}
