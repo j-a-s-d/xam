@@ -47,6 +47,9 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 03-01-21 *[1.6.2]*
+	- added `xam` exchange template
+	- inlined `strings` piped, tabbed, spaced and lined routines
 * 02-01-21 *[1.6.1]*
 	- added `xam` withIt template
 	- added `strings` piped, tabbed, spaced and lined routines

@@ -135,6 +135,26 @@ It's behaviour allows you to intercept values on assignment (ex. var x = debug g
 
 ## TEMPLATES
 
+### EXCHANGE
+
+**SIGNATURE**
+
+`template exchange*[T](a, b: var T)`
+
+**DESCRIPTION**
+
+*This template exchanges the value of the two provided variables.*
+
+**USAGE**
+
+```nim
+var x = 0
+var y = 1
+exchange(x, y)
+if x == 1 and y == 0:
+  echo "exchanged!"
+```
+
 ### WITHIT
 
 **SIGNATURE**

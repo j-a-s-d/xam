@@ -2,8 +2,6 @@
 # ===
 # STRINGS ROUTINES
 
-from strutils import Digits, Letters, strip, find, rfind, join
-
 {.push inline.}
 
 func concat*(strings: varargs[string]): string =
@@ -64,26 +62,6 @@ func haveContent*(strings: varargs[string]): bool =
   for s in strings:
     result = result and hasContent(s)
 
-func hasText*(s: string): bool =
-  ## Determines if the specified string has text.
-  ## NOTE: white space is ignored.
-  strip(s).len > 0
-
-func haveText*(strings: varargs[string]): bool =
-  ## Determines if the specified strings have text.
-  ## NOTE: white space is ignored.
-  result = strings.len > 0
-  for s in strings:
-    result = result and hasText(s)
-
-func stripLeft*(s: string): string =
-  ## Strips leading whitespace characters from s and returns the resulting string.
-  s.strip(trailing = false)
-
-func stripRight*(s: string): string =
-  ## Strips trailing whitespace characters from s and returns the resulting string.
-  s.strip(leading = false)
-
 func leftCount*(s: string, sub: char): int =
   ## Count the occurrences of the character `sub` in the left size (head) of the string `s`.
   ## NOTE: specialized version of the strutils.count.
@@ -125,41 +103,6 @@ func dropBoth*(s: string, amount: int): string =
   else:
     STRINGS_EMPTY
 
-proc between*(s, start, ending: string, firstEnding: bool = false): string =
-  ## Returns the string contained between the specified start string
-  ## and the specified ending string, which can be the first match
-  ## of it if specified, otherwise is the last match by default.
-  ## NOTE: if matching fails, empty string an will be returned.
-  let sl = start.len()
-  let el = ending.len()
-  if sl > 0 and el > 0:
-    let st = s.find(start)
-    if st > -1:
-      let ss = st + sl
-      let en = if firstEnding: s.find(ending) else: s.rfind(ending)
-      if en > -1 and ss <= en:
-        result = s[ss..<en]
-
-{.pop.}
-
-proc isNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool =
-  ## Determines if the specified string is numeric.
-  ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
-  if s.len == 0 or s[0] notin Digits + leading:
-    return false
-  let legal = Digits + additional
-  for x in 1..s.len - 1:
-    if s[x] notin legal:
-      return false
-  return true
-
-proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool =
-  ## Determines if the specified string is alphanumeric.
-  ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
-  isNumericString(s, Letters + additional, leading)
-
-# CSV RELATED
-
 proc csv*(strings: varargs[string], separator: char, quoted: bool): string =
   ## Generates a CSV string with the provided strings, the specified separator char and with quoted values if specified.
   result = STRINGS_EMPTY
@@ -188,16 +131,80 @@ proc csv*(strings: varargs[string], quoted: bool): string =
 
 proc piped*(strings: varargs[string]): string =
   ## Generates a string with the provided strings using a pipe ('|') as separator.
-  strings.join(STRINGS_PIPE)
+  csv(strings, '|', false)
 
 proc tabbed*(strings: varargs[string]): string =
   ## Generates a string with the provided strings using a tab as separator.
-  strings.join(STRINGS_TAB)
+  csv(strings, '\t', false)
 
 proc spaced*(strings: varargs[string]): string =
   ## Generates a string with the provided strings using a space as separator.
-  strings.join(STRINGS_SPACE)
+  csv(strings, ' ', false)
 
 proc lined*(strings: varargs[string]): string =
   ## Generates a string with the provided strings using a pipe '|' as separator.
-  strings.join(STRINGS_EOL)
+  result = STRINGS_EMPTY
+  for s in strings:
+    if result != STRINGS_EMPTY:
+      result &= STRINGS_EOL
+    result &= s
+
+{.pop.}
+
+from strutils import find, rfind
+
+proc between*(s, start, ending: string, firstEnding: bool = false): string =
+  ## Returns the string contained between the specified start string
+  ## and the specified ending string, which can be the first match
+  ## of it if specified, otherwise is the last match by default.
+  ## NOTE: if matching fails, empty string an will be returned.
+  let sl = start.len()
+  let el = ending.len()
+  if sl > 0 and el > 0:
+    let st = s.find(start)
+    if st > -1:
+      let ss = st + sl
+      let en = if firstEnding: s.find(ending) else: s.rfind(ending)
+      if en > -1 and ss <= en:
+        result = s[ss..<en]
+
+from strutils import Digits, Letters
+
+proc isNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool =
+  ## Determines if the specified string is numeric.
+  ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
+  if s.len == 0 or s[0] notin Digits + leading:
+    return false
+  let legal = Digits + additional
+  for x in 1..s.len - 1:
+    if s[x] notin legal:
+      return false
+  return true
+
+proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[char] = {}): bool =
+  ## Determines if the specified string is alphanumeric.
+  ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
+  isNumericString(s, Letters + additional, leading)
+
+from strutils import strip
+
+func hasText*(s: string): bool =
+  ## Determines if the specified string has text.
+  ## NOTE: white space is ignored.
+  strip(s).len > 0
+
+func haveText*(strings: varargs[string]): bool =
+  ## Determines if the specified strings have text.
+  ## NOTE: white space is ignored.
+  result = strings.len > 0
+  for s in strings:
+    result = result and hasText(s)
+
+func stripLeft*(s: string): string =
+  ## Strips leading whitespace characters from s and returns the resulting string.
+  s.strip(trailing = false)
+
+func stripRight*(s: string): string =
+  ## Strips trailing whitespace characters from s and returns the resulting string.
+  s.strip(leading = false)
+

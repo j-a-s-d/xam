@@ -2,7 +2,13 @@
 # ===
 # USEFUL TEMPLATES
 
-template withIt(definition, code: untyped) {.used.} =
+template exchange*[T](a, b: var T) {.used.} =
+  ## This template exchanges the value of the two provided variables.
+  let tmp = a
+  a = b
+  b = tmp
+
+template withIt*(definition, code: untyped) {.used.} =
   ## This template treats as 'it' the specified definition in the specified code block.
   let it {.inject.} = definition
   code
