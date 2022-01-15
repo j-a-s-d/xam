@@ -34,7 +34,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`nimlang`](docs/nimlang.md), *nimlang related constants and routines*
 * [`semanticversion`](docs/semanticversion.md), *semantic version object*
 * [`seqs`](docs/seqs.md), *sequences related routines*
-* [`sets`](docs/sets.md), *sequences related routines*
+* [`set`](docs/set.md), *sequences related routines*
 * [`sizes`](docs/sizes.md), *sizes related constants and routines*
 * [`strings`](docs/strings.md), *strings related constants and routines*
 * [`temp`](docs/temp.md), *temporary files related constants and routines*
