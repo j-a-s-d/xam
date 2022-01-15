@@ -15,6 +15,8 @@ This is the documentation of the strings related constants and routines module o
 
 ### SYMBOLS
 
+- `const STRINGS_BACKTICK*: string`
+- `const STRINGS_DIAERESIS*: string`
 - `const STRINGS_EQUAL*: string`
 - `const STRINGS_NUMERAL*: string`
 - `const STRINGS_PIPE*: string`

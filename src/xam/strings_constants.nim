@@ -12,6 +12,8 @@ const
   STRINGS_SPACE*: string = " "
 
   # SYMBOLS
+  STRINGS_BACKTICK*: string = "`"
+  STRINGS_DIAERESIS*: string = "¨"
   STRINGS_EQUAL*: string = "="
   STRINGS_NUMERAL*: string = "#"
   STRINGS_PIPE*: string = "|"
