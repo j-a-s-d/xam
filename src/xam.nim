@@ -16,7 +16,7 @@ include xam/xam_reexports
 # VALUES RELATED CONSTANTS AND ROUTINES
 
 let
-  VERSION*: SemanticVersion = newSemanticVersion(1, 7, 0)
+  VERSION*: SemanticVersion = newSemanticVersion(1, 7, 1)
 
 var
   DEVELOPMENT*: bool = not defined(release) ## This is the development flag. False by default, except when "release" is not defined.

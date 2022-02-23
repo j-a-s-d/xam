@@ -4,6 +4,25 @@ This is the documentation of the semantic version object module of the Xam libra
 
 > this is inspired in the Java Ace Toolkit's SemanticVersion class following what is specified at http://semver.org/
 
+## ROUTINES
+
+### ISVALIDSEMANTICVERSIONSTRING
+
+**SIGNATURE**
+
+`func isValidSemanticVersionString(value: string): bool`
+
+**DESCRIPTION**
+
+*Determines if the passed string value is a valid semantic version value.*
+
+**USAGE**
+
+```nim
+  if isValidSemanticVersionString("1.2.3"):
+    echo "valid!"
+```
+
 ## TYPES
 
 ### SEMANTICVERSION

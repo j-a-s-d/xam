@@ -48,13 +48,15 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
-* 15-01-21 *[1.7.0]*
+* 23-01-22 *[1.7.1]*
+	- added `semanticversion` isValidSemanticVersionString routine
+* 15-01-22 *[1.7.0]*
 	- added `sets` common types definitions
 	- added `strings` STRINGS_BACKTICK and STRINGS_DIAERESIS constants
-* 03-01-21 *[1.6.2]*
+* 03-01-22 *[1.6.2]*
 	- added `xam` exchange template
 	- inlined `strings` piped, tabbed, spaced and lined routines
-* 02-01-21 *[1.6.1]*
+* 02-01-22 *[1.6.1]*
 	- added `xam` withIt template
 	- added `strings` piped, tabbed, spaced and lined routines
 * 26-12-21 *[1.6.0]*

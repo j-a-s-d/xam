@@ -6,7 +6,7 @@
 # following what is specified at http://semver.org/
 
 from strutils import split
-from strings import STRINGS_PERIOD
+from strings import STRINGS_PERIOD, isNumericString
 from maths import tryParseInt
 
 const
@@ -151,3 +151,9 @@ proc isPatchNewerThan*(sv: SemanticVersion, other: string): bool =
   ## Compares the semantic version against the provided version number and returns
   ## true if it is newer at patch level.
   sv.isLevelNewerThan(other, 2)
+
+func isValidSemanticVersionString*(value: string): bool =
+  ## Determines if the passed string value is a valid semantic version value.
+  let p = value.split(STRINGS_PERIOD)
+  p.len == 3 and isNumericString(p[0]) and isNumericString(p[1]) and isNumericString(p[2])
+

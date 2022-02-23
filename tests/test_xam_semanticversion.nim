@@ -6,6 +6,14 @@ import
 
 suite "test xam semanticversion":
 
+  test "test isValidSemanticVersionString":
+    check(isValidSemanticVersionString("1.2.3"))
+    check(not isValidSemanticVersionString("1.2"))
+    check(not isValidSemanticVersionString("1.2.3.4"))
+    check(not isValidSemanticVersionString("1,2,3"))
+    check(not isValidSemanticVersionString("blah"))
+    check(not isValidSemanticVersionString(""))
+
   test "test newSemanticVersion":
     check(newSemanticVersion() != nil)
     check(newSemanticVersion(1) != nil)
