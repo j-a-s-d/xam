@@ -76,3 +76,53 @@ This is the documentation of the files related routines module of the Xam librar
   if appendToFile("test.txt", "lorem ipsum"):
     echo "appended!"
 ```
+
+### REMOVEFILES
+
+**SIGNATURE**
+
+`proc removeFiles*(files: varargs[string])`
+
+**DESCRIPTION**
+
+*Removes the provided files.*
+
+**USAGE**
+
+```nim
+  removeFiles("file1.txt", "file2.txt")
+```
+
+### FILESEXIST
+
+**SIGNATURE**
+
+`proc filesExist*(files: varargs[string]): bool`
+
+**DESCRIPTION**
+
+*Checks if all of the provided files exist.*
+
+**USAGE**
+
+```nim
+  if filesExist("foo.txt", "bar.txt"):
+    echo "exist!"
+```
+
+### FILESDONTEXIST
+
+**SIGNATURE**
+
+`proc filesDontExist*(files: varargs[string]): bool`
+
+**DESCRIPTION**
+
+*Checks if all of the provided files do not exist.*
+
+**USAGE**
+
+```nim
+  if filesDontExist("foo.txt", "bar.txt"):
+    echo "dont exist!"
+```

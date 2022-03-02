@@ -2,7 +2,6 @@
 
 import
   unittest,
-  os,
   xam
 
 suite "test xam files":
@@ -26,9 +25,17 @@ suite "test xam files":
     check("hello world!" == content)
     check(appendToFile("test3.file", "hey!"))
 
-  # suite teardown
+  test "test filesExist":
+    check(filesExist())
+    check(filesExist("test.file"))
+    check(filesExist("test.file", "test2.file", "test3.file"))
+  
+  test "test removeFiles":
+    removeFiles("test.file", "test2.file", "test3.file")
 
-  "test.file".removeFile()
-  "test1.file".removeFile()
-  "test2.file".removeFile()
-  "test3.file".removeFile()
+  test "test filesDontExist":
+    check(filesDontExist())
+    check(filesDontExist("blah.txt"))
+    check(filesDontExist("foo.txt", "bar.txt"))
+    check(filesDontExist("test.file", "test2.file", "test3.file"))
+

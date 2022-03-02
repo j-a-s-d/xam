@@ -25,6 +25,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`time`](docs/time.md), *time related constants and routines*
 * [`exceptions`](docs/exceptions.md), *exceptions related routines*
 * [`files`](docs/files.md), *files related routines*
+* [`directories`](docs/directories.md), *directories related routines*
 * [`hex`](docs/hex.md), *hex related constants*
 * [`html`](docs/html.md), *html related constants and routines*
 * [`jsons`](docs/jsons.md), *json related constants and routines*
@@ -48,6 +49,9 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 02-03-22 *[1.7.2]*
+	- added `files` filesExist, filesDontExist and removeFiles routines
+	- added `directories` routines
 * 23-01-22 *[1.7.1]*
 	- added `semanticversion` isValidSemanticVersionString routine
 * 15-01-22 *[1.7.0]*

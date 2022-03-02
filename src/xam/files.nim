@@ -40,3 +40,22 @@ proc appendToFile*[T](filename: string, content: T): bool =
     fs.write(content)
     fs.close()
 
+from os import fileExists, removeFile
+
+proc filesExist*(files: varargs[string]): bool =
+  ## Checks if all of the provided files exist.
+  result = true
+  for file in files:
+    result = result and fileExists(file)
+
+proc filesDontExist*(files: varargs[string]): bool =
+  ## Checks if all of the provided files do not exist.
+  result = true
+  for file in files:
+    result = result and not fileExists(file)
+
+proc removeFiles*(files: varargs[string]) =
+  ## Removes the provided files.
+  for file in files:
+    removeFile(file)
+

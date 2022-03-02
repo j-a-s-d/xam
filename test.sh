@@ -11,6 +11,7 @@ RUN_TEST test_xam_ansi
 RUN_TEST test_xam_time
 RUN_TEST test_xam_exceptions
 RUN_TEST test_xam_files
+RUN_TEST test_xam_directories
 RUN_TEST test_xam_html
 RUN_TEST test_xam_jsons
 RUN_TEST test_xam_looping
