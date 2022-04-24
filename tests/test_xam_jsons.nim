@@ -51,6 +51,13 @@ suite "test xam json":
     check(arr2.kind == JArray)
     check(arr2.len == 3)
 
+  test "test ensureJsonNode":
+    let a = %* { "a": 1, "b": 2, "c": 3 }
+    check(ensureJObject(a).len == 3)
+    let b = ensureJsonNode(nil)
+    check(b != nil)
+    check(b == JSON_NULL)
+
   test "test ensureJObject":
     let a = %* { "a": 1, "b": 2, "c": 3 }
     check(ensureJObject(a).len == 3)
@@ -182,6 +189,27 @@ suite "test xam json":
     check(b.reset().len == 0)
     b.add("hello again!").clear()
     check(b.len == 0)
+    check(b == b.addAll())
+    check(b.len == 0)
+    check(b == b.addAll(newJString("hello"), newJInt(123)).addAll(newJBool(true), newJNull(), newJFloat(456.789)))
+    check(b.getAsPrettyString() == """[
+  "hello",
+  123,
+  true,
+  null,
+  456.789
+]""")
+    b.clear()
+    b.appendAll()
+    check(b.len == 0)
+    b.appendAll(newJString("hello"), newJInt(123), newJBool(true), newJNull(), newJFloat(456.789))
+    check(b.getAsPrettyString() == """[
+  "hello",
+  123,
+  true,
+  null,
+  456.789
+]""")
 
   test "test JObjectBuilder":
     let b = newJObjectBuilder()

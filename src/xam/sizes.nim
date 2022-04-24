@@ -4,8 +4,8 @@
 
 from strutils import split, toUpper
 
-import
-  maths, strings
+from chars import CHARS_PERIOD, CHARS_SPACE
+from maths import floatRound
 
 # ORDERS OF MAGNITUDE CONSTANTS
 
@@ -110,10 +110,9 @@ func formatByteSize*(bytes: SomeNumber, decimals: int = 2, space: bool = true, u
   ## (for example accepting SomeNumber instead of int64).
   let input = float bytes
   let unit = getUnitTupleBySize(input)
-  let rounded = $floatRound(input / unit.bytes, decimals)
-  let splitted = rounded.split({'.'})
-  concat(
-    if decimals == 0: splitted[0] else: splitted[0] & "." & splitted[1][0..decimals - 1],
-    if space: STRINGS_SPACE else: STRINGS_EMPTY,
-    if uppercase: unit.suffix.toUpper else: unit.suffix
-  )
+  template rounded: string = $floatRound(input / unit.bytes, decimals)
+  let splitted = rounded.split({CHARS_PERIOD})
+  template number: string = (if decimals == 0: splitted[0] else: splitted[0] & CHARS_PERIOD & splitted[1][0..decimals - 1])
+  template suffix: string = (if uppercase: unit.suffix.toUpper else: unit.suffix)
+  number & (if space: CHARS_SPACE & suffix else: suffix)
+

@@ -49,6 +49,10 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 24-03-22 *[1.7.3]*
+	- added `jsons` ensureJsonNode routine
+	- added `jsons` addAll and appendAll methods for JsonArrayBuilder supporting varags[JsonNode]
+	- improved `sizes` implementation
 * 02-03-22 *[1.7.2]*
 	- added `files` filesExist, filesDontExist and removeFiles routines
 	- added `directories` routines

@@ -28,9 +28,15 @@ proc getAsJsonNodeSequence*(builder: JArrayBuilder): seq[JsonNode] =
   ## Returns the array being built as a sequence of JsonNode items.
   builder.elements
 
+proc addAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]): JArrayBuilder =
+  ## Adds all the specified json nodes and returns the builder instance.
+  for node in nodes:
+    builder.elements.add(ensureJsonNode(node))
+  builder
+
 proc add*(builder: JArrayBuilder, node: JsonNode): JArrayBuilder =
   ## Adds the specified json node and returns the builder instance.
-  builder.elements.add(if node != nil: node else: newJNull())
+  builder.elements.add(ensureJsonNode(node))
   builder
 
 proc add*(builder: JArrayBuilder, value: bool): JArrayBuilder =
@@ -49,9 +55,14 @@ proc add*(builder: JArrayBuilder, value: string): JArrayBuilder =
   ## Adds the specified string value and returns the builder instance.
   builder.add(newJString(value))
 
+proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]) =
+  ## Adds all the specified json nodes to the array being built.
+  for node in nodes:
+    builder.elements.add(ensureJsonNode(node))
+
 proc append*(builder: JArrayBuilder, node: JsonNode) =
   ## Adds the specified json node to the array being built.
-  builder.elements.add(if node != nil: node else: newJNull())
+  builder.elements.add(ensureJsonNode(node))
 
 proc append*(builder: JArrayBuilder, value: bool) =
   ## Appends the specified boolean value to the array being built.

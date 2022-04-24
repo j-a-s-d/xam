@@ -41,6 +41,11 @@ proc wrapInJArray*(nodes: varargs[JsonNode]): JsonNode =
   for node in nodes:
     result.add(node)
 
+proc ensureJsonNode*(node: JsonNode): JsonNode =
+  ## If the provided json node is not nil, it is returned.
+  ## Otherwise a new json null is returned.
+  if node != nil: node else: newJNull()
+
 proc ensureJObject*(node: JsonNode): JsonNode =
   ## If the provided json node is a json object, it is returned.
   ## Otherwise a new json object is returned.
