@@ -141,6 +141,24 @@ This is the documentation of the json related constants and routines module of t
       echo "wrapped!"
 ```
 
+### ENSUREJSONNODE
+
+**SIGNATURE**
+
+`proc ensureJsonNode*(node: JsonNode): JsonNode`
+
+**DESCRIPTION**
+
+*If the provided json node is not nil, it is returned.*
+*Otherwise a new json null is returned.*
+
+**USAGE**
+
+```nim
+  if ensureJsonNode(%* { "a": 1, "b": 2, "c": 3 }).len == 3 and ensureJsonNode(nil) == newJNull():
+    echo "ensured!"
+```
+
 ### ENSUREJOBJECT
 
 **SIGNATURE**
@@ -584,6 +602,26 @@ This is the documentation of the json related constants and routines module of t
     echo "no items!"
 ```
 
+#### SIZE
+
+**SIGNATURE**
+
+`proc size*(builder: JArrayBuilder, length: var int): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Returns the current items count of the array being built and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  var l = 0
+  if b.size(l).len == 0:
+    if l == 0:
+      echo "no items!"
+```
+
 #### ADD (NODE)
 
 **SIGNATURE**
@@ -682,6 +720,24 @@ This is the documentation of the json related constants and routines module of t
   let b = newJArrayBuilder()
   if b.add("hello").len == 1:
     echo "added!"
+```
+
+#### ADDALL (VARARGS[JSONNODE])
+
+**SIGNATURE**
+
+`proc addAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Adds all the specified json nodes and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addAll(newJString("hello"), newJInt(123)).addAll(newJBool(true), newJNull(), newJFloat(456.789)).len == 5:
+    echo "added all!"
 ```
 
 #### APPEND (NODE)
@@ -787,6 +843,26 @@ This is the documentation of the json related constants and routines module of t
   b.append("hello")
   if b.len == 1:
     echo "appended!"
+```
+
+#### APPENDALL (VARARGS[JSONNODE])
+
+**SIGNATURE**
+
+`proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Appends all the specified json nodes to the array being built.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendAll(newJString("hello"), newJInt(123))
+  b.appendAll(newJBool(true), newJNull(), newJFloat(456.789))
+  if b.len == 5:
+    echo "appended all!"
 ```
 
 #### GETASJARRAY
@@ -963,6 +1039,26 @@ This is the documentation of the json related constants and routines module of t
   let b = newJObjectBuilder()
   if b.len == 0:
     echo "no items!"
+```
+
+#### SIZE
+
+**SIGNATURE**
+
+`proc size*(builder: JObjectBuilder, length: var int): JObjectBuilder`
+
+**DESCRIPTION**
+
+*Returns the current keys count of the object being built and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  var l = 0
+  if b.size(l).len == 0:
+    if l == 0:
+      echo "no items!"
 ```
 
 #### PUT (NODE)

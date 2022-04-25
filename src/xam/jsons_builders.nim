@@ -56,12 +56,12 @@ proc add*(builder: JArrayBuilder, value: string): JArrayBuilder =
   builder.add(newJString(value))
 
 proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]) =
-  ## Adds all the specified json nodes to the array being built.
+  ## Appends all the specified json nodes to the array being built.
   for node in nodes:
     builder.elements.add(ensureJsonNode(node))
 
 proc append*(builder: JArrayBuilder, node: JsonNode) =
-  ## Adds the specified json node to the array being built.
+  ## Appends the specified json node to the array being built.
   builder.elements.add(ensureJsonNode(node))
 
 proc append*(builder: JArrayBuilder, value: bool) =
@@ -89,6 +89,11 @@ proc reset*(builder: JArrayBuilder, other: JArrayBuilder = nil): JArrayBuilder =
   ## Resets the content of the builder by assigning the values of the
   ## specified json array builder instance (if any) and returns the builder instance.
   builder.elements = if other != nil: other.elements else: @[]
+  builder
+
+proc size*(builder: JArrayBuilder, length: var int): JArrayBuilder =
+  ## Returns the current items count of the array being built and returns the builder instance.
+  length = builder.elements.len
   builder
 
 proc len*(builder: JArrayBuilder): int =
@@ -194,6 +199,11 @@ proc reset*(builder: JObjectBuilder, other: JObjectBuilder = nil): JObjectBuilde
   ## Resets the content of the builder by assigning the value of the
   ## specified json object builder instance (if any) and returns the builder instance.
   builder.fields = if other != nil: other.fields else: initOrderedTable[string, JsonNode](2)
+  builder
+
+proc size*(builder: JObjectBuilder, length: var int): JObjectBuilder =
+  ## Returns the current keys count of the object being built and returns the builder instance.
+  length = builder.fields.len
   builder
 
 proc len*(builder: JObjectBuilder): int =

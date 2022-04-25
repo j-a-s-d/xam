@@ -210,6 +210,10 @@ suite "test xam json":
   null,
   456.789
 ]""")
+    var l: int = 0
+    check(b.size(l) == b)
+    check(l == 5)
+    check(b.len == 5)
 
   test "test JObjectBuilder":
     let b = newJObjectBuilder()
@@ -226,6 +230,10 @@ suite "test xam json":
   "test4": null,
   "test5": 456.789
 }""")
+    var l: int = 0
+    check(b.size(l) == b)
+    check(l == 5)
+    check(b.len == 5)
     var t = initOrderedTable[string, JsonNode]()
     t.add("test1", newJString("hello"))
     t.add("test2", newJInt(123))
