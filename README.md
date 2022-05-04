@@ -29,6 +29,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`hex`](docs/hex.md), *hex related constants*
 * [`html`](docs/html.md), *html related constants and routines*
 * [`jsons`](docs/jsons.md), *json related constants and routines*
+* [`languages`](docs/languages.md), *languages related constants*
 * [`looping`](docs/looping.md), *looping related routines*
 * [`maths`](docs/maths.md), *math related constants and routines*
 * [`multiplatform`](docs/multiplatform.md), *multiplatform aliases (only harmless ones)*
@@ -38,6 +39,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`set`](docs/set.md), *sequences related routines*
 * [`sizes`](docs/sizes.md), *sizes related constants and routines*
 * [`strings`](docs/strings.md), *strings related constants and routines*
+* [`structures`](docs/structures.md), *structures related routines*
 * [`temp`](docs/temp.md), *temporary files related constants and routines*
 
 ## RELATED
@@ -49,8 +51,11 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 04-05-22 *[1.8.0]*
+	- added `structures` routines
+	- added `languages` constants
 * 25-04-22 *[1.7.4]*
-	- added `jsons` size fluent methods to JsonArrayBuilder and JsonArrayBuilder
+	- added `jsons` size fluent methods to JsonArrayBuilder and JsonObjectBuilder
 * 24-04-22 *[1.7.3]*
 	- added `jsons` ensureJsonNode routine
 	- added `jsons` addAll and appendAll methods for JsonArrayBuilder supporting varargs[JsonNode]

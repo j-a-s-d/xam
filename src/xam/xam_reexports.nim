@@ -16,6 +16,7 @@ reexport_xam_module directories
 reexport_xam_module hex
 reexport_xam_module html
 reexport_xam_module jsons
+reexport_xam_module languages
 reexport_xam_module looping
 reexport_xam_module maths
 reexport_xam_module multiplatform
@@ -25,5 +26,6 @@ reexport_xam_module seqs
 reexport_xam_module set
 reexport_xam_module sizes
 reexport_xam_module strings
+reexport_xam_module structures
 reexport_xam_module temp
 

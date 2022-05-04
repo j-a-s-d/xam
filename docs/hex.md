@@ -8,7 +8,7 @@ This is the documentation of the hex related constants module of the Xam library
 
 - `const HEX_00*: string`
 ...
-- `const HEX_FF: string`
+- `const HEX_FF*: string`
 
 ### NAMESPACED LET
 
