@@ -39,3 +39,16 @@ suite "test xam files":
     check(filesDontExist("foo.txt", "bar.txt"))
     check(filesDontExist("test.file", "test2.file", "test3.file"))
 
+  test "test extractFileExtension":
+    check(extractFileExtension("test.nim") == ".nim")
+    check(extractFileExtension("test.") == ".")
+    check(extractFileExtension("test") == "")
+    check(extractFileExtension(".") == "")
+    check(extractFileExtension("") == "")
+
+  test "test checkFileExtension":
+    check(checkFileExtension("test.nim", ".nim"))
+    check(checkFileExtension("test.xyz.nim", ".nim"))
+    check(not checkFileExtension("test", ".nim"))
+
+

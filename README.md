@@ -51,6 +51,9 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 17-05-22 *[1.8.1]*
+	- added `files` extractFileExtension and checkFileExtension routines
+	- added `directories` ensureDir routine
 * 04-05-22 *[1.8.0]*
 	- added `structures` routines
 	- added `languages` constants

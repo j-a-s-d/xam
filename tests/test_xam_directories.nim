@@ -26,6 +26,10 @@ suite "test xam directories":
     check(not dirsDontExist("foo"))
     check(dirsDontExist("test", "test2", "test3"))
 
+  test "test ensureDir":
+    check(ensureDir("bar"))
+    check(not ensureDir(""))
+
   removeDir("foo")
   removeDir("bar")
 

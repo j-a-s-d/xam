@@ -53,3 +53,22 @@ This is the documentation of the directories related routines module of the Xam 
   if dirsDontExist("foo", "bar"):
     echo "dont exist!"
 ```
+
+### ENSUREDIR
+
+**SIGNATURE**
+
+`proc ensureDir*(directoryName: string): bool`
+
+**DESCRIPTION**
+
+*If the provided directory name does not exist it tries to create it and returns true if finally the directory exists.*
+
+*NOTE: this is an alternative (with a different implementation) for existsOrCreateDir.*
+
+**USAGE**
+
+```nim
+  if ensureDir("bar"):
+    echo "ensured!"
+```

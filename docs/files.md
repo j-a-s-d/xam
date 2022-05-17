@@ -126,3 +126,37 @@ This is the documentation of the files related routines module of the Xam librar
   if filesDontExist("foo.txt", "bar.txt"):
     echo "dont exist!"
 ```
+
+### EXTRACTFILEEXTENSION
+
+**SIGNATURE**
+
+`func extractFileExtension*(fileName: string): string`
+
+**DESCRIPTION**
+
+*Returns the file extension part of the provided file name if any. Otherwise it returns an empty string.*
+
+**USAGE**
+
+```nim
+  if extractFileExtension("file.nim") == ".nim":
+    echo "extracted!"
+```
+
+### CHECKFILEEXTENSION
+
+**SIGNATURE**
+
+`func checkFileExtension*(fileName, fileExtension: string): bool`
+
+**DESCRIPTION**
+
+*Determines if the provided file name has the specified file extension.*
+
+**USAGE**
+
+```nim
+  if checkFileExtension("file.nim", ".nim"):
+    echo "extracted!"
+```
