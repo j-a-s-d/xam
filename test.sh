@@ -18,7 +18,7 @@ RUN_TEST test_xam_looping
 RUN_TEST test_xam_maths
 RUN_TEST test_xam_nimlang
 RUN_TEST test_xam_semanticversion
-RUN_TEST test_xam_sets
+RUN_TEST test_xam_set
 RUN_TEST test_xam_seqs
 RUN_TEST test_xam_sizes
 RUN_TEST test_xam_strings

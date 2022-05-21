@@ -122,9 +122,7 @@ This is the documentation of the chars related constants module of the Xam libra
 - `const CHARS_LOWERCASE_Y*: char`
 - `const CHARS_LOWERCASE_Z*: char`
 
-### NAMESPACED LET
+### NAMESPACED CONST
 
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `CHARS`.
+The preceding constants are also grouped into a "namespaced" constant under the name of `CHARS`.
 So you can use `CHARS.TAB` as value equivalent to `CHARS_TAB`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".

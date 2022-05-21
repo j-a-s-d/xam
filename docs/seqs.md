@@ -29,6 +29,11 @@ This is the documentation of the sequences related routines module of the Xam li
 - `type CIntSeq* = seq[cint]`
 - `type CFloatSeq* = seq[cfloat]`
 
+### OTHER COMMON DEFINITIONS
+
+- `type DateTimeSeq* = seq[DateTime]`
+- `type JsonNodeSeq* = seq[JsonNode]`
+
 ## JS STACK-LIKE GENERIC SEQUENCE DEFINITION
 
 - `type stack*[T] = seq[T]`
@@ -59,6 +64,11 @@ This is the documentation of the sequences related routines module of the Xam li
 - `proc newCUintSeq*(values: varargs[cuint]): CUIntSeq`
 - `proc newCIntSeq*(values: varargs[cint]): CIntSeq`
 - `proc newCFloatSeq*(values: varargs[cfloat]): CFloatSeq`
+
+### OTHER SEQUENCE CONSTRUCTORS
+
+- `proc newDateTimeSeq*(values: varargs[DateTime]): DateTimeSeq`
+- `proc newJsonNodeSeq*(values: varargs[JsonNode]): JsonNodeSeq`
 
 ### CSV RELATED ROUTINES
 

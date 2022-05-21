@@ -279,7 +279,7 @@ const
     HEX_F0, HEX_F1, HEX_F2, HEX_F3, HEX_F4, HEX_F5, HEX_F6, HEX_F7, HEX_F8, HEX_F9, HEX_FA, HEX_FB, HEX_FC, HEX_FD, HEX_FE, HEX_FF
   ]
 
-let
+const
   HEX*: tuple = (
     X00: HEX_00,
     X01: HEX_01,

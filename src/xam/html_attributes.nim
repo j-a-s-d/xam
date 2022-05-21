@@ -184,7 +184,7 @@ const
   HTML_ATTRIBUTES_BORDER* = "border" # Not supported in HTML 5. | Specifies the width of the border of an element. Use CSS instead
   HTML_ATTRIBUTES_COLOR* = "color" # Not supported in HTML 5. | Specifies the text color of an element. Use CSS instead
 
-let
+const
   HTML_ATTRIBUTES*: tuple = (
     ACCESSKEY: HTML_ATTRIBUTES_ACCESSKEY,
     CLASS: HTML_ATTRIBUTES_CLASS,

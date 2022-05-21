@@ -182,12 +182,10 @@ This is the documentation of the html related constants and routines module of t
 - `const HTML_ATTRIBUTES_BORDER*: string`
 - `const HTML_ATTRIBUTES_COLOR*: string`
 
-### NAMESPACED LET
+### NAMESPACED CONST
 
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `HTML_ATTRIBUTES`.
+The preceding constants are also grouped into a "namespaced" constant under the name of `HTML_ATTRIBUTES`.
 So you can use `HTML_ATTRIBUTES.ALIGN` as value equivalent to `HTML_ATTRIBUTES_ALIGN`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ## HTML COLOURS CONSTANTS
 
@@ -331,12 +329,10 @@ So you can use `HTML_ATTRIBUTES.ALIGN` as value equivalent to `HTML_ATTRIBUTES_A
 - `const HTML_COLORS_WHITE_SMOKE*: string`
 - `const HTML_COLORS_WHITE*: string`
 
-### NAMESPACED LET
+### NAMESPACED CONST
 
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `HTML_COLORS`.
+The preceding constants are also grouped into a "namespaced" constant under the name of `HTML_COLORS`.
 So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ## HTML TAGS CONSTANTS
 
@@ -459,12 +455,10 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_VIDEO*: string`
 - `const HTML_TAGS_WBR*: string`
 
-### NAMESPACED LET
+### NAMESPACED CONST
 
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `HTML_TAGS`.
+The preceding constants are also grouped into a "namespaced" constant under the name of `HTML_TAGS`.
 So you can use `HTML_TAGS.A` as value equivalent to `HTML_TAGS_A`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ## TYPES
 

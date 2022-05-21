@@ -123,7 +123,7 @@ const
   STRINGS_LOWERCASE_Y*: string = "y"
   STRINGS_LOWERCASE_Z*: string = "z"
 
-let
+const
   STRINGS*: tuple = (
     EMPTY: STRINGS_EMPTY,
     EOL: STRINGS_EOL,

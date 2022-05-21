@@ -2,8 +2,6 @@
 # ===
 # CALLBACK DEFINITIONS
 
-from json import JsonNode
-
 type
   # VOID PROC CALLBACK DEFINITIONS
   NoArgsVoidProc* = proc ()
@@ -99,7 +97,12 @@ type
   #CIntArrayFunc*[R, T] = proc (parameter: array[R, cint]): T {.noSideEffect.}
   #CFloatArrayFunc*[R, T] = proc (parameter: array[R, cfloat]): T {.noSideEffect.}
 
+from json import JsonNode
+from times import DateTime
+
+type
   # OTHER CALLBACK DEFINITIONS
   JsonNodeFunc*[T] = proc (parameter: JsonNode): T {.noSideEffect.}
+  DateTimeFunc*[T] = proc (parameter: DateTime): T {.noSideEffect.}
   Taker*[T] = NoArgsProc[T] # func (): T
   Treater*[T] = SingleArgProc[T, T] # func (param: T): T

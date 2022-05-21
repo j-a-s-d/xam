@@ -7,13 +7,6 @@ This is the documentation of the temporary files related constants and routines 
 - `const TMP_EXTENSION*: string`
 - `let TMP_DIRECTORY*: string`
 
-### NAMESPACED LET
-
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `TMP`.
-So you can use `TMP.EXTENSION` as value equivalent to `TMP_EXTENSION`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
-
 ## ROUTINES
 
 ### GETNEWTEMPFILENAME

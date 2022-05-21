@@ -40,7 +40,7 @@ const
   ANSI_BG_BRIGHT_CYAN*: string = "\e[106m"
   ANSI_BG_BRIGHT_WHITE*: string = "\e[107m"
 
-let
+const
   ANSI*: tuple = (
     RESET: ANSI_RESET,
     BOLD: ANSI_BOLD,

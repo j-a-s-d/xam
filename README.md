@@ -51,6 +51,13 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 21-05-22 *[1.9.0]*
+	- added `seqs` date time and json node sequences definitions and constructors
+	- added `callbacks` date time callback definition
+	- changed "namespaced let code" constants to "namespaced regular const" to allow optionally declaration (ex. let ALL_HTML_COLORS*: tuple = HTML_COLORS) of the let
+	- added `multiplatform` delphi/cppbuilder/fpc-like FreeAndNil alias
+	- added `multiplatform` c/cpp/etc-like argc arguments count and argc arguments vector alias
+	- added `multiplatform` c#/javascript/swift/powershell/etc-like null coalescing operator
 * 17-05-22 *[1.8.1]*
 	- added `files` extractFileExtension and checkFileExtension routines
 	- added `directories` ensureDir routine

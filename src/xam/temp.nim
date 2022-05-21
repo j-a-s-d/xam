@@ -8,12 +8,6 @@ const TMP_EXTENSION*: string = ".tmp"
 
 let TMP_DIRECTORY*: string = getTempDir()
 
-let
-  TMP*: tuple = (
-    EXTENSION: TMP_EXTENSION,
-    DIRECTORY: TMP_DIRECTORY
-  )
-
 proc getNewTempFilename*(directory: string = ""): string =
   ## Returns an string containing a new temporary filename available in the
   ## specified directory (if none is specified, TMP.DIRECTORY will be used).

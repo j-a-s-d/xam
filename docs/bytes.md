@@ -10,12 +10,10 @@ This is the documentation of the bytes related constants module of the Xam libra
 ...
 - `const BYTES_FF: uint8`
 
-### NAMESPACED LET
+### NAMESPACED CONST
 
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `BYTES`.
+The preceding constants are also grouped into a "namespaced" constant under the name of `BYTES`.
 So you can use `BYTES.X00` as value equivalent to `BYTES_00`, and so on. Note an X is preceding the byte numbers.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
 
 ### BYTES SEQUENCES
 

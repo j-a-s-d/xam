@@ -143,7 +143,7 @@ const
   HTML_COLORS_WHITE_SMOKE*: string = "#F5F5F5"
   HTML_COLORS_WHITE*: string = "#FFFFFF"
 
-let
+const
   HTML_COLORS*: tuple = (
     MAROON: HTML_COLORS_MAROON,
     DARK_RED: HTML_COLORS_DARK_RED,

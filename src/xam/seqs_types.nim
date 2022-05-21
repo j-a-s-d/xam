@@ -51,3 +51,16 @@ proc newCCharSeq*(values: varargs[cchar]): CCharSeq = (result = @[]; for v in va
 proc newCUintSeq*(values: varargs[cuint]): CUIntSeq = (result = @[]; for v in values: result.add v)
 proc newCIntSeq*(values: varargs[cint]): CIntSeq = (result = @[]; for v in values: result.add v)
 proc newCFloatSeq*(values: varargs[cfloat]): CFloatSeq = (result = @[]; for v in values: result.add v)
+
+from json import JsonNode
+from times import DateTime
+
+type
+  # OTHER SEQUENCE DEFINITIONS
+  JsonNodeSeq* = seq[JsonNode]
+  DateTimeSeq* = seq[DateTime]
+
+# OTHER SEQUENCE CONSTRUCTORS
+
+proc newJsonNodeSeq*(values: varargs[JsonNode]): JsonNodeSeq = (result = @[]; for v in values: result.add v)
+proc newDateTimeSeq*(values: varargs[DateTime]): DateTimeSeq = (result = @[]; for v in values: result.add v)

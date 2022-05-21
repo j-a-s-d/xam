@@ -5,7 +5,7 @@ import
   sets,
   xam
 
-suite "test xam sets":
+suite "test xam set":
 
   test "test concrete-type hash set constructor":
     check(newStringHashSet() == toHashSet[string]([]))

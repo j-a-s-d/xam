@@ -117,7 +117,7 @@ const
   CHARS_LOWERCASE_Y*: char = 'y'
   CHARS_LOWERCASE_Z*: char = 'z'
 
-let
+const
   CHARS*: tuple = (
     TAB: CHARS_TAB,
     LF: CHARS_LF,

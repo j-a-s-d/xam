@@ -59,7 +59,7 @@ const
   #SIZES_ZBYTE_UNIT*: SizesFloatUnit = (bytes: float SIZES_ZETTABYTE, suffix: SIZES_ZETTABYTE_UNIT)
   #SIZES_YBYTE_UNIT*: SizesFloatUnit = (bytes: float SIZES_YOTTABYTE, suffix: SIZES_YOTTABYTE_UNIT)
 
-let
+const
   SIZES*: tuple = (
     BIT: SIZES_BIT,
     PAIR: SIZES_PAIR,

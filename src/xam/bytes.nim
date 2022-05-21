@@ -400,7 +400,7 @@ const
     BYTES_F8, BYTES_F9, BYTES_FA, BYTES_FB, BYTES_FC, BYTES_FD, BYTES_FE, BYTES_FF
   ]
 
-let
+const
   BYTES*: tuple = (
     X00: BYTES_00,
     X01: BYTES_01,

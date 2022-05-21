@@ -184,7 +184,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 `proc halt*(errorCode: int = EXIT_SUCCESS)`
 
 *Exits with the specified error code (omittion defaults to 0).*
-  
+
 *NOTE: inspired in Pascal's one.*
 
 ### PASCAL-LIKE EXIT
@@ -361,6 +361,18 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 *C/Pascal/Basic-like string concatenation*
 
+### C/JAVASCRIPT/SWIFT/POWERSHELL-LIKE NULL COALESCING OPERATOR
+
+**SIGNATURE**
+
+`template `??`*[T](left: T, right: T): T {.used.}`
+
+**DESCRIPTION**
+
+*C#/Javascript/Swift/PowerShell/etc-like null coalescing operator*
+
+*NOTE: same approach as in https://github.com/piedar/coalesce*
+
 ## COMMENTS
 
 > see https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Inline_comments
@@ -421,8 +433,8 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template pass* = discard`
-`template pass*(something: untyped = nil): untyped`
+`template pass* {.used.}`
+`template pass*(something: untyped = nil): untyped {.used.}`
 
 **DESCRIPTION**
 
@@ -432,7 +444,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template unless*(expr, body: untyped): untyped`
+`template unless*(expr, body: untyped): untyped {.used.}`
 
 **DESCRIPTION**
 
@@ -444,7 +456,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template length*(s: string): int`
+`template length*(s: string): int {.used.}`
 
 **DESCRIPTION**
 
@@ -454,7 +466,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template pos*(s, sub: string, offset: int = 0): int`
+`template pos*(s, sub: string, offset: int = 0): int {.used.}`
 
 **DESCRIPTION**
 
@@ -464,7 +476,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template indexOf*(s, sub: string, fromIndex: int = 0): int`
+`template indexOf*(s, sub: string, fromIndex: int = 0): int {.used.}`
 
 **DESCRIPTION**
 
@@ -474,7 +486,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trim*(s: string): string`
+`template trim*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
@@ -484,7 +496,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trimLeft*(s: string): string`
+`template trimLeft*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
@@ -494,7 +506,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trimRight*(s: string): string`
+`template trimRight*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
@@ -504,7 +516,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trimStart*(s: string): string`
+`template trimStart*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
@@ -514,8 +526,44 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trimEnd*(s: string): string`
+`template trimEnd*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
 *C#/Javascript/etc-like trimEnd alias*
+
+### MEMORY
+
+### DELPHI/CPPBUILDER/FPC-LIKE FREEANDNIL
+
+**SIGNATURE**
+
+`template freeAndNil*[T](obj: var T) {.used.}`
+
+**DESCRIPTION**
+
+*Delphi/CppBuilder/FPC-like FreeAndNil alias*
+
+### ARGUMENTS
+
+### C/CPP-LIKE ARGC
+
+**SIGNATURE**
+
+`template argc*: int {.used.}`
+
+**DESCRIPTION**
+
+*C/CPP/etc-like argc arguments count alias*
+
+### C/CPP-LIKE ARGV
+
+**SIGNATURE**
+
+`type TArgv = ref object`
+`let argv* {.used.}: TArgv = nil`
+`template `[]`*(a: TArgv, i: int): string {.used.}`
+
+**DESCRIPTION**
+
+*C/CPP/etc-like argc arguments vector alias*

@@ -193,13 +193,6 @@ This is the documentation of the time related constants and routines module of t
 - `const DATETIME_FORMAT_DDMMYYYY*: string`
 - `const DATETIME_FORMAT_YYYYMMDD*: string`
 
-### NAMESPACED LET
-
-The preceding constants are also grouped into a "let namespaced code constant" under the name of `DATETIME`.
-So you can use `DATETIME.FORMAT_DDMMYYYY` as value equivalent to `DATETIME_FORMAT_DDMMYYYY`, and so on.
-
-> REMEMBER: `let` introduces a variable that can not be re-assigned, `const` means "enforce compile time evaluation and put it into a data section".
-
 ## ROUTINES
 
 ### GETLISTOFDAYSBETWEEN

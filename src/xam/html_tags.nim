@@ -122,7 +122,7 @@ const
   HTML_TAGS_VIDEO* = "video"
   HTML_TAGS_WBR* = "wbr"
 
-let
+const
   HTML_TAGS*: tuple = (
     A: HTML_TAGS_A,
     ABBR: HTML_TAGS_ABBR,

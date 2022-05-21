@@ -18,3 +18,5 @@ include multiplatform_shutdown
 include multiplatform_types
 include multiplatform_keywords
 include multiplatform_strings
+include multiplatform_memory
+include multiplatform_arguments

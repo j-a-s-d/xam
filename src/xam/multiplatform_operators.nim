@@ -35,3 +35,11 @@ template `!`*(a: bool): bool {.used.} =
 template `+`*(x, y: string): string {.used.} =
   ## C/Pascal/Basic-like string concatenation
   x & y
+
+template `??`*[T](a, b: T): T {.used.} =
+  ## C#/Javascript/Swift/PowerShell/etc-like null coalescing operator
+  ## NOTE: same approach as in https://github.com/piedar/coalesce
+  when not compiles(isNil(a)):
+    a
+  else:
+    if not isNil(a): a else: b

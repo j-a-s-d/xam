@@ -1,6 +1,8 @@
 # xam by Javier Santo Domingo (j-a-s-d@coderesearchlabs.com)
 
 import
+  json,
+  times,
   unittest,
   xam
 
@@ -150,6 +152,14 @@ suite "test xam seqs":
   test "test concrete-type constructor":
     check(newStringSeq() == newSeq[string]())
     check(newStringSeq("a", "b", "c") == @["a", "b", "c"])
+
+  test "test other-types constructor":
+    check(newJsonNodeSeq() == newSeq[JsonNode]())
+    let node: JsonNode = %* { "a": "blah", "b": true, "c": 123 }
+    check(newJsonNodeSeq(node) == @[node])
+    check(newDateTimeSeq() == newSeq[DateTime]())
+    let now: DateTime = now()
+    check(newDateTimeSeq(now) == @[now])
 
   test "test treat":
     let increment: Treater[uint8] = proc (p: uint8): uint8 = p + 1
