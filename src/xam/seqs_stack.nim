@@ -11,7 +11,7 @@ proc push*[T](c: var seq[T], value: T) =
   ## Adds the provided value at the end of the sequence.
   c.add(value)
 
-proc peek*[T](c: var seq[T], default: T): T =
+proc peek*[T](c: seq[T], default: T): T =
   ## Returns the value of the last item of the sequence
   ## returning the default provided value in case of an empty sequence.
   if c.len() == 0: default else: c[^1]
@@ -24,7 +24,7 @@ proc pop*[T](c: var seq[T], default: T): T =
   result = c[^1]
   c.setLen(c.len() - 1)
 
-proc slice*[T](c: var seq[T], index: int = 0): seq[T] =
+proc slice*[T](c: seq[T], index: int = 0): seq[T] =
   ## Returns a copy of the sequence segment
   ## starting at the optionally specified index.
   let cln = c.len()
@@ -33,7 +33,7 @@ proc slice*[T](c: var seq[T], index: int = 0): seq[T] =
     return @[]
   c[st..^1]
 
-proc slice*[T](c: var seq[T], index: int, last: int): seq[T] =
+proc slice*[T](c: seq[T], index: int, last: int): seq[T] =
   ## Returns a copy of the sequence segment starting at the specified index
   ## and ending at an also defined index.
   let cln = c.len()

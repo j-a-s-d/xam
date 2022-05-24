@@ -2,6 +2,9 @@
 # ===
 # EXCEPTIONS RELATED ROUTINES
 
+type
+  ExceptionRef* = ref Exception
+
 from callbacks import NoArgsProc, SingleArgProc
 
 {.push inline.}

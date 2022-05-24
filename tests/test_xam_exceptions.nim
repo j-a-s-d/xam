@@ -26,7 +26,7 @@ suite "test xam exceptions":
     check(msg == "Blah")
 
   test "test catch":
-    var err: ref Exception
+    var err: ExceptionRef
     catch(failure, err)
     check(err != nil)
     check(err.msg == "Blah")

@@ -51,6 +51,9 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 24-05-22 *[1.9.1]*
+	- added `exceptions` ExceptionRef type
+	- changed `seqs` peek and slice methods not to require a var sequence to operate
 * 21-05-22 *[1.9.0]*
 	- added `seqs` date time and json node sequences definitions and constructors
 	- added `callbacks` date time callback definition

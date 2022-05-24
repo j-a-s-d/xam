@@ -181,7 +181,7 @@ This is the documentation of the sequences related routines module of the Xam li
 
 **SIGNATURE**
 
-`proc peek*[T](c: var stack[T], default: T): T`
+`proc peek*[T](c: stack[T], default: T): T`
 
 **DESCRIPTION**
 
@@ -222,7 +222,7 @@ This is the documentation of the sequences related routines module of the Xam li
 
 **SIGNATURE**
 
-`proc slice*[T](c: var stack[T], index: int = 0): seq[T]`
+`proc slice*[T](c: stack[T], index: int = 0): seq[T]`
 
 **DESCRIPTION**
 
@@ -252,7 +252,7 @@ This is the documentation of the sequences related routines module of the Xam li
 
 **SIGNATURE**
 
-`proc slice*[T](c: var stack[T], index: int, last: int): seq[T]`
+`proc slice*[T](c: stack[T], index: int, last: int): seq[T]`
 
 **DESCRIPTION**
 
