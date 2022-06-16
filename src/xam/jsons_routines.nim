@@ -41,6 +41,34 @@ proc wrapInJArray*(nodes: varargs[JsonNode]): JsonNode =
   for node in nodes:
     result.add(node)
 
+proc wrapInJArray*(value: bool, values: varargs[bool]): JsonNode =
+  ## Wraps the provided boolean values in a json array.
+  result = newJArray()
+  result.add(newJBool(value))
+  for v in values:
+    result.add(newJBool(v))
+
+proc wrapInJArray*(value: BiggestInt, values: varargs[BiggestInt]): JsonNode =
+  ## Wraps the provided integer values in a json array.
+  result = newJArray()
+  result.add(newJInt(value))
+  for v in values:
+    result.add(newJInt(v))
+
+proc wrapInJArray*(value: float, values: varargs[float]): JsonNode =
+  ## Wraps the provided float values in a json array.
+  result = newJArray()
+  result.add(newJFloat(value))
+  for v in values:
+    result.add(newJFloat(v))
+
+proc wrapInJArray*(value: string, values: varargs[string]): JsonNode =
+  ## Wraps the provided string values in a json array.
+  result = newJArray()
+  result.add(newJString(value))
+  for v in values:
+    result.add(newJString(v))
+
 proc ensureJsonNode*(node: JsonNode): JsonNode =
   ## If the provided json node is not nil, it is returned.
   ## Otherwise a new json null is returned.

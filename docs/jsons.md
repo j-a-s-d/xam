@@ -141,6 +141,78 @@ This is the documentation of the json related constants and routines module of t
       echo "wrapped!"
 ```
 
+### WRAPINJARRAY
+
+**SIGNATURE**
+
+`proc wrapInJArray*(value: bool, values: varargs[bool]): JsonNode {.inline.}`
+
+**DESCRIPTION**
+
+*Wraps the provided boolean values in a json array.*
+
+**USAGE**
+
+```nim
+    var arr = wrapInJArray(true, false, true)
+    if arr.len == 3:
+      echo "wrapped!"
+```
+
+### WRAPINJARRAY
+
+**SIGNATURE**
+
+`proc wrapInJArray*(value: BiggestInt, values: varargs[BiggestInt]): JsonNode {.inline.}`
+
+**DESCRIPTION**
+
+*Wraps the provided integer values in a json array.*
+
+**USAGE**
+
+```nim
+    var arr = wrapInJArray(1, 2, 3)
+    if arr.len == 3:
+      echo "wrapped!"
+```
+
+### WRAPINJARRAY
+
+**SIGNATURE**
+
+`proc wrapInJArray*(value: float, values: varargs[float]): JsonNode {.inline.}`
+
+**DESCRIPTION**
+
+*Wraps the provided float values in a json array.*
+
+**USAGE**
+
+```nim
+    var arr = wrapInJArray(1.1, 2.2, 3.3)
+    if arr.len == 3:
+      echo "wrapped!"
+```
+
+### WRAPINJARRAY
+
+**SIGNATURE**
+
+`proc wrapInJArray*(value: string, values: varargs[string]): JsonNode {.inline.}`
+
+**DESCRIPTION**
+
+*Wraps the provided string values in a json array.*
+
+**USAGE**
+
+```nim
+    var arr = wrapInJArray("blah1", "blah2", "blah3")
+    if arr.len == 3:
+      echo "wrapped!"
+```
+
 ### ENSUREJSONNODE
 
 **SIGNATURE**
@@ -527,7 +599,25 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`proc newJArrayBuilder*(other: JArrayBuilder = nil): JArrayBuilder`
+`proc newJArrayBuilder*(): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Default JArrayBuilder constructor.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### NEWJARRAYBUILDER
+
+**SIGNATURE**
+
+`proc newJArrayBuilder*(other: JArrayBuilder): JArrayBuilder`
 
 **DESCRIPTION**
 
@@ -537,6 +627,24 @@ This is the documentation of the json related constants and routines module of t
 
 ```nim
   let b = newJArrayBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### NEWJARRAYBUILDER
+
+**SIGNATURE**
+
+`proc newJArrayBuilder*(arr: JsonNode): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Constructor accepting a json array instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder(%* [1, 2])
   if b != nil:
     echo "created!"
 ```
@@ -740,6 +848,98 @@ This is the documentation of the json related constants and routines module of t
     echo "added all!"
 ```
 
+#### ADDALL (BOOLEAN)
+
+**SIGNATURE**
+
+`proc addAll*(builder: JArrayBuilder, value: bool, values: varargs[bool]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Adds all the specified boolean values and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addAll(true).addAll(false, true, false, true).len == 5:
+    echo "added all!"
+```
+
+#### ADDALL (INTEGER)
+
+**SIGNATURE**
+
+`proc addAll*(builder: JArrayBuilder, value: BiggestInt, values: varargs[BiggestInt]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Adds all the specified integer values and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addAll(0).addAll(1, 2, 3, 4).len == 5:
+    echo "added all!"
+```
+
+#### ADDALL (FLOAT)
+
+**SIGNATURE**
+
+`proc addAll*(builder: JArrayBuilder, value: float, values: varargs[float]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Adds all the specified float values and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addAll(0.0).addAll(1.1, 2.2, 3.3, 4.4).len == 5:
+    echo "added all!"
+```
+
+#### ADDALL (STRING)
+
+**SIGNATURE**
+
+`proc addAll*(builder: JArrayBuilder, value: string, values: varargs[string]): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Adds all the specified string values and returns the builder instance.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addAll("foo").addAll("bar", "baz", "hello", "world").len == 5:
+    echo "added all!"
+```
+
+#### ADDVALUES
+
+**SIGNATURE**
+
+`proc addValues*(builder: JArrayBuilder, node: JsonNode): JArrayBuilder`
+
+**DESCRIPTION**
+
+*Add the values of the provided json array into the builder and returns the builder instance.*
+
+*NOTE: if the provided node is not a valid json array it does nothing.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  if b.addValues(%* ["foo", 1]).addValues(%* [true, 0.123]).len == 4:
+    echo "added all!"
+```
+
 #### APPEND (NODE)
 
 **SIGNATURE**
@@ -849,7 +1049,7 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]): JArrayBuilder`
+`proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode])`
 
 **DESCRIPTION**
 
@@ -862,6 +1062,107 @@ This is the documentation of the json related constants and routines module of t
   b.appendAll(newJString("hello"), newJInt(123))
   b.appendAll(newJBool(true), newJNull(), newJFloat(456.789))
   if b.len == 5:
+    echo "appended all!"
+```
+
+#### APPENDALL (BOOLEAN)
+
+**SIGNATURE**
+
+`proc appendAll*(builder: JArrayBuilder, value: bool, values: varargs[bool])`
+
+**DESCRIPTION**
+
+*Adds all the specified boolean values to the array being built.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendAll(true)
+  b.appendAll(false, true, false, true)
+  if b.len == 5:
+    echo "appended all!"
+```
+
+#### APPENDALL (INTEGER)
+
+**SIGNATURE**
+
+`proc appendAll*(builder: JArrayBuilder, value: BiggestInt, values: varargs[BiggestInt])`
+
+**DESCRIPTION**
+
+*Adds all the specified integer values to the array being built.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendAll(0)
+  b.appendAll(1, 2, 3, 4)
+  if b.len == 5:
+    echo "appended all!"
+```
+
+#### APPENDALL (FLOAT)
+
+**SIGNATURE**
+
+`proc appendAll*(builder: JArrayBuilder, value: float, values: varargs[float])`
+
+**DESCRIPTION**
+
+*Adds all the specified float values to the array being built.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendAll(0.0)
+  b.appendAll(1.1, 2.2, 3.3, 4.4)
+  if b.len == 5:
+    echo "appended all!"
+```
+
+#### APPENDALL (STRING)
+
+**SIGNATURE**
+
+`proc appendAll*(builder: JArrayBuilder, value: string, values: varargs[string])`
+
+**DESCRIPTION**
+
+*Adds all the specified string values to the array being built.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendAll("foo")
+  b.appendAll("bar", "baz", "hello", "world")
+  if b.len == 5:
+    echo "appended all!"
+```
+
+#### APPENDVALUES
+
+**SIGNATURE**
+
+`proc appendValues*(builder: JArrayBuilder, node: JsonNode)`
+
+**DESCRIPTION**
+
+*Add the values of the provided json array into the array being built.*
+
+*NOTE: if the provided node is not a valid json array it does nothing.*
+
+**USAGE**
+
+```nim
+  let b = newJArrayBuilder()
+  b.appendValues(%* ["foo", 1, true, 0.123])
+  if b.len == 4:
     echo "appended all!"
 ```
 
@@ -966,7 +1267,25 @@ This is the documentation of the json related constants and routines module of t
 
 **SIGNATURE**
 
-`proc newJObjectBuilder*(other: JObjectBuilder = nil): JObjectBuilder`
+`proc newJObjectBuilder*(): JObjectBuilder`
+
+**DESCRIPTION**
+
+*Default JObjectBuilder constructor.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### NEWJOBJECTBUILDER
+
+**SIGNATURE**
+
+`proc newJObjectBuilder*(other: JObjectBuilder): JObjectBuilder`
 
 **DESCRIPTION**
 
@@ -976,6 +1295,24 @@ This is the documentation of the json related constants and routines module of t
 
 ```nim
   let b = newJObjectBuilder()
+  if b != nil:
+    echo "created!"
+```
+
+#### NEWJOBJECTBUILDER
+
+**SIGNATURE**
+
+`proc newJObjectBuilder*(obj: JsonNode): JObjectBuilder`
+
+**DESCRIPTION**
+
+*Constructor accepting a json object instance.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder(%* { "a": 1, "b": 2 })
   if b != nil:
     echo "created!"
 ```
@@ -1166,6 +1503,27 @@ This is the documentation of the json related constants and routines module of t
     echo "it has an item!"
 ```
 
+#### PUTALL
+
+**SIGNATURE**
+
+`proc putAll*(builder: JObjectBuilder, node: JsonNode)`
+
+**DESCRIPTION**
+
+*Adds the specified json object keys and values into the builder.*
+
+*NOTE: if the provided node is not a valid json object it does nothing.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  b.putAll(%* { "test": 1, "hello": 2 })
+  if b.len == 2:
+    echo "it has two items!"
+```
+
 #### SET (NODE)
 
 **SIGNATURE**
@@ -1264,6 +1622,26 @@ This is the documentation of the json related constants and routines module of t
   let b = newJObjectBuilder()
   if b.set("test", "hello").len == 1:
     echo "it has an item!"
+```
+
+#### SETALL
+
+**SIGNATURE**
+
+`proc setAll*(builder: JObjectBuilder, node: JsonNode): JObjectBuilder`
+
+**DESCRIPTION**
+
+*Adds the specified json object keys and values into the builder and returns the builder instance.*
+
+*NOTE: if the provided node is not a valid json object it does nothing. This is the fluent version of putAll.*
+
+**USAGE**
+
+```nim
+  let b = newJObjectBuilder()
+  if b.setAll(%* { "test": 1, "hello": 2 }).len == 2:
+    echo "it has two items!"
 ```
 
 #### FIELD ACCESSOR (NODE)

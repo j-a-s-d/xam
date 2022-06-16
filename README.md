@@ -51,6 +51,13 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 16-06-22 *[1.9.2]*
+	- added `jsons` wrapInJArray overloads supporting native types
+	- added `jsons` JObjectBuilder setAll and putAll methods supporting json object
+	- added `jsons` JObjectBuilder constructor overloads
+	- added `jsons` JArrayBuilder addAll and appendAll methods supporting native types
+	- added `jsons` JArrayBuilder addValues and appendValues methods supporting json array
+	- added `jsons` JArrayBuilder constructor overloads
 * 24-05-22 *[1.9.1]*
 	- added `exceptions` ExceptionRef type
 	- changed `seqs` peek and slice methods not to require a var sequence to operate

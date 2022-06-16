@@ -34,6 +34,42 @@ proc addAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]): JArrayBuilder =
     builder.elements.add(ensureJsonNode(node))
   builder
 
+proc addAll*(builder: JArrayBuilder, value: bool, values: varargs[bool]): JArrayBuilder =
+  ## Adds all the specified boolean values and returns the builder instance.
+  builder.elements.add(newJBool(value))
+  for v in values:
+    builder.elements.add(newJBool(v))
+  builder
+
+proc addAll*(builder: JArrayBuilder, value: BiggestInt, values: varargs[BiggestInt]): JArrayBuilder =
+  ## Adds all the specified integer values and returns the builder instance.
+  builder.elements.add(newJInt(value))
+  for v in values:
+    builder.elements.add(newJInt(v))
+  builder
+
+proc addAll*(builder: JArrayBuilder, value: float, values: varargs[float]): JArrayBuilder =
+  ## Adds all the specified float values and returns the builder instance.
+  builder.elements.add(newJFloat(value))
+  for v in values:
+    builder.elements.add(newJFloat(v))
+  builder
+
+proc addAll*(builder: JArrayBuilder, value: string, values: varargs[string]): JArrayBuilder =
+  ## Adds all the specified string values and returns the builder instance.
+  builder.elements.add(newJString(value))
+  for v in values:
+    builder.elements.add(newJString(v))
+  builder
+
+proc addValues*(builder: JArrayBuilder, node: JsonNode): JArrayBuilder =
+  ## Add the values of the provided json array into the builder and returns the builder instance.
+  ## NOTE: if the provided node is not a valid json array it does nothing.
+  if node != nil and node.kind == JArray:
+    for item in items(node.elems):
+      builder.elements.add(item)
+  builder
+
 proc add*(builder: JArrayBuilder, node: JsonNode): JArrayBuilder =
   ## Adds the specified json node and returns the builder instance.
   builder.elements.add(ensureJsonNode(node))
@@ -59,6 +95,37 @@ proc appendAll*(builder: JArrayBuilder, nodes: varargs[JsonNode]) =
   ## Appends all the specified json nodes to the array being built.
   for node in nodes:
     builder.elements.add(ensureJsonNode(node))
+
+proc appendAll*(builder: JArrayBuilder, value: bool, values: varargs[bool]) =
+  ## Adds all the specified boolean values to the array being built.
+  builder.elements.add(newJBool(value))
+  for v in values:
+    builder.elements.add(newJBool(v))
+
+proc appendAll*(builder: JArrayBuilder, value: BiggestInt, values: varargs[BiggestInt]) =
+  ## Adds all the specified integer values to the array being built.
+  builder.elements.add(newJInt(value))
+  for v in values:
+    builder.elements.add(newJInt(v))
+
+proc appendAll*(builder: JArrayBuilder, value: float, values: varargs[float]) =
+  ## Adds all the specified float values to the array being built.
+  builder.elements.add(newJFloat(value))
+  for v in values:
+    builder.elements.add(newJFloat(v))
+
+proc appendAll*(builder: JArrayBuilder, value: string, values: varargs[string]) =
+  ## Adds all the specified string values to the array being built.
+  builder.elements.add(newJString(value))
+  for v in values:
+    builder.elements.add(newJString(v))
+
+proc appendValues*(builder: JArrayBuilder, node: JsonNode) =
+  ## Add the values of the provided json array into the array being built.
+  ## NOTE: if the provided node is not a valid json array it does nothing.
+  if node != nil and node.kind == JArray:
+    for item in items(node.elems):
+      builder.elements.add(item)
 
 proc append*(builder: JArrayBuilder, node: JsonNode) =
   ## Appends the specified json node to the array being built.
@@ -100,18 +167,27 @@ proc len*(builder: JArrayBuilder): int =
   ## Returns the current items count of the array being built.
   builder.elements.len
 
-proc newJArrayBuilder*(other: JArrayBuilder = nil): JArrayBuilder =
+proc newJArrayBuilder*(arr: JsonNode): JArrayBuilder =
+  ## Constructor accepting a json array instance.
+  result = new TJArrayBuilder
+  result = result.addValues(arr)
+
+proc newJArrayBuilder*(other: JArrayBuilder): JArrayBuilder =
   ## Constructor accepting other json array builder instance.
   result = new TJArrayBuilder
   result = result.reset(other)
 
+proc newJArrayBuilder*(): JArrayBuilder =
+  ## Default JArrayBuilder constructor.
+  new TJArrayBuilder
+
 # JSON OBJECT BUILDER
 
 type
-  XamJObjectBuilder = object
+  TJObjectBuilder = object
     fields: OrderedTable[string, JsonNode]
 
-  JObjectBuilder* = ref XamJObjectBuilder
+  JObjectBuilder* = ref TJObjectBuilder
 
 proc getAsJObject*(builder: JObjectBuilder): JsonNode =
   ## Builds the resulting json object and returns it.
@@ -128,6 +204,13 @@ proc getAsPrettyString*(builder: JObjectBuilder): string =
 proc getAsNamedJsonNodeOrderedTable*(builder: JObjectBuilder): OrderedTable[string, JsonNode] =
   ## Returns the object being built as a ordered table of named JsonNode items.
   builder.fields
+
+proc putAll*(builder: JObjectBuilder, node: JsonNode) =
+  ## Adds the specified json object keys and values into the builder.
+  ## NOTE: if the provided node is not a valid json object it does nothing.
+  if node != nil and node.kind == JObject:
+    for key, value in node:
+      builder.fields[key] = value
 
 proc put*(builder: JObjectBuilder, name: string, node: JsonNode) =
   ## Adds the specified json node with the specified name.
@@ -148,6 +231,14 @@ proc put*(builder: JObjectBuilder, name: string, value: float) =
 proc put*(builder: JObjectBuilder, name: string, value: string) =
   ## Adds the specified string value with the specified name.
   builder.put(name, newJString(value))
+
+proc setAll*(builder: JObjectBuilder, node: JsonNode): JObjectBuilder =
+  ## Adds the specified json object keys and values into the builder and returns the builder instance.
+  ## NOTE: if the provided node is not a valid json object it does nothing.
+  if node != nil and node.kind == JObject:
+    for key, value in node:
+      builder.fields[key] = value
+  builder
 
 proc set*(builder: JObjectBuilder, name: string, node: JsonNode): JObjectBuilder =
   ## Adds the specified json node with the specified name and returns the builder instance.
@@ -210,7 +301,16 @@ proc len*(builder: JObjectBuilder): int =
   ## Returns the current keys count of the object being built.
   builder.fields.len
 
-proc newJObjectBuilder*(other: JObjectBuilder = nil): JObjectBuilder =
+proc newJObjectBuilder*(obj: JsonNode): JObjectBuilder =
+  ## Constructor accepting a json object instance.
+  result = new TJObjectBuilder
+  result = result.setAll(obj)
+
+proc newJObjectBuilder*(other: JObjectBuilder): JObjectBuilder =
   ## Constructor accepting other json object builder instance.
-  result = new XamJObjectBuilder
+  result = new TJObjectBuilder
   result = result.reset(other)
+
+proc newJObjectBuilder*(): JObjectBuilder =
+  ## Default JObjectBuilder constructor.
+  new TJObjectBuilder
