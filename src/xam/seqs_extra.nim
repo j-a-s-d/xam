@@ -28,6 +28,15 @@ func remove*[T](a: var seq[T], s: openArray[T]) =
   for x in s:
     a.remove(x)
 
+func prepend*[T](a: var seq[T], value: T) =
+  ## Prepends the specified value in the specified sequence.
+  a.insert(value, 0)
+
+func prepend*[T](a: var seq[T], b: openArray[T]) =
+  ## Prepends the provided open array in the specified sequence.
+  for t in countdown(high(b), low(b)):
+    insert(a, b[t], 0)
+
 func append*[T](a: var seq[T], b: openArray[T]) =
   ## Appends the provided open array in the specified sequence.
   for t in b:

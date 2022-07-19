@@ -101,6 +101,18 @@ suite "test xam seqs":
     append(k, @[])
     check(k == @[1, 2, 3, 4, 5, 6, 7, 8, 9])
 
+  test "test prepend":
+    var k = @[1, 2, 3, 4, 5]
+    let l = @[6, 7, 8]
+    prepend(k, l)
+    check(k == @[6, 7, 8, 1, 2, 3, 4, 5])
+    prepend(k, 9)
+    check(k == @[9, 6, 7, 8, 1, 2, 3, 4, 5])
+    prepend(k, @[])
+    check(k == @[9, 6, 7, 8, 1, 2, 3, 4, 5])
+    prepend(k, [0])
+    check(k == @[0, 9, 6, 7, 8, 1, 2, 3, 4, 5])
+
   test "test isEmpty":
     let k: seq[int] = @[]
     let l: seq[int] = @[1, 2, 3]
