@@ -450,6 +450,30 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 *Ruby unless-like alias*
 
+### ZIG-LIKE UNREACHABLE
+
+**SIGNATURE**
+
+`template unreachable*() {.used.}`
+
+**DESCRIPTION**
+
+*Zig unreachable-like code marker alias*
+
+*NOTE: when not compiled with the option --threads:on it will show thread 0 as the origin.*
+
+### SWIFT-LIKE TYPEALIAS
+
+**SIGNATURE**
+
+`template typealias*(X, Y) {.used.}`
+
+**DESCRIPTION**
+
+*Swift-like typealias*
+
+*NOTE: the generated type will be public.*
+
 ### STRINGS
 
 ### PASCAL/C#-LIKE LENGTH

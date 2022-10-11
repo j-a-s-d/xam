@@ -334,7 +334,7 @@ So you can use `HTML_ATTRIBUTES.ALIGN` as value equivalent to `HTML_ATTRIBUTES_A
 The preceding constants are also grouped into a "namespaced" constant under the name of `HTML_COLORS`.
 So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, and so on.
 
-## HTML TAGS CONSTANTS
+## HTML TAGS CONSTANTS (INCLUDING DEPRECATED ONES)
 
 - `const HTML_TAGS_A*: string`
 - `const HTML_TAGS_ABBR*: string`
@@ -350,7 +350,9 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_BASEFONT*: string`
 - `const HTML_TAGS_BDI*: string`
 - `const HTML_TAGS_BDO*: string`
+- `const HTML_TAGS_BGSOUND*: string`
 - `const HTML_TAGS_BIG*: string`
+- `const HTML_TAGS_BLINK*: string`
 - `const HTML_TAGS_BLOCKQUOTE*: string`
 - `const HTML_TAGS_BODY*: string`
 - `const HTML_TAGS_BR*: string`
@@ -362,6 +364,7 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_CODE*: string`
 - `const HTML_TAGS_COL*: string`
 - `const HTML_TAGS_COLGROUP*: string`
+- `const HTML_TAGS_CONTENT*: string`
 - `const HTML_TAGS_DATALIST*: string`
 - `const HTML_TAGS_DD*: string`
 - `const HTML_TAGS_DEL*: string`
@@ -397,17 +400,27 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_IMG*: string`
 - `const HTML_TAGS_INPUT*: string`
 - `const HTML_TAGS_INS*: string`
+- `const HTML_TAGS_ISINDEX*: string`
 - `const HTML_TAGS_KBD*: string`
+- `const HTML_TAGS_KEYGEN*: string`
 - `const HTML_TAGS_LABEL*: string`
 - `const HTML_TAGS_LEGEND*: string`
 - `const HTML_TAGS_LI*: string`
 - `const HTML_TAGS_LINK*: string`
+- `const HTML_TAGS_LISTING*: string`
 - `const HTML_TAGS_MAIN*: string`
 - `const HTML_TAGS_MAP*: string`
+- `const HTML_TAGS_MARQUEE*: string`
 - `const HTML_TAGS_MARK*: string`
+- `const HTML_TAGS_MENU*: string`
+- `const HTML_TAGS_MENUITEM*: string`
 - `const HTML_TAGS_META*: string`
 - `const HTML_TAGS_METER*: string`
+- `const HTML_TAGS_MULTICOL*: string`
 - `const HTML_TAGS_NAV*: string`
+- `const HTML_TAGS_NEXTID*: string`
+- `const HTML_TAGS_NOBR*: string`
+- `const HTML_TAGS_NOEMBED*: string`
 - `const HTML_TAGS_NOFRAMES*: string`
 - `const HTML_TAGS_NOSCRIPT*: string`
 - `const HTML_TAGS_OBJECT*: string`
@@ -417,19 +430,24 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_OUTPUT*: string`
 - `const HTML_TAGS_P*: string`
 - `const HTML_TAGS_PARAM*: string`
+- `const HTML_TAGS_PLAINTEXT*: string`
 - `const HTML_TAGS_PRE*: string`
 - `const HTML_TAGS_PROGRESS*: string`
 - `const HTML_TAGS_Q*: string`
+- `const HTML_TAGS_RB*: string`
 - `const HTML_TAGS_RP*: string`
 - `const HTML_TAGS_RT*: string`
+- `const HTML_TAGS_RTC*: string`
 - `const HTML_TAGS_RUBY*: string`
 - `const HTML_TAGS_S*: string`
 - `const HTML_TAGS_SAMP*: string`
 - `const HTML_TAGS_SCRIPT*: string`
 - `const HTML_TAGS_SECTION*: string`
 - `const HTML_TAGS_SELECT*: string`
+- `const HTML_TAGS_SHADOW*: string`
 - `const HTML_TAGS_SMALL*: string`
 - `const HTML_TAGS_SOURCE*: string`
+- `const HTML_TAGS_SPACER*: string`
 - `const HTML_TAGS_SPAN*: string`
 - `const HTML_TAGS_STRIKE*: string`
 - `const HTML_TAGS_STRONG*: string`
@@ -454,6 +472,7 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_VAR*: string`
 - `const HTML_TAGS_VIDEO*: string`
 - `const HTML_TAGS_WBR*: string`
+- `const HTML_TAGS_XMP*: string`
 
 ### NAMESPACED CONST
 

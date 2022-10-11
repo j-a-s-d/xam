@@ -443,6 +443,46 @@ This is the documentation of the sequences related routines module of the Xam li
     echo "removed!"
 ```
 
+### PREPEND (VALUE)
+
+**SIGNATURE**
+
+`func prepend*[T](a: var seq[T], value: T)`
+
+**DESCRIPTION**
+
+*Prepends the specified value in the specified sequence.*
+
+**USAGE**
+
+```nim
+  var k = @[1, 2, 3, 4, 5]
+  let l = 9
+  prepend(k, l)
+  if k == @[9, 1, 2, 3, 4, 5]:
+    echo "preprended!"
+```
+
+### PREPEND (OPENARRAY)
+
+**SIGNATURE**
+
+`func prepend*[T](a: var seq[T], value: b: openArray[T])`
+
+**DESCRIPTION**
+
+*Prepends the provided open array in the specified sequence.*
+
+**USAGE**
+
+```nim
+  var k = @[1, 2, 3, 4, 5]
+  let l = [6, 7, 8]
+  prepend(k, l)
+  if k == @[6, 7, 8, 1, 2, 3, 4, 5]:
+    echo "preprended!"
+```
+
 ### APPEND
 
 **SIGNATURE**

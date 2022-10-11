@@ -139,7 +139,9 @@ const
   
   # COMMON VALUES
   VALUE_E*: float = math.E
+  VALUE_LOG2E*: float = 1.4426950408889634  # log_2 e
   VALUE_LOG10E*: float = math.log10(math.E)
+  VALUE_LNPI*: float = 1.1447298858494001 # log_e(pi)
   VALUE_PI*: float = math.PI
   VALUE_2PI*: float = F2 * math.PI
   VALUE_TAU*: float = VALUE_2PI
@@ -147,7 +149,12 @@ const
   VALUE_PIDIV4*: float = math.PI / F4
   VALUE_1DIVPI*: float = F1 / math.PI
   VALUE_2DIVPI*: float = F2 / math.PI
+  VALUE_SQRTPI*: float = math.sqrt(math.PI)
   VALUE_2SQRTPI*: float = F2 / math.sqrt(math.PI)
   VALUE_SQRT2*: float = math.sqrt(F2)
-  VALUE_1DIVSQRT2*: float = F1 / VALUE_SQRT2
-  VALUE_PHI*: float = 1.618033988749894
+  VALUE_SQRT3*: float = math.sqrt(F3)
+  VALUE_1DIVSQRT2*: float = F1 / VALUE_SQRT2 # silver ratio
+  VALUE_PHI*: float = 1.6180339887498948 # golden ratio
+  VALUE_INVERSE_PHI*: float = 1 / VALUE_PHI
+  VALUE_EULER_MASCHERONI*: float = 0.5772156649015328 # gamma
+  VALUE_ALPHA*: float = 0.0072992700729927 # 1/137, fine-structure constant

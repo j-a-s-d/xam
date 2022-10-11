@@ -21,3 +21,8 @@ template unreachable*() {.used.} =
   when not compileOption("threads"):
     template getThreadId(): int = 0
   echo "thread " & $getThreadId() & " panic: reached unreachable code"
+
+template typealias*(X, Y) {.used.} =
+  ## Swift-like typealias
+  ## NOTE: the generated type will be public.
+  type X* = Y

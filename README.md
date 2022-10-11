@@ -51,6 +51,10 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 11-10-22 *[1.9.4]*
+	- added `math` VALUE_LOG2E, VALUE_LNPI, VALUE_SQRTPI, VALUE_SQRT3, VALUE_INVERSE_PHI, VALUE_EULER_MASCHERONI and VALUE_ALPHA constants
+	- added `html` HTML_TAGS_BLINK, HTML_TAGS_BGSOUND, HTML_TAGS_CONTENT, HTML_TAGS_ISINDEX, HTML_TAGS_KEYGEN, HTML_TAGS_LISTING, HTML_TAGS_MARQUEE, HTML_TAGS_MENU, HTML_TAGS_MENUITEM, HTML_TAGS_MULTICOL, HTML_TAGS_NEXTID, HTML_TAGS_NOBR, HTML_TAGS_NOEMBED, HTML_TAGS_PLAINTEXT, HTML_TAGS_RB, HTML_TAGS_RTC, HTML_TAGS_SHADOW, HTML_TAGS_SPACER and HTML_TAGS_XMP constants
+	- added `multiplatform` swift typealias-like alias
 * 19-07-22 *[1.9.3]*
 	- added `seqs` prepend routine
 	- added `multiplatform` zig unreachable-like code marker alias

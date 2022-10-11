@@ -144,7 +144,9 @@ This is the documentation of the math related constants and routines module of t
 ### COMMON VALUES
 
 - `const VALUE_E*: float`
+- `const VALUE_LOG2E*: float`
 - `const VALUE_LOG10E*: float`
+- `const VALUE_LNPI*: float`
 - `const VALUE_PI*: float`
 - `const VALUE_2PI*: float`
 - `const VALUE_TAU*: float`
@@ -152,10 +154,15 @@ This is the documentation of the math related constants and routines module of t
 - `const VALUE_PIDIV4*: float`
 - `const VALUE_1DIVPI*: float`
 - `const VALUE_2DIVPI*: float`
+- `const VALUE_SQRTPI*: float`
 - `const VALUE_2SQRTPI*: float`
 - `const VALUE_SQRT2*: float`
+- `const VALUE_SQRT3*: float`
 - `const VALUE_1DIVSQRT2*: float`
 - `const VALUE_PHI*: float`
+- `const VALUE_INVERSE_PHI*: float`
+- `const VALUE_EULER_MASCHERONI*: float`
+- `const VALUE_ALPHA*: float`
 
 ## ROUTINES
 
