@@ -21,12 +21,13 @@ All the following modules are included in xam (no extra includes are required):
 * [`ansi`](docs/ansi.md), *ansi related routines*
 * [`bytes`](docs/bytes.md), *bytes related constants*
 * [`callbacks`](docs/callbacks.md), *common callback declarations*
+* [`cctlds`](docs/cctlds.md), *country code top-level domains related constants*
 * [`chars`](docs/chars.md), *chars related constants*
-* [`time`](docs/time.md), *time related constants and routines*
+* [`directories`](docs/directories.md), *directories related routines*
 * [`exceptions`](docs/exceptions.md), *exceptions related routines*
 * [`files`](docs/files.md), *files related routines*
-* [`directories`](docs/directories.md), *directories related routines*
 * [`hex`](docs/hex.md), *hex related constants*
+* [`hgtlds`](docs/hgtlds.md), *historical generic top-level domains related constants*
 * [`html`](docs/html.md), *html related constants and routines*
 * [`jsons`](docs/jsons.md), *json related constants and routines*
 * [`languages`](docs/languages.md), *languages related constants*
@@ -41,6 +42,7 @@ All the following modules are included in xam (no extra includes are required):
 * [`strings`](docs/strings.md), *strings related constants and routines*
 * [`structures`](docs/structures.md), *structures related routines*
 * [`temp`](docs/temp.md), *temporary files related constants and routines*
+* [`time`](docs/time.md), *time related constants and routines*
 
 ## RELATED
 
@@ -51,6 +53,11 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 10-02-23 *[1.9.5]*
+	- added `math` floatInterpolate routine
+	- added `math` VALUE_INVERSE_PI, VALUE_INVERSE_SQRTPI and VALUE_INVERSE_SQRT3 constants
+	- added `cctlds` constants
+	- added `hgtlds` constants
 * 11-10-22 *[1.9.4]*
 	- added `math` VALUE_LOG2E, VALUE_LNPI, VALUE_SQRTPI, VALUE_SQRT3, VALUE_INVERSE_PHI, VALUE_EULER_MASCHERONI and VALUE_ALPHA constants
 	- added `html` HTML_TAGS_BLINK, HTML_TAGS_BGSOUND, HTML_TAGS_CONTENT, HTML_TAGS_ISINDEX, HTML_TAGS_KEYGEN, HTML_TAGS_LISTING, HTML_TAGS_MARQUEE, HTML_TAGS_MENU, HTML_TAGS_MENUITEM, HTML_TAGS_MULTICOL, HTML_TAGS_NEXTID, HTML_TAGS_NOBR, HTML_TAGS_NOEMBED, HTML_TAGS_PLAINTEXT, HTML_TAGS_RB, HTML_TAGS_RTC, HTML_TAGS_SHADOW, HTML_TAGS_SPACER and HTML_TAGS_XMP constants

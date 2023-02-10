@@ -8,12 +8,14 @@ template reexport_xam_module(module: untyped) =
 reexport_xam_module ansi
 reexport_xam_module bytes
 reexport_xam_module callbacks
+reexport_xam_module cctlds
 reexport_xam_module chars
 reexport_xam_module time
 reexport_xam_module exceptions
 reexport_xam_module files
 reexport_xam_module directories
 reexport_xam_module hex
+reexport_xam_module hgtlds
 reexport_xam_module html
 reexport_xam_module jsons
 reexport_xam_module languages

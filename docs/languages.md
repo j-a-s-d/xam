@@ -6,440 +6,440 @@ This is the documentation of the languages related constants module of the Xam l
 
 ### ISO-639-1 INTERNATIONAL LANGUAGE CODES
 
-- `const LANGUAGE_CODES.AA`
-- `const LANGUAGE_CODES.AB`
-- `const LANGUAGE_CODES.AF`
-- `const LANGUAGE_CODES.AM`
-- `const LANGUAGE_CODES.AR`
-- `const LANGUAGE_CODES.AR_AE`
-- `const LANGUAGE_CODES.AR_BH`
-- `const LANGUAGE_CODES.AR_DZ`
-- `const LANGUAGE_CODES.AR_EG`
-- `const LANGUAGE_CODES.AR_IQ`
-- `const LANGUAGE_CODES.AR_JO`
-- `const LANGUAGE_CODES.AR_KW`
-- `const LANGUAGE_CODES.AR_LB`
-- `const LANGUAGE_CODES.AR_LY`
-- `const LANGUAGE_CODES.AR_MA`
-- `const LANGUAGE_CODES.AR_OM`
-- `const LANGUAGE_CODES.AR_QA`
-- `const LANGUAGE_CODES.AR_SA`
-- `const LANGUAGE_CODES.AR_SY`
-- `const LANGUAGE_CODES.AR_TN`
-- `const LANGUAGE_CODES.AR_YE`
-- `const LANGUAGE_CODES.AS`
-- `const LANGUAGE_CODES.AY`
-- `const LANGUAGE_CODES.AZ`
-- `const LANGUAGE_CODES.BA`
-- `const LANGUAGE_CODES.BE`
-- `const LANGUAGE_CODES.BG`
-- `const LANGUAGE_CODES.BH`
-- `const LANGUAGE_CODES.BI`
-- `const LANGUAGE_CODES.BN`
-- `const LANGUAGE_CODES.BO`
-- `const LANGUAGE_CODES.BR`
-- `const LANGUAGE_CODES.CA`
-- `const LANGUAGE_CODES.CO`
-- `const LANGUAGE_CODES.CS`
-- `const LANGUAGE_CODES.CY`
-- `const LANGUAGE_CODES.DA`
-- `const LANGUAGE_CODES.DE`
-- `const LANGUAGE_CODES.DE_AT`
-- `const LANGUAGE_CODES.DE_CH`
-- `const LANGUAGE_CODES.DE_LI`
-- `const LANGUAGE_CODES.DE_LU`
-- `const LANGUAGE_CODES.DIV`
-- `const LANGUAGE_CODES.DZ`
-- `const LANGUAGE_CODES.EL`
-- `const LANGUAGE_CODES.EN`
-- `const LANGUAGE_CODES.EN_AU`
-- `const LANGUAGE_CODES.EN_BZ`
-- `const LANGUAGE_CODES.EN_CA`
-- `const LANGUAGE_CODES.EN_GB`
-- `const LANGUAGE_CODES.EN_IE`
-- `const LANGUAGE_CODES.EN_JM`
-- `const LANGUAGE_CODES.EN_NZ`
-- `const LANGUAGE_CODES.EN_PH`
-- `const LANGUAGE_CODES.EN_TT`
-- `const LANGUAGE_CODES.EN_US`
-- `const LANGUAGE_CODES.EN_ZA`
-- `const LANGUAGE_CODES.EN_ZW`
-- `const LANGUAGE_CODES.EO`
-- `const LANGUAGE_CODES.ES`
-- `const LANGUAGE_CODES.ES_AR`
-- `const LANGUAGE_CODES.ES_BO`
-- `const LANGUAGE_CODES.ES_CL`
-- `const LANGUAGE_CODES.ES_CO`
-- `const LANGUAGE_CODES.ES_CR`
-- `const LANGUAGE_CODES.ES_DO`
-- `const LANGUAGE_CODES.ES_EC`
-- `const LANGUAGE_CODES.ES_ES`
-- `const LANGUAGE_CODES.ES_GT`
-- `const LANGUAGE_CODES.ES_HN`
-- `const LANGUAGE_CODES.ES_MX`
-- `const LANGUAGE_CODES.ES_NI`
-- `const LANGUAGE_CODES.ES_PA`
-- `const LANGUAGE_CODES.ES_PE`
-- `const LANGUAGE_CODES.ES_PR`
-- `const LANGUAGE_CODES.ES_PY`
-- `const LANGUAGE_CODES.ES_SV`
-- `const LANGUAGE_CODES.ES_US`
-- `const LANGUAGE_CODES.ES_UY`
-- `const LANGUAGE_CODES.ES_VE`
-- `const LANGUAGE_CODES.ET`
-- `const LANGUAGE_CODES.EU`
-- `const LANGUAGE_CODES.FA`
-- `const LANGUAGE_CODES.FI`
-- `const LANGUAGE_CODES.FJ`
-- `const LANGUAGE_CODES.FO`
-- `const LANGUAGE_CODES.FR`
-- `const LANGUAGE_CODES.FR_BE`
-- `const LANGUAGE_CODES.FR_CA`
-- `const LANGUAGE_CODES.FR_CH`
-- `const LANGUAGE_CODES.FR_LU`
-- `const LANGUAGE_CODES.FR_MC`
-- `const LANGUAGE_CODES.FY`
-- `const LANGUAGE_CODES.GA`
-- `const LANGUAGE_CODES.GD`
-- `const LANGUAGE_CODES.GL`
-- `const LANGUAGE_CODES.GN`
-- `const LANGUAGE_CODES.GU`
-- `const LANGUAGE_CODES.HA`
-- `const LANGUAGE_CODES.HE`
-- `const LANGUAGE_CODES.HI`
-- `const LANGUAGE_CODES.HR`
-- `const LANGUAGE_CODES.HU`
-- `const LANGUAGE_CODES.HY`
-- `const LANGUAGE_CODES.IA`
-- `const LANGUAGE_CODES.ID`
-- `const LANGUAGE_CODES.IE`
-- `const LANGUAGE_CODES.IK`
-- `const LANGUAGE_CODES.IN`
-- `const LANGUAGE_CODES.IS`
-- `const LANGUAGE_CODES.IT`
-- `const LANGUAGE_CODES.IT_CH`
-- `const LANGUAGE_CODES.IW`
-- `const LANGUAGE_CODES.JA`
-- `const LANGUAGE_CODES.JI`
-- `const LANGUAGE_CODES.JW`
-- `const LANGUAGE_CODES.KA`
-- `const LANGUAGE_CODES.KK`
-- `const LANGUAGE_CODES.KL`
-- `const LANGUAGE_CODES.KM`
-- `const LANGUAGE_CODES.KN`
-- `const LANGUAGE_CODES.KO`
-- `const LANGUAGE_CODES.KOK`
-- `const LANGUAGE_CODES.KS`
-- `const LANGUAGE_CODES.KU`
-- `const LANGUAGE_CODES.KY`
-- `const LANGUAGE_CODES.KZ`
-- `const LANGUAGE_CODES.LA`
-- `const LANGUAGE_CODES.LN`
-- `const LANGUAGE_CODES.LO`
-- `const LANGUAGE_CODES.LS`
-- `const LANGUAGE_CODES.LT`
-- `const LANGUAGE_CODES.LV`
-- `const LANGUAGE_CODES.MG`
-- `const LANGUAGE_CODES.MI`
-- `const LANGUAGE_CODES.MK`
-- `const LANGUAGE_CODES.ML`
-- `const LANGUAGE_CODES.MN`
-- `const LANGUAGE_CODES.MO`
-- `const LANGUAGE_CODES.MR`
-- `const LANGUAGE_CODES.MS`
-- `const LANGUAGE_CODES.MT`
-- `const LANGUAGE_CODES.MY`
-- `const LANGUAGE_CODES.NA`
-- `const LANGUAGE_CODES.NB_NO`
-- `const LANGUAGE_CODES.NE`
-- `const LANGUAGE_CODES.NL`
-- `const LANGUAGE_CODES.NL_BE`
-- `const LANGUAGE_CODES.NN_NO`
-- `const LANGUAGE_CODES.NO`
-- `const LANGUAGE_CODES.OC`
-- `const LANGUAGE_CODES.OM`
-- `const LANGUAGE_CODES.OR`
-- `const LANGUAGE_CODES.PA`
-- `const LANGUAGE_CODES.PL`
-- `const LANGUAGE_CODES.PS`
-- `const LANGUAGE_CODES.PT`
-- `const LANGUAGE_CODES.PT_BR`
-- `const LANGUAGE_CODES.QU`
-- `const LANGUAGE_CODES.RM`
-- `const LANGUAGE_CODES.RN`
-- `const LANGUAGE_CODES.RO`
-- `const LANGUAGE_CODES.RO_MD`
-- `const LANGUAGE_CODES.RU`
-- `const LANGUAGE_CODES.RU_MD`
-- `const LANGUAGE_CODES.RW`
-- `const LANGUAGE_CODES.SA`
-- `const LANGUAGE_CODES.SB`
-- `const LANGUAGE_CODES.SD`
-- `const LANGUAGE_CODES.SG`
-- `const LANGUAGE_CODES.SH`
-- `const LANGUAGE_CODES.SI`
-- `const LANGUAGE_CODES.SK`
-- `const LANGUAGE_CODES.SL`
-- `const LANGUAGE_CODES.SM`
-- `const LANGUAGE_CODES.SN`
-- `const LANGUAGE_CODES.SO`
-- `const LANGUAGE_CODES.SQ`
-- `const LANGUAGE_CODES.SR`
-- `const LANGUAGE_CODES.SS`
-- `const LANGUAGE_CODES.ST`
-- `const LANGUAGE_CODES.SU`
-- `const LANGUAGE_CODES.SV`
-- `const LANGUAGE_CODES.SV_FI`
-- `const LANGUAGE_CODES.SW`
-- `const LANGUAGE_CODES.SX`
-- `const LANGUAGE_CODES.SYR`
-- `const LANGUAGE_CODES.TA`
-- `const LANGUAGE_CODES.TE`
-- `const LANGUAGE_CODES.TG`
-- `const LANGUAGE_CODES.TH`
-- `const LANGUAGE_CODES.TI`
-- `const LANGUAGE_CODES.TK`
-- `const LANGUAGE_CODES.TL`
-- `const LANGUAGE_CODES.TN`
-- `const LANGUAGE_CODES.TO`
-- `const LANGUAGE_CODES.TR`
-- `const LANGUAGE_CODES.TS`
-- `const LANGUAGE_CODES.TT`
-- `const LANGUAGE_CODES.TW`
-- `const LANGUAGE_CODES.UK`
-- `const LANGUAGE_CODES.UR`
-- `const LANGUAGE_CODES.US`
-- `const LANGUAGE_CODES.UZ`
-- `const LANGUAGE_CODES.VI`
-- `const LANGUAGE_CODES.VO`
-- `const LANGUAGE_CODES.WO`
-- `const LANGUAGE_CODES.XH`
-- `const LANGUAGE_CODES.YI`
-- `const LANGUAGE_CODES.YO`
-- `const LANGUAGE_CODES.ZH`
-- `const LANGUAGE_CODES.ZH_CN`
-- `const LANGUAGE_CODES.ZH_HK`
-- `const LANGUAGE_CODES.ZH_MO`
-- `const LANGUAGE_CODES.ZH_SG`
-- `const LANGUAGE_CODES.ZH_TW`
-- `const LANGUAGE_CODES.ZU`
+- `const LANGUAGE_CODES.AA*: string`
+- `const LANGUAGE_CODES.AB*: string`
+- `const LANGUAGE_CODES.AF*: string`
+- `const LANGUAGE_CODES.AM*: string`
+- `const LANGUAGE_CODES.AR*: string`
+- `const LANGUAGE_CODES.AR_AE*: string`
+- `const LANGUAGE_CODES.AR_BH*: string`
+- `const LANGUAGE_CODES.AR_DZ*: string`
+- `const LANGUAGE_CODES.AR_EG*: string`
+- `const LANGUAGE_CODES.AR_IQ*: string`
+- `const LANGUAGE_CODES.AR_JO*: string`
+- `const LANGUAGE_CODES.AR_KW*: string`
+- `const LANGUAGE_CODES.AR_LB*: string`
+- `const LANGUAGE_CODES.AR_LY*: string`
+- `const LANGUAGE_CODES.AR_MA*: string`
+- `const LANGUAGE_CODES.AR_OM*: string`
+- `const LANGUAGE_CODES.AR_QA*: string`
+- `const LANGUAGE_CODES.AR_SA*: string`
+- `const LANGUAGE_CODES.AR_SY*: string`
+- `const LANGUAGE_CODES.AR_TN*: string`
+- `const LANGUAGE_CODES.AR_YE*: string`
+- `const LANGUAGE_CODES.AS*: string`
+- `const LANGUAGE_CODES.AY*: string`
+- `const LANGUAGE_CODES.AZ*: string`
+- `const LANGUAGE_CODES.BA*: string`
+- `const LANGUAGE_CODES.BE*: string`
+- `const LANGUAGE_CODES.BG*: string`
+- `const LANGUAGE_CODES.BH*: string`
+- `const LANGUAGE_CODES.BI*: string`
+- `const LANGUAGE_CODES.BN*: string`
+- `const LANGUAGE_CODES.BO*: string`
+- `const LANGUAGE_CODES.BR*: string`
+- `const LANGUAGE_CODES.CA*: string`
+- `const LANGUAGE_CODES.CO*: string`
+- `const LANGUAGE_CODES.CS*: string`
+- `const LANGUAGE_CODES.CY*: string`
+- `const LANGUAGE_CODES.DA*: string`
+- `const LANGUAGE_CODES.DE*: string`
+- `const LANGUAGE_CODES.DE_AT*: string`
+- `const LANGUAGE_CODES.DE_CH*: string`
+- `const LANGUAGE_CODES.DE_LI*: string`
+- `const LANGUAGE_CODES.DE_LU*: string`
+- `const LANGUAGE_CODES.DIV*: string`
+- `const LANGUAGE_CODES.DZ*: string`
+- `const LANGUAGE_CODES.EL*: string`
+- `const LANGUAGE_CODES.EN*: string`
+- `const LANGUAGE_CODES.EN_AU*: string`
+- `const LANGUAGE_CODES.EN_BZ*: string`
+- `const LANGUAGE_CODES.EN_CA*: string`
+- `const LANGUAGE_CODES.EN_GB*: string`
+- `const LANGUAGE_CODES.EN_IE*: string`
+- `const LANGUAGE_CODES.EN_JM*: string`
+- `const LANGUAGE_CODES.EN_NZ*: string`
+- `const LANGUAGE_CODES.EN_PH*: string`
+- `const LANGUAGE_CODES.EN_TT*: string`
+- `const LANGUAGE_CODES.EN_US*: string`
+- `const LANGUAGE_CODES.EN_ZA*: string`
+- `const LANGUAGE_CODES.EN_ZW*: string`
+- `const LANGUAGE_CODES.EO*: string`
+- `const LANGUAGE_CODES.ES*: string`
+- `const LANGUAGE_CODES.ES_AR*: string`
+- `const LANGUAGE_CODES.ES_BO*: string`
+- `const LANGUAGE_CODES.ES_CL*: string`
+- `const LANGUAGE_CODES.ES_CO*: string`
+- `const LANGUAGE_CODES.ES_CR*: string`
+- `const LANGUAGE_CODES.ES_DO*: string`
+- `const LANGUAGE_CODES.ES_EC*: string`
+- `const LANGUAGE_CODES.ES_ES*: string`
+- `const LANGUAGE_CODES.ES_GT*: string`
+- `const LANGUAGE_CODES.ES_HN*: string`
+- `const LANGUAGE_CODES.ES_MX*: string`
+- `const LANGUAGE_CODES.ES_NI*: string`
+- `const LANGUAGE_CODES.ES_PA*: string`
+- `const LANGUAGE_CODES.ES_PE*: string`
+- `const LANGUAGE_CODES.ES_PR*: string`
+- `const LANGUAGE_CODES.ES_PY*: string`
+- `const LANGUAGE_CODES.ES_SV*: string`
+- `const LANGUAGE_CODES.ES_US*: string`
+- `const LANGUAGE_CODES.ES_UY*: string`
+- `const LANGUAGE_CODES.ES_VE*: string`
+- `const LANGUAGE_CODES.ET*: string`
+- `const LANGUAGE_CODES.EU*: string`
+- `const LANGUAGE_CODES.FA*: string`
+- `const LANGUAGE_CODES.FI*: string`
+- `const LANGUAGE_CODES.FJ*: string`
+- `const LANGUAGE_CODES.FO*: string`
+- `const LANGUAGE_CODES.FR*: string`
+- `const LANGUAGE_CODES.FR_BE*: string`
+- `const LANGUAGE_CODES.FR_CA*: string`
+- `const LANGUAGE_CODES.FR_CH*: string`
+- `const LANGUAGE_CODES.FR_LU*: string`
+- `const LANGUAGE_CODES.FR_MC*: string`
+- `const LANGUAGE_CODES.FY*: string`
+- `const LANGUAGE_CODES.GA*: string`
+- `const LANGUAGE_CODES.GD*: string`
+- `const LANGUAGE_CODES.GL*: string`
+- `const LANGUAGE_CODES.GN*: string`
+- `const LANGUAGE_CODES.GU*: string`
+- `const LANGUAGE_CODES.HA*: string`
+- `const LANGUAGE_CODES.HE*: string`
+- `const LANGUAGE_CODES.HI*: string`
+- `const LANGUAGE_CODES.HR*: string`
+- `const LANGUAGE_CODES.HU*: string`
+- `const LANGUAGE_CODES.HY*: string`
+- `const LANGUAGE_CODES.IA*: string`
+- `const LANGUAGE_CODES.ID*: string`
+- `const LANGUAGE_CODES.IE*: string`
+- `const LANGUAGE_CODES.IK*: string`
+- `const LANGUAGE_CODES.IN*: string`
+- `const LANGUAGE_CODES.IS*: string`
+- `const LANGUAGE_CODES.IT*: string`
+- `const LANGUAGE_CODES.IT_CH*: string`
+- `const LANGUAGE_CODES.IW*: string`
+- `const LANGUAGE_CODES.JA*: string`
+- `const LANGUAGE_CODES.JI*: string`
+- `const LANGUAGE_CODES.JW*: string`
+- `const LANGUAGE_CODES.KA*: string`
+- `const LANGUAGE_CODES.KK*: string`
+- `const LANGUAGE_CODES.KL*: string`
+- `const LANGUAGE_CODES.KM*: string`
+- `const LANGUAGE_CODES.KN*: string`
+- `const LANGUAGE_CODES.KO*: string`
+- `const LANGUAGE_CODES.KOK*: string`
+- `const LANGUAGE_CODES.KS*: string`
+- `const LANGUAGE_CODES.KU*: string`
+- `const LANGUAGE_CODES.KY*: string`
+- `const LANGUAGE_CODES.KZ*: string`
+- `const LANGUAGE_CODES.LA*: string`
+- `const LANGUAGE_CODES.LN*: string`
+- `const LANGUAGE_CODES.LO*: string`
+- `const LANGUAGE_CODES.LS*: string`
+- `const LANGUAGE_CODES.LT*: string`
+- `const LANGUAGE_CODES.LV*: string`
+- `const LANGUAGE_CODES.MG*: string`
+- `const LANGUAGE_CODES.MI*: string`
+- `const LANGUAGE_CODES.MK*: string`
+- `const LANGUAGE_CODES.ML*: string`
+- `const LANGUAGE_CODES.MN*: string`
+- `const LANGUAGE_CODES.MO*: string`
+- `const LANGUAGE_CODES.MR*: string`
+- `const LANGUAGE_CODES.MS*: string`
+- `const LANGUAGE_CODES.MT*: string`
+- `const LANGUAGE_CODES.MY*: string`
+- `const LANGUAGE_CODES.NA*: string`
+- `const LANGUAGE_CODES.NB_NO*: string`
+- `const LANGUAGE_CODES.NE*: string`
+- `const LANGUAGE_CODES.NL*: string`
+- `const LANGUAGE_CODES.NL_BE*: string`
+- `const LANGUAGE_CODES.NN_NO*: string`
+- `const LANGUAGE_CODES.NO*: string`
+- `const LANGUAGE_CODES.OC*: string`
+- `const LANGUAGE_CODES.OM*: string`
+- `const LANGUAGE_CODES.OR*: string`
+- `const LANGUAGE_CODES.PA*: string`
+- `const LANGUAGE_CODES.PL*: string`
+- `const LANGUAGE_CODES.PS*: string`
+- `const LANGUAGE_CODES.PT*: string`
+- `const LANGUAGE_CODES.PT_BR*: string`
+- `const LANGUAGE_CODES.QU*: string`
+- `const LANGUAGE_CODES.RM*: string`
+- `const LANGUAGE_CODES.RN*: string`
+- `const LANGUAGE_CODES.RO*: string`
+- `const LANGUAGE_CODES.RO_MD*: string`
+- `const LANGUAGE_CODES.RU*: string`
+- `const LANGUAGE_CODES.RU_MD*: string`
+- `const LANGUAGE_CODES.RW*: string`
+- `const LANGUAGE_CODES.SA*: string`
+- `const LANGUAGE_CODES.SB*: string`
+- `const LANGUAGE_CODES.SD*: string`
+- `const LANGUAGE_CODES.SG*: string`
+- `const LANGUAGE_CODES.SH*: string`
+- `const LANGUAGE_CODES.SI*: string`
+- `const LANGUAGE_CODES.SK*: string`
+- `const LANGUAGE_CODES.SL*: string`
+- `const LANGUAGE_CODES.SM*: string`
+- `const LANGUAGE_CODES.SN*: string`
+- `const LANGUAGE_CODES.SO*: string`
+- `const LANGUAGE_CODES.SQ*: string`
+- `const LANGUAGE_CODES.SR*: string`
+- `const LANGUAGE_CODES.SS*: string`
+- `const LANGUAGE_CODES.ST*: string`
+- `const LANGUAGE_CODES.SU*: string`
+- `const LANGUAGE_CODES.SV*: string`
+- `const LANGUAGE_CODES.SV_FI*: string`
+- `const LANGUAGE_CODES.SW*: string`
+- `const LANGUAGE_CODES.SX*: string`
+- `const LANGUAGE_CODES.SYR*: string`
+- `const LANGUAGE_CODES.TA*: string`
+- `const LANGUAGE_CODES.TE*: string`
+- `const LANGUAGE_CODES.TG*: string`
+- `const LANGUAGE_CODES.TH*: string`
+- `const LANGUAGE_CODES.TI*: string`
+- `const LANGUAGE_CODES.TK*: string`
+- `const LANGUAGE_CODES.TL*: string`
+- `const LANGUAGE_CODES.TN*: string`
+- `const LANGUAGE_CODES.TO*: string`
+- `const LANGUAGE_CODES.TR*: string`
+- `const LANGUAGE_CODES.TS*: string`
+- `const LANGUAGE_CODES.TT*: string`
+- `const LANGUAGE_CODES.TW*: string`
+- `const LANGUAGE_CODES.UK*: string`
+- `const LANGUAGE_CODES.UR*: string`
+- `const LANGUAGE_CODES.US*: string`
+- `const LANGUAGE_CODES.UZ*: string`
+- `const LANGUAGE_CODES.VI*: string`
+- `const LANGUAGE_CODES.VO*: string`
+- `const LANGUAGE_CODES.WO*: string`
+- `const LANGUAGE_CODES.XH*: string`
+- `const LANGUAGE_CODES.YI*: string`
+- `const LANGUAGE_CODES.YO*: string`
+- `const LANGUAGE_CODES.ZH*: string`
+- `const LANGUAGE_CODES.ZH_CN*: string`
+- `const LANGUAGE_CODES.ZH_HK*: string`
+- `const LANGUAGE_CODES.ZH_MO*: string`
+- `const LANGUAGE_CODES.ZH_SG*: string`
+- `const LANGUAGE_CODES.ZH_TW*: string`
+- `const LANGUAGE_CODES.ZU*: string`
 
 ### ISO-639-1 INTERNATIONAL LANGUAGE NAMES
 
-- `const LANGUAGE_NAMES.AA`
-- `const LANGUAGE_NAMES.AB`
-- `const LANGUAGE_NAMES.AF`
-- `const LANGUAGE_NAMES.AM`
-- `const LANGUAGE_NAMES.AR`
-- `const LANGUAGE_NAMES.AR_AE`
-- `const LANGUAGE_NAMES.AR_BH`
-- `const LANGUAGE_NAMES.AR_DZ`
-- `const LANGUAGE_NAMES.AR_EG`
-- `const LANGUAGE_NAMES.AR_IQ`
-- `const LANGUAGE_NAMES.AR_JO`
-- `const LANGUAGE_NAMES.AR_KW`
-- `const LANGUAGE_NAMES.AR_LB`
-- `const LANGUAGE_NAMES.AR_LY`
-- `const LANGUAGE_NAMES.AR_MA`
-- `const LANGUAGE_NAMES.AR_OM`
-- `const LANGUAGE_NAMES.AR_QA`
-- `const LANGUAGE_NAMES.AR_SA`
-- `const LANGUAGE_NAMES.AR_SY`
-- `const LANGUAGE_NAMES.AR_TN`
-- `const LANGUAGE_NAMES.AR_YE`
-- `const LANGUAGE_NAMES.AS`
-- `const LANGUAGE_NAMES.AY`
-- `const LANGUAGE_NAMES.AZ`
-- `const LANGUAGE_NAMES.BA`
-- `const LANGUAGE_NAMES.BE`
-- `const LANGUAGE_NAMES.BG`
-- `const LANGUAGE_NAMES.BH`
-- `const LANGUAGE_NAMES.BI`
-- `const LANGUAGE_NAMES.BN`
-- `const LANGUAGE_NAMES.BO`
-- `const LANGUAGE_NAMES.BR`
-- `const LANGUAGE_NAMES.CA`
-- `const LANGUAGE_NAMES.CO`
-- `const LANGUAGE_NAMES.CS`
-- `const LANGUAGE_NAMES.CY`
-- `const LANGUAGE_NAMES.DA`
-- `const LANGUAGE_NAMES.DE`
-- `const LANGUAGE_NAMES.DE_AT`
-- `const LANGUAGE_NAMES.DE_CH`
-- `const LANGUAGE_NAMES.DE_LI`
-- `const LANGUAGE_NAMES.DE_LU`
-- `const LANGUAGE_NAMES.DIV`
-- `const LANGUAGE_NAMES.DZ`
-- `const LANGUAGE_NAMES.EL`
-- `const LANGUAGE_NAMES.EN`
-- `const LANGUAGE_NAMES.EN_AU`
-- `const LANGUAGE_NAMES.EN_BZ`
-- `const LANGUAGE_NAMES.EN_CA`
-- `const LANGUAGE_NAMES.EN_GB`
-- `const LANGUAGE_NAMES.EN_IE`
-- `const LANGUAGE_NAMES.EN_JM`
-- `const LANGUAGE_NAMES.EN_NZ`
-- `const LANGUAGE_NAMES.EN_PH`
-- `const LANGUAGE_NAMES.EN_TT`
-- `const LANGUAGE_NAMES.EN_US`
-- `const LANGUAGE_NAMES.EN_ZA`
-- `const LANGUAGE_NAMES.EN_ZW`
-- `const LANGUAGE_NAMES.EO`
-- `const LANGUAGE_NAMES.ES`
-- `const LANGUAGE_NAMES.ES_AR`
-- `const LANGUAGE_NAMES.ES_BO`
-- `const LANGUAGE_NAMES.ES_CL`
-- `const LANGUAGE_NAMES.ES_CO`
-- `const LANGUAGE_NAMES.ES_CR`
-- `const LANGUAGE_NAMES.ES_DO`
-- `const LANGUAGE_NAMES.ES_EC`
-- `const LANGUAGE_NAMES.ES_ES`
-- `const LANGUAGE_NAMES.ES_GT`
-- `const LANGUAGE_NAMES.ES_HN`
-- `const LANGUAGE_NAMES.ES_MX`
-- `const LANGUAGE_NAMES.ES_NI`
-- `const LANGUAGE_NAMES.ES_PA`
-- `const LANGUAGE_NAMES.ES_PE`
-- `const LANGUAGE_NAMES.ES_PR`
-- `const LANGUAGE_NAMES.ES_PY`
-- `const LANGUAGE_NAMES.ES_SV`
-- `const LANGUAGE_NAMES.ES_US`
-- `const LANGUAGE_NAMES.ES_UY`
-- `const LANGUAGE_NAMES.ES_VE`
-- `const LANGUAGE_NAMES.ET`
-- `const LANGUAGE_NAMES.EU`
-- `const LANGUAGE_NAMES.FA`
-- `const LANGUAGE_NAMES.FI`
-- `const LANGUAGE_NAMES.FJ`
-- `const LANGUAGE_NAMES.FO`
-- `const LANGUAGE_NAMES.FR`
-- `const LANGUAGE_NAMES.FR_BE`
-- `const LANGUAGE_NAMES.FR_CA`
-- `const LANGUAGE_NAMES.FR_CH`
-- `const LANGUAGE_NAMES.FR_LU`
-- `const LANGUAGE_NAMES.FR_MC`
-- `const LANGUAGE_NAMES.FY`
-- `const LANGUAGE_NAMES.GA`
-- `const LANGUAGE_NAMES.GD`
-- `const LANGUAGE_NAMES.GL`
-- `const LANGUAGE_NAMES.GN`
-- `const LANGUAGE_NAMES.GU`
-- `const LANGUAGE_NAMES.HA`
-- `const LANGUAGE_NAMES.HE`
-- `const LANGUAGE_NAMES.HI`
-- `const LANGUAGE_NAMES.HR`
-- `const LANGUAGE_NAMES.HU`
-- `const LANGUAGE_NAMES.HY`
-- `const LANGUAGE_NAMES.IA`
-- `const LANGUAGE_NAMES.ID`
-- `const LANGUAGE_NAMES.IE`
-- `const LANGUAGE_NAMES.IK`
-- `const LANGUAGE_NAMES.IN`
-- `const LANGUAGE_NAMES.IS`
-- `const LANGUAGE_NAMES.IT`
-- `const LANGUAGE_NAMES.IT_CH`
-- `const LANGUAGE_NAMES.IW`
-- `const LANGUAGE_NAMES.JA`
-- `const LANGUAGE_NAMES.JI`
-- `const LANGUAGE_NAMES.JW`
-- `const LANGUAGE_NAMES.KA`
-- `const LANGUAGE_NAMES.KK`
-- `const LANGUAGE_NAMES.KL`
-- `const LANGUAGE_NAMES.KM`
-- `const LANGUAGE_NAMES.KN`
-- `const LANGUAGE_NAMES.KO`
-- `const LANGUAGE_NAMES.KOK`
-- `const LANGUAGE_NAMES.KS`
-- `const LANGUAGE_NAMES.KU`
-- `const LANGUAGE_NAMES.KY`
-- `const LANGUAGE_NAMES.KZ`
-- `const LANGUAGE_NAMES.LA`
-- `const LANGUAGE_NAMES.LN`
-- `const LANGUAGE_NAMES.LO`
-- `const LANGUAGE_NAMES.LS`
-- `const LANGUAGE_NAMES.LT`
-- `const LANGUAGE_NAMES.LV`
-- `const LANGUAGE_NAMES.MG`
-- `const LANGUAGE_NAMES.MI`
-- `const LANGUAGE_NAMES.MK`
-- `const LANGUAGE_NAMES.ML`
-- `const LANGUAGE_NAMES.MN`
-- `const LANGUAGE_NAMES.MO`
-- `const LANGUAGE_NAMES.MR`
-- `const LANGUAGE_NAMES.MS`
-- `const LANGUAGE_NAMES.MT`
-- `const LANGUAGE_NAMES.MY`
-- `const LANGUAGE_NAMES.NA`
-- `const LANGUAGE_NAMES.NB_NO`
-- `const LANGUAGE_NAMES.NE`
-- `const LANGUAGE_NAMES.NL`
-- `const LANGUAGE_NAMES.NL_BE`
-- `const LANGUAGE_NAMES.NN_NO`
-- `const LANGUAGE_NAMES.NO`
-- `const LANGUAGE_NAMES.OC`
-- `const LANGUAGE_NAMES.OM`
-- `const LANGUAGE_NAMES.OR`
-- `const LANGUAGE_NAMES.PA`
-- `const LANGUAGE_NAMES.PL`
-- `const LANGUAGE_NAMES.PS`
-- `const LANGUAGE_NAMES.PT`
-- `const LANGUAGE_NAMES.PT_BR`
-- `const LANGUAGE_NAMES.QU`
-- `const LANGUAGE_NAMES.RM`
-- `const LANGUAGE_NAMES.RN`
-- `const LANGUAGE_NAMES.RO`
-- `const LANGUAGE_NAMES.RO_MD`
-- `const LANGUAGE_NAMES.RU`
-- `const LANGUAGE_NAMES.RU_MD`
-- `const LANGUAGE_NAMES.RW`
-- `const LANGUAGE_NAMES.SA`
-- `const LANGUAGE_NAMES.SB`
-- `const LANGUAGE_NAMES.SD`
-- `const LANGUAGE_NAMES.SG`
-- `const LANGUAGE_NAMES.SH`
-- `const LANGUAGE_NAMES.SI`
-- `const LANGUAGE_NAMES.SK`
-- `const LANGUAGE_NAMES.SL`
-- `const LANGUAGE_NAMES.SM`
-- `const LANGUAGE_NAMES.SN`
-- `const LANGUAGE_NAMES.SO`
-- `const LANGUAGE_NAMES.SQ`
-- `const LANGUAGE_NAMES.SR`
-- `const LANGUAGE_NAMES.SS`
-- `const LANGUAGE_NAMES.ST`
-- `const LANGUAGE_NAMES.SU`
-- `const LANGUAGE_NAMES.SV`
-- `const LANGUAGE_NAMES.SV_FI`
-- `const LANGUAGE_NAMES.SW`
-- `const LANGUAGE_NAMES.SX`
-- `const LANGUAGE_NAMES.SYR`
-- `const LANGUAGE_NAMES.TA`
-- `const LANGUAGE_NAMES.TE`
-- `const LANGUAGE_NAMES.TG`
-- `const LANGUAGE_NAMES.TH`
-- `const LANGUAGE_NAMES.TI`
-- `const LANGUAGE_NAMES.TK`
-- `const LANGUAGE_NAMES.TL`
-- `const LANGUAGE_NAMES.TN`
-- `const LANGUAGE_NAMES.TO`
-- `const LANGUAGE_NAMES.TR`
-- `const LANGUAGE_NAMES.TS`
-- `const LANGUAGE_NAMES.TT`
-- `const LANGUAGE_NAMES.TW`
-- `const LANGUAGE_NAMES.UK`
-- `const LANGUAGE_NAMES.UR`
-- `const LANGUAGE_NAMES.US`
-- `const LANGUAGE_NAMES.UZ`
-- `const LANGUAGE_NAMES.VI`
-- `const LANGUAGE_NAMES.VO`
-- `const LANGUAGE_NAMES.WO`
-- `const LANGUAGE_NAMES.XH`
-- `const LANGUAGE_NAMES.YI`
-- `const LANGUAGE_NAMES.YO`
-- `const LANGUAGE_NAMES.ZH`
-- `const LANGUAGE_NAMES.ZH_CN`
-- `const LANGUAGE_NAMES.ZH_HK`
-- `const LANGUAGE_NAMES.ZH_MO`
-- `const LANGUAGE_NAMES.ZH_SG`
-- `const LANGUAGE_NAMES.ZH_TW`
-- `const LANGUAGE_NAMES.ZU`
+- `const LANGUAGE_NAMES.AA*: string`
+- `const LANGUAGE_NAMES.AB*: string`
+- `const LANGUAGE_NAMES.AF*: string`
+- `const LANGUAGE_NAMES.AM*: string`
+- `const LANGUAGE_NAMES.AR*: string`
+- `const LANGUAGE_NAMES.AR_AE*: string`
+- `const LANGUAGE_NAMES.AR_BH*: string`
+- `const LANGUAGE_NAMES.AR_DZ*: string`
+- `const LANGUAGE_NAMES.AR_EG*: string`
+- `const LANGUAGE_NAMES.AR_IQ*: string`
+- `const LANGUAGE_NAMES.AR_JO*: string`
+- `const LANGUAGE_NAMES.AR_KW*: string`
+- `const LANGUAGE_NAMES.AR_LB*: string`
+- `const LANGUAGE_NAMES.AR_LY*: string`
+- `const LANGUAGE_NAMES.AR_MA*: string`
+- `const LANGUAGE_NAMES.AR_OM*: string`
+- `const LANGUAGE_NAMES.AR_QA*: string`
+- `const LANGUAGE_NAMES.AR_SA*: string`
+- `const LANGUAGE_NAMES.AR_SY*: string`
+- `const LANGUAGE_NAMES.AR_TN*: string`
+- `const LANGUAGE_NAMES.AR_YE*: string`
+- `const LANGUAGE_NAMES.AS*: string`
+- `const LANGUAGE_NAMES.AY*: string`
+- `const LANGUAGE_NAMES.AZ*: string`
+- `const LANGUAGE_NAMES.BA*: string`
+- `const LANGUAGE_NAMES.BE*: string`
+- `const LANGUAGE_NAMES.BG*: string`
+- `const LANGUAGE_NAMES.BH*: string`
+- `const LANGUAGE_NAMES.BI*: string`
+- `const LANGUAGE_NAMES.BN*: string`
+- `const LANGUAGE_NAMES.BO*: string`
+- `const LANGUAGE_NAMES.BR*: string`
+- `const LANGUAGE_NAMES.CA*: string`
+- `const LANGUAGE_NAMES.CO*: string`
+- `const LANGUAGE_NAMES.CS*: string`
+- `const LANGUAGE_NAMES.CY*: string`
+- `const LANGUAGE_NAMES.DA*: string`
+- `const LANGUAGE_NAMES.DE*: string`
+- `const LANGUAGE_NAMES.DE_AT*: string`
+- `const LANGUAGE_NAMES.DE_CH*: string`
+- `const LANGUAGE_NAMES.DE_LI*: string`
+- `const LANGUAGE_NAMES.DE_LU*: string`
+- `const LANGUAGE_NAMES.DIV*: string`
+- `const LANGUAGE_NAMES.DZ*: string`
+- `const LANGUAGE_NAMES.EL*: string`
+- `const LANGUAGE_NAMES.EN*: string`
+- `const LANGUAGE_NAMES.EN_AU*: string`
+- `const LANGUAGE_NAMES.EN_BZ*: string`
+- `const LANGUAGE_NAMES.EN_CA*: string`
+- `const LANGUAGE_NAMES.EN_GB*: string`
+- `const LANGUAGE_NAMES.EN_IE*: string`
+- `const LANGUAGE_NAMES.EN_JM*: string`
+- `const LANGUAGE_NAMES.EN_NZ*: string`
+- `const LANGUAGE_NAMES.EN_PH*: string`
+- `const LANGUAGE_NAMES.EN_TT*: string`
+- `const LANGUAGE_NAMES.EN_US*: string`
+- `const LANGUAGE_NAMES.EN_ZA*: string`
+- `const LANGUAGE_NAMES.EN_ZW*: string`
+- `const LANGUAGE_NAMES.EO*: string`
+- `const LANGUAGE_NAMES.ES*: string`
+- `const LANGUAGE_NAMES.ES_AR*: string`
+- `const LANGUAGE_NAMES.ES_BO*: string`
+- `const LANGUAGE_NAMES.ES_CL*: string`
+- `const LANGUAGE_NAMES.ES_CO*: string`
+- `const LANGUAGE_NAMES.ES_CR*: string`
+- `const LANGUAGE_NAMES.ES_DO*: string`
+- `const LANGUAGE_NAMES.ES_EC*: string`
+- `const LANGUAGE_NAMES.ES_ES*: string`
+- `const LANGUAGE_NAMES.ES_GT*: string`
+- `const LANGUAGE_NAMES.ES_HN*: string`
+- `const LANGUAGE_NAMES.ES_MX*: string`
+- `const LANGUAGE_NAMES.ES_NI*: string`
+- `const LANGUAGE_NAMES.ES_PA*: string`
+- `const LANGUAGE_NAMES.ES_PE*: string`
+- `const LANGUAGE_NAMES.ES_PR*: string`
+- `const LANGUAGE_NAMES.ES_PY*: string`
+- `const LANGUAGE_NAMES.ES_SV*: string`
+- `const LANGUAGE_NAMES.ES_US*: string`
+- `const LANGUAGE_NAMES.ES_UY*: string`
+- `const LANGUAGE_NAMES.ES_VE*: string`
+- `const LANGUAGE_NAMES.ET*: string`
+- `const LANGUAGE_NAMES.EU*: string`
+- `const LANGUAGE_NAMES.FA*: string`
+- `const LANGUAGE_NAMES.FI*: string`
+- `const LANGUAGE_NAMES.FJ*: string`
+- `const LANGUAGE_NAMES.FO*: string`
+- `const LANGUAGE_NAMES.FR*: string`
+- `const LANGUAGE_NAMES.FR_BE*: string`
+- `const LANGUAGE_NAMES.FR_CA*: string`
+- `const LANGUAGE_NAMES.FR_CH*: string`
+- `const LANGUAGE_NAMES.FR_LU*: string`
+- `const LANGUAGE_NAMES.FR_MC*: string`
+- `const LANGUAGE_NAMES.FY*: string`
+- `const LANGUAGE_NAMES.GA*: string`
+- `const LANGUAGE_NAMES.GD*: string`
+- `const LANGUAGE_NAMES.GL*: string`
+- `const LANGUAGE_NAMES.GN*: string`
+- `const LANGUAGE_NAMES.GU*: string`
+- `const LANGUAGE_NAMES.HA*: string`
+- `const LANGUAGE_NAMES.HE*: string`
+- `const LANGUAGE_NAMES.HI*: string`
+- `const LANGUAGE_NAMES.HR*: string`
+- `const LANGUAGE_NAMES.HU*: string`
+- `const LANGUAGE_NAMES.HY*: string`
+- `const LANGUAGE_NAMES.IA*: string`
+- `const LANGUAGE_NAMES.ID*: string`
+- `const LANGUAGE_NAMES.IE*: string`
+- `const LANGUAGE_NAMES.IK*: string`
+- `const LANGUAGE_NAMES.IN*: string`
+- `const LANGUAGE_NAMES.IS*: string`
+- `const LANGUAGE_NAMES.IT*: string`
+- `const LANGUAGE_NAMES.IT_CH*: string`
+- `const LANGUAGE_NAMES.IW*: string`
+- `const LANGUAGE_NAMES.JA*: string`
+- `const LANGUAGE_NAMES.JI*: string`
+- `const LANGUAGE_NAMES.JW*: string`
+- `const LANGUAGE_NAMES.KA*: string`
+- `const LANGUAGE_NAMES.KK*: string`
+- `const LANGUAGE_NAMES.KL*: string`
+- `const LANGUAGE_NAMES.KM*: string`
+- `const LANGUAGE_NAMES.KN*: string`
+- `const LANGUAGE_NAMES.KO*: string`
+- `const LANGUAGE_NAMES.KOK*: string`
+- `const LANGUAGE_NAMES.KS*: string`
+- `const LANGUAGE_NAMES.KU*: string`
+- `const LANGUAGE_NAMES.KY*: string`
+- `const LANGUAGE_NAMES.KZ*: string`
+- `const LANGUAGE_NAMES.LA*: string`
+- `const LANGUAGE_NAMES.LN*: string`
+- `const LANGUAGE_NAMES.LO*: string`
+- `const LANGUAGE_NAMES.LS*: string`
+- `const LANGUAGE_NAMES.LT*: string`
+- `const LANGUAGE_NAMES.LV*: string`
+- `const LANGUAGE_NAMES.MG*: string`
+- `const LANGUAGE_NAMES.MI*: string`
+- `const LANGUAGE_NAMES.MK*: string`
+- `const LANGUAGE_NAMES.ML*: string`
+- `const LANGUAGE_NAMES.MN*: string`
+- `const LANGUAGE_NAMES.MO*: string`
+- `const LANGUAGE_NAMES.MR*: string`
+- `const LANGUAGE_NAMES.MS*: string`
+- `const LANGUAGE_NAMES.MT*: string`
+- `const LANGUAGE_NAMES.MY*: string`
+- `const LANGUAGE_NAMES.NA*: string`
+- `const LANGUAGE_NAMES.NB_NO*: string`
+- `const LANGUAGE_NAMES.NE*: string`
+- `const LANGUAGE_NAMES.NL*: string`
+- `const LANGUAGE_NAMES.NL_BE*: string`
+- `const LANGUAGE_NAMES.NN_NO*: string`
+- `const LANGUAGE_NAMES.NO*: string`
+- `const LANGUAGE_NAMES.OC*: string`
+- `const LANGUAGE_NAMES.OM*: string`
+- `const LANGUAGE_NAMES.OR*: string`
+- `const LANGUAGE_NAMES.PA*: string`
+- `const LANGUAGE_NAMES.PL*: string`
+- `const LANGUAGE_NAMES.PS*: string`
+- `const LANGUAGE_NAMES.PT*: string`
+- `const LANGUAGE_NAMES.PT_BR*: string`
+- `const LANGUAGE_NAMES.QU*: string`
+- `const LANGUAGE_NAMES.RM*: string`
+- `const LANGUAGE_NAMES.RN*: string`
+- `const LANGUAGE_NAMES.RO*: string`
+- `const LANGUAGE_NAMES.RO_MD*: string`
+- `const LANGUAGE_NAMES.RU*: string`
+- `const LANGUAGE_NAMES.RU_MD*: string`
+- `const LANGUAGE_NAMES.RW*: string`
+- `const LANGUAGE_NAMES.SA*: string`
+- `const LANGUAGE_NAMES.SB*: string`
+- `const LANGUAGE_NAMES.SD*: string`
+- `const LANGUAGE_NAMES.SG*: string`
+- `const LANGUAGE_NAMES.SH*: string`
+- `const LANGUAGE_NAMES.SI*: string`
+- `const LANGUAGE_NAMES.SK*: string`
+- `const LANGUAGE_NAMES.SL*: string`
+- `const LANGUAGE_NAMES.SM*: string`
+- `const LANGUAGE_NAMES.SN*: string`
+- `const LANGUAGE_NAMES.SO*: string`
+- `const LANGUAGE_NAMES.SQ*: string`
+- `const LANGUAGE_NAMES.SR*: string`
+- `const LANGUAGE_NAMES.SS*: string`
+- `const LANGUAGE_NAMES.ST*: string`
+- `const LANGUAGE_NAMES.SU*: string`
+- `const LANGUAGE_NAMES.SV*: string`
+- `const LANGUAGE_NAMES.SV_FI*: string`
+- `const LANGUAGE_NAMES.SW*: string`
+- `const LANGUAGE_NAMES.SX*: string`
+- `const LANGUAGE_NAMES.SYR*: string`
+- `const LANGUAGE_NAMES.TA*: string`
+- `const LANGUAGE_NAMES.TE*: string`
+- `const LANGUAGE_NAMES.TG*: string`
+- `const LANGUAGE_NAMES.TH*: string`
+- `const LANGUAGE_NAMES.TI*: string`
+- `const LANGUAGE_NAMES.TK*: string`
+- `const LANGUAGE_NAMES.TL*: string`
+- `const LANGUAGE_NAMES.TN*: string`
+- `const LANGUAGE_NAMES.TO*: string`
+- `const LANGUAGE_NAMES.TR*: string`
+- `const LANGUAGE_NAMES.TS*: string`
+- `const LANGUAGE_NAMES.TT*: string`
+- `const LANGUAGE_NAMES.TW*: string`
+- `const LANGUAGE_NAMES.UK*: string`
+- `const LANGUAGE_NAMES.UR*: string`
+- `const LANGUAGE_NAMES.US*: string`
+- `const LANGUAGE_NAMES.UZ*: string`
+- `const LANGUAGE_NAMES.VI*: string`
+- `const LANGUAGE_NAMES.VO*: string`
+- `const LANGUAGE_NAMES.WO*: string`
+- `const LANGUAGE_NAMES.XH*: string`
+- `const LANGUAGE_NAMES.YI*: string`
+- `const LANGUAGE_NAMES.YO*: string`
+- `const LANGUAGE_NAMES.ZH*: string`
+- `const LANGUAGE_NAMES.ZH_CN*: string`
+- `const LANGUAGE_NAMES.ZH_HK*: string`
+- `const LANGUAGE_NAMES.ZH_MO*: string`
+- `const LANGUAGE_NAMES.ZH_SG*: string`
+- `const LANGUAGE_NAMES.ZH_TW*: string`
+- `const LANGUAGE_NAMES.ZU*: string`

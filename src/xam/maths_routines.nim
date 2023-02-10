@@ -38,6 +38,13 @@ func floatIsNaN*(x: SomeFloat): bool {.inline.} =
   ## Tests if the specified float is NaN (not-a-number).
   x.classify == fcNaN
 
+func floatInterpolate*[T: SomeFloat](value, inputMin, inputMax, outputMin, outputMax: T): T =
+  ## Translates the value from the input range margins to the output range margins.
+  template inputSpan: T = inputMax - inputMin
+  template outputSpan: T = outputMax - outputMin
+  template scaledValue: T = (value - inputMin) / T(inputSpan)
+  outputMin + (scaledValue * outputSpan)
+
 # NOTE: most of the following routines are adaptations from the Java Ace Toolkit
 
 # INTEGERS

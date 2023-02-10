@@ -148,6 +148,7 @@ This is the documentation of the math related constants and routines module of t
 - `const VALUE_LOG10E*: float`
 - `const VALUE_LNPI*: float`
 - `const VALUE_PI*: float`
+- `const VALUE_INVERSE_PI*: float`
 - `const VALUE_2PI*: float`
 - `const VALUE_TAU*: float`
 - `const VALUE_PIDIV2*: float`
@@ -155,9 +156,11 @@ This is the documentation of the math related constants and routines module of t
 - `const VALUE_1DIVPI*: float`
 - `const VALUE_2DIVPI*: float`
 - `const VALUE_SQRTPI*: float`
+- `const VALUE_INVERSE_SQRTPI*: float`
 - `const VALUE_2SQRTPI*: float`
 - `const VALUE_SQRT2*: float`
 - `const VALUE_SQRT3*: float`
+- `const VALUE_INVERSE_SQRT3*: float`
 - `const VALUE_1DIVSQRT2*: float`
 - `const VALUE_PHI*: float`
 - `const VALUE_INVERSE_PHI*: float`
@@ -268,6 +271,24 @@ This is the documentation of the math related constants and routines module of t
 ```nim
   if not floatIsNaN(1.2345):
     echo "not is NaN"
+```
+
+### FLOATINTERPOLATE
+
+**SIGNATURE**
+
+`func floatInterpolate*[T: SomeFloat](value, inputMin, inputMax, outputMin, outputMax: T): T`
+
+**DESCRIPTION**
+
+*Translates the value from the input range margins to the output range margins.*
+
+**USAGE**
+
+```nim
+  let mapped = floatInterpolate(180, 0, 359, 0, 1)
+  if floatRound(mapped, 1) == 0.5:
+    echo "interpolated"
 ```
 
 > most of the following routines are adaptations from the Java Ace Toolkit

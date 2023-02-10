@@ -37,6 +37,14 @@ suite "test xam maths":
     check(not floatIsNaN(x))
     check(floatIsNaN(y))
 
+  test "test floatInterpolate":
+    check(floatInterpolate(1.0, 0.0, 1.0, 0.0, 1.0) == 1.0)
+    check(floatInterpolate(1.0, 0.0, 1.0, 0.0, -1.0) == -1.0)
+    check(floatRound(floatInterpolate(180.0, 0.0, 359.0, 0.0, 1.0), 1) == 0.5)
+    check(floatRound(floatInterpolate(720.0, 0.0, 359.0, 0.0, 1.0), 1) == 2.0)
+    check(floatIsNaN(floatInterpolate(0.0, 0.0, 0.0, 0.0, 0.0)))
+    check(floatIsNaN(floatInterpolate(NaN, NaN, NaN, NaN, NaN)))
+
   test "test add":
     check(add(1) == 1)
     check(add(40, 2) == 42)
