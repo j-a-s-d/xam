@@ -86,3 +86,7 @@ proc maximum*[SomeNumber](numbers: varargs[SomeNumber]): SomeNumber =
   result = low(SomeNumber)
   for number in numbers:
     result = max(result, number)
+
+proc constrain*[SomeNumber](value, minValue, maxValue: SomeNumber): SomeNumber {.inline.} =
+  ## Returns the provided value constrained between the specified limits.
+  max(minValue, min(value, maxValue))

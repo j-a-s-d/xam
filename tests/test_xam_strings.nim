@@ -92,6 +92,11 @@ suite "test xam strings":
     check(between("ab12de", "e", "e") == "")
     check(between("ab12de34de", "a", "e") == "b12de34d")
     check(between("ab12de34de", "a", "e", true) == "b12d")
+  test "test extractInBetween":
+    check(extractInBetween("this 'is a 'test, 'hello' world", '\'', '\'') == @["is a ", "hello"])
+    check(extractInBetween("this \"is a \"test, \"hello world", '\"', '\"') == @["is a "])
+    check(extractInBetween("hello world", 'x', 'x').len == 0)
+    check(extractInBetween("", ' ', ' ').len == 0)
 
   test "test isNumericString":
     check(isNumericString("12345") == true)

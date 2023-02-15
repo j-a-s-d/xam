@@ -411,3 +411,20 @@ This is the documentation of the math related constants and routines module of t
   if maximum(1.1, 2.2, 3.3) == 3.3:
     echo "the maximum number provided was 3.3"
 ```
+
+### CONSTRAIN
+
+**SIGNATURE**
+
+`proc constrain*[SomeNumber](value, minValue, maxValue: SomeNumber): SomeNumber {.inline.}`
+
+**DESCRIPTION**
+
+*Returns the provided value constrained between the specified limits.*
+
+**USAGE**
+
+```nim
+  if constrain(3.3, 1.1, 2.2) == 2.2:
+    echo "the constrained number is 2.2"
+```

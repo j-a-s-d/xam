@@ -94,3 +94,11 @@ suite "test xam maths":
     check(not isDivisibleBy(100, 3))
     check(not isDivisibleBy(9, 2))
     check(not isDivisibleBy(4, 10))
+
+  test "test constrain":
+    check(constrain(5, 1, 10) == 5)
+    check(constrain(0, 1, 10) == 1)
+    check(constrain(11, 1, 10) == 10)
+    check(constrain(5.5, 1.1, 10.1) == 5.5)
+    check(constrain(0.0, 1.1, 10.1) == 1.1)
+    check(constrain(11.1, 1.1, 10.1) == 10.1)

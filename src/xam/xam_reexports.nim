@@ -10,6 +10,7 @@ reexport_xam_module bytes
 reexport_xam_module callbacks
 reexport_xam_module cctlds
 reexport_xam_module chars
+reexport_xam_module currencies
 reexport_xam_module time
 reexport_xam_module exceptions
 reexport_xam_module files

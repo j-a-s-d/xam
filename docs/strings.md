@@ -518,11 +518,30 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
     echo "dropped!"
 ```
 
+### EXTRACTINBETWEEN
+
+**SIGNATURE**
+
+`proc extractInBetween*(s: string, start, ending: char): seq[string]`
+
+**DESCRIPTION**
+
+*Returns a sequence of strings containing the texts contained between the specified start string and the specified ending string. If no matches, the returned sequence will be empty.*
+
+**USAGE**
+
+```nim
+  if extractInBetween("this 'is a 'test, 'hello' world", '\'', '\'') == @["is a ", "hello"]:
+    echo "extracted!"
+  if extractInBetween("", " ", " ").len == 0:
+    echo "nothing extracted!"
+```
+
 ### BETWEEN
 
 **SIGNATURE**
 
-`proc between*(s, start, ending: string, firstEnding: bool = false): string {.inline.}`
+`proc between*(s, start, ending: string, firstEnding: bool = false): string`
 
 **DESCRIPTION**
 

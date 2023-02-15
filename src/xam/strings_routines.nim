@@ -149,7 +149,46 @@ proc lined*(strings: varargs[string]): string =
       result &= STRINGS_EOL
     result &= s
 
+from strutils import strip
+
+func hasText*(s: string): bool =
+  ## Determines if the specified string has text.
+  ## NOTE: white space is ignored.
+  strip(s).len > 0
+
+func haveText*(strings: varargs[string]): bool =
+  ## Determines if the specified strings have text.
+  ## NOTE: white space is ignored.
+  result = strings.len > 0
+  for s in strings:
+    result = result and hasText(s)
+
+func stripLeft*(s: string): string =
+  ## Strips leading whitespace characters from s and returns the resulting string.
+  s.strip(trailing = false)
+
+func stripRight*(s: string): string =
+  ## Strips trailing whitespace characters from s and returns the resulting string.
+  s.strip(leading = false)
+
 {.pop.}
+
+proc extractInBetween*(s: string, start, ending: char): seq[string] =
+  ## Returns a sequence of strings containing the texts contained
+  ## between the specified start string and the specified ending string.
+  ## If no matches, the returned sequence will be empty.
+  var captured: string = STRINGS_EMPTY
+  var inside: bool = false
+  for c in s:
+    if inside:
+      if c == ending:
+        inside = false
+        result.add(captured)
+        captured = STRINGS_EMPTY
+        continue
+      captured &= c
+    else:
+      inside = c == start
 
 from strutils import find, rfind
 
@@ -185,26 +224,3 @@ proc isAlphaNumericString*(s: string, additional: set[char] = {}, leading: set[c
   ## Determines if the specified string is alphanumeric.
   ## NOTE: it allows an optional set of chars to be tested (useful to add math symbols for example).
   isNumericString(s, Letters + additional, leading)
-
-from strutils import strip
-
-func hasText*(s: string): bool =
-  ## Determines if the specified string has text.
-  ## NOTE: white space is ignored.
-  strip(s).len > 0
-
-func haveText*(strings: varargs[string]): bool =
-  ## Determines if the specified strings have text.
-  ## NOTE: white space is ignored.
-  result = strings.len > 0
-  for s in strings:
-    result = result and hasText(s)
-
-func stripLeft*(s: string): string =
-  ## Strips leading whitespace characters from s and returns the resulting string.
-  s.strip(trailing = false)
-
-func stripRight*(s: string): string =
-  ## Strips trailing whitespace characters from s and returns the resulting string.
-  s.strip(leading = false)
-

@@ -1,6 +1,6 @@
 # xam
 # ===
-# HISTORICAL GENERIC TOP-LEVEL DOMAINS
+# HISTORICAL GENERIC TOP-LEVEL DOMAINS CONSTANTS
 
 # NOTE: this list exclude ICANN's sponsored TLDs, so it's a pre-2003 list.
 # See https://en.wikipedia.org/wiki/Generic_top-level_domain
