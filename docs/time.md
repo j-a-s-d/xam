@@ -192,6 +192,11 @@ This is the documentation of the time related constants and routines module of t
 
 - `const DATETIME_FORMAT_DDMMYYYY*: string`
 - `const DATETIME_FORMAT_YYYYMMDD*: string`
+- `const DATETIME_FORMAT_MMDDYYYY*: string`
+- `const DATETIME_FORMAT_HHMMSS*: string`
+- `const DATETIME_FORMAT_DDMMYYYY_HHMMSS*: string`
+- `const DATETIME_FORMAT_YYYYMMDD_HHMMSS*: string`
+- `const DATETIME_FORMAT_MMDDYYYY_HHMMSS*: string`
 
 ## ROUTINES
 

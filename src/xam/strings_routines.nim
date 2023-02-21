@@ -149,12 +149,12 @@ proc lined*(strings: varargs[string]): string =
       result &= STRINGS_EOL
     result &= s
 
-from strutils import strip
+from strutils import allCharsInSet, Whitespace
 
 func hasText*(s: string): bool =
   ## Determines if the specified string has text.
   ## NOTE: white space is ignored.
-  strip(s).len > 0
+  not s.allCharsInSet(Whitespace)
 
 func haveText*(strings: varargs[string]): bool =
   ## Determines if the specified strings have text.
@@ -162,6 +162,8 @@ func haveText*(strings: varargs[string]): bool =
   result = strings.len > 0
   for s in strings:
     result = result and hasText(s)
+
+from strutils import strip
 
 func stripLeft*(s: string): string =
   ## Strips leading whitespace characters from s and returns the resulting string.

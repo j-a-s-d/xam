@@ -490,7 +490,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template pos*(s, sub: string, offset: int = 0): int {.used.}`
+`proc pos*(s, sub: string, offset: int = 0): int {.used.}`
 
 **DESCRIPTION**
 
@@ -500,7 +500,7 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template indexOf*(s, sub: string, fromIndex: int = 0): int {.used.}`
+`proc indexOf*(s, sub: string, fromIndex: int = 0): int {.used.}`
 
 **DESCRIPTION**
 
@@ -510,51 +510,61 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **SIGNATURE**
 
-`template trim*(s: string): string {.used.}`
+`proc trim*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
-*Pascal/C#/Javascript/etc-like trim alias*
+*Pascal/C#/Javascript/etc-like strip alias*
 
 ### PASCAL/JAVASCRIPT-LIKE TRIMLEFT
 
 **SIGNATURE**
 
-`template trimLeft*(s: string): string {.used.}`
+`proc trimLeft*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
-*Pascal/Javascript/etc-like trimLeft alias*
+*Pascal/Javascript/etc-like stripLeft alias*
 
 ### PASCAL/JAVASCRIPT-LIKE TRIMRIGHT
 
 **SIGNATURE**
 
-`template trimRight*(s: string): string {.used.}`
+`proc trimRight*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
-*Pascal/Javascript/etc-like trimRight alias*
+*Pascal/Javascript/etc-like stripRight alias*
 
 ### C#/JAVASCRIPT-LIKE TRIMSTART
 
 **SIGNATURE**
 
-`template trimStart*(s: string): string {.used.}`
+`proc trimStart*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
-*C#/Javascript/etc-like trimStart alias*
+*C#/Javascript/etc-like stripLeft alias*
 
 ### C#/JAVASCRIPT-LIKE TRIMEND
 
 **SIGNATURE**
 
-`template trimEnd*(s: string): string {.used.}`
+`proc trimEnd*(s: string): string {.used.}`
 
 **DESCRIPTION**
 
-*C#/Javascript/etc-like trimEnd alias*
+*C#/Javascript/etc-like stripRight alias*
+
+### PASCAL-LIKE SPLITSTRING
+
+**SIGNATURE**
+
+`proc splitString*(s, delimiter: string): string {.used.}`
+
+**DESCRIPTION**
+
+*Pascal-like splitString alias*
 
 ### MEMORY
 

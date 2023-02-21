@@ -68,3 +68,13 @@ func extractFileExtension*(fileName: string): string =
 func checkFileExtension*(fileName, fileExtension: string): bool =
   ## Determines if the provided file name has the specified file extension.
   extractFileExtension(fileName) == fileExtension
+
+from os import changeFileExt, extractFilename
+
+func stripFileExtension*(fileName: string): string =
+  ## Removes the extension from the specified file name.
+  changeFileExt(fileName, "")
+
+func extractFilenameWithoutExtension*(filePath: string): string =
+  ## Returns the name (without extension) from the specified file name.
+  changeFileExt(extractFilename(filePath), "")

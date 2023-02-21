@@ -50,5 +50,19 @@ suite "test xam files":
     check(checkFileExtension("test.nim", ".nim"))
     check(checkFileExtension("test.xyz.nim", ".nim"))
     check(not checkFileExtension("test", ".nim"))
+    check(checkFileExtension("test", ""))
+    check(not checkFileExtension("", ".nim"))
+    check(checkFileExtension("", ""))
 
+  test "test stripFileExtension":
+    check(stripFileExtension("test.nim") == "test")
+    check(stripFileExtension("dir/test.nim") == "dir/test")
+    check(stripFileExtension("dir/test") == "dir/test")
+    check(stripFileExtension("") == "")
 
+  test "test extractFilenameWithoutExtension":
+    check(extractFilenameWithoutExtension("test.nim") == "test")
+    check(extractFilenameWithoutExtension("dir/test.nim") == "test")
+    check(extractFilenameWithoutExtension("dir/test") == "test")
+    check(extractFilenameWithoutExtension("dir/") == "")
+    check(extractFilenameWithoutExtension("") == "")

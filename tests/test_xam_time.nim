@@ -40,3 +40,15 @@ suite "test xam time":
     check(s[0] == "31-12-2020")
     check(s[1] == "01-01-2021")
     check(s[2] == "02-01-2021")
+
+  test "test DATETIME_FORMAT_*":
+    let d = parse("2020-12-31", DATETIME_FORMAT_YYYYMMDD)
+    check(d.format(DATETIME_FORMAT_YYYYMMDD) == "2020-12-31")
+    check(d.format(DATETIME_FORMAT_DDMMYYYY) == "31-12-2020")
+    check(d.format(DATETIME_FORMAT_MMDDYYYY) == "12-31-2020")
+    let t = parse("11:22:33", DATETIME_FORMAT_HHMMSS)
+    check(t.format(DATETIME_FORMAT_HHMMSS) == "11:22:33")
+    let dt = parse("2020-12-31 11:22:33", DATETIME_FORMAT_YYYYMMDD_HHMMSS)
+    check(dt.format(DATETIME_FORMAT_YYYYMMDD_HHMMSS) == "2020-12-31 11:22:33")
+    check(dt.format(DATETIME_FORMAT_DDMMYYYY_HHMMSS) == "31-12-2020 11:22:33")
+    check(dt.format(DATETIME_FORMAT_MMDDYYYY_HHMMSS) == "12-31-2020 11:22:33")

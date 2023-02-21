@@ -54,6 +54,11 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 21-02-23 *[1.9.7]*
+	- added `time` DATETIME_FORMAT_MMDDYYYY, DATETIME_FORMAT_HHMMSS, DATETIME_FORMAT_MMDDYYYY_HHMMSS, DATETIME_FORMAT_DDMMYYYY_HHMMSS and DATETIME_FORMAT_YYYYMMDD_HHMMSS constants
+	- added `files` stripFileExtension and extractFilenameWithoutExtension routines
+	- added `multiplatform` pascal-like splitString split alias
+	- improved `strings` hasText routine implementation
 * 15-02-23 *[1.9.6]*
 	- added `maths` constrain routine
 	- added `strings` extractInBetween routine

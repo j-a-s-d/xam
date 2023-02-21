@@ -160,3 +160,37 @@ This is the documentation of the files related routines module of the Xam librar
   if checkFileExtension("file.nim", ".nim"):
     echo "extracted!"
 ```
+
+### STRIPFILEEXTENSION
+
+**SIGNATURE**
+
+`func stripFileExtension*(fileName: string): string`
+
+**DESCRIPTION**
+
+*Removes the extension from the specified file name.*
+
+**USAGE**
+
+```nim
+  if stripFileExtension("dir/file.nim") == "dir/file":
+    echo "stripped!"
+```
+
+### EXTRACTFILEWITHOUTEXTENSION
+
+**SIGNATURE**
+
+`func extractFilenameWithoutExtension*(filePath: string): string`
+
+**DESCRIPTION**
+
+*Returns the name (without extension) from the specified file name.*
+
+**USAGE**
+
+```nim
+  if extractFilenameWithoutExtension("dir/file.nim") == "file":
+    echo "extracted!"
+```
