@@ -110,65 +110,97 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 *Python-like "nil constant"-like alias*
 
-### FORTRAN/PYTHON/LUA-LIKE OUTPUT
+## OUTPUT ALIASES
+
+### FORTRAN/PYTHON/LUA-LIKE TEXT OUTPUT
 
 **SIGNATURE**
 
-`const print* = echo`
+`template print*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*Fortran/Python/Lua-like output alias*
+*Fortran/Python/Lua-like text output alias*
 
-### JAVA/ARDUINO/KOTLIN/GO-LIKE OUTPUT
+### JAVA/ARDUINO/KOTLIN/GO-LIKE LINE OUTPUT
 
 **SIGNATURE**
 
-`const println* = echo`
+`template println*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*Java/Arduino/Kotlin/Go-like output alias*
+*Java/Arduino/Kotlin/Go-like line output alias*
 
-### PASCAL/D/DART-LIKE OUTPUT
+### PASCAL/D/DART-LIKE LINE OUTPUT
 
 **SIGNATURE**
 
-`const writeln* = echo`
+`template writeln*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*Pascal/D/Dart-like output alias*
+*Pascal/D/Dart-like line output alias*
 
-### HASKELL-LIKE OUTPUT
+### HASKELL-LIKE TEXT OUTPUT
 
 **SIGNATURE**
 
-`const putstrln* = echo`
+`template putstr*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*Haskell-like output alias*
+*Haskell-like text output alias*
 
-### C/RUBY-LIKE OUTPUT
+### HASKELL-LIKE LINE OUTPUT
 
 **SIGNATURE**
 
-`const puts* = echo`
+`template putstrln*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*C/Ruby-like output alias*
+*Haskell-like line output alias*
 
-### APPLESCRIPT/SCRATCH-LIKE OUTPUT
+### RACKET-LIKE TEXT OUTPUT
 
 **SIGNATURE**
 
-`const say* = echo`
+`template display*(s: varargs[string])`
 
 **DESCRIPTION**
 
-*AppleScript/Scratch-like output alias*
+*Racket-like text output alias*
+
+### RACKET-LIKE LINE OUTPUT
+
+**SIGNATURE**
+
+`template displayln*(s: varargs[string])`
+
+**DESCRIPTION**
+
+*Racket-like line output alias*
+
+### C/RUBY-LIKE LINE OUTPUT
+
+**SIGNATURE**
+
+`template puts*(s: varargs[string])`
+
+**DESCRIPTION**
+
+*C/Ruby-like line output alias*
+
+### APPLESCRIPT/SCRATCH-LIKE LINE OUTPUT
+
+**SIGNATURE**
+
+`template say*(s: varargs[string])`
+
+**DESCRIPTION**
+
+*AppleScript/Scratch-like line output alias*
 
 ### EXIT VALUES
 

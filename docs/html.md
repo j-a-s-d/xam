@@ -364,6 +364,7 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 - `const HTML_TAGS_CODE*: string`
 - `const HTML_TAGS_COL*: string`
 - `const HTML_TAGS_COLGROUP*: string`
+- `const HTML_TAGS_COMMAND*: string`
 - `const HTML_TAGS_CONTENT*: string`
 - `const HTML_TAGS_DATALIST*: string`
 - `const HTML_TAGS_DD*: string`
@@ -478,6 +479,7 @@ So you can use `HTML_COLORS.WHITE` as value equivalent to `HTML_COLORS_WHITE`, a
 
 The preceding constants are also grouped into a "namespaced" constant under the name of `HTML_TAGS`.
 So you can use `HTML_TAGS.A` as value equivalent to `HTML_TAGS_A`, and so on.
+They are also joined in the HTML_TAGS_ALL sequence, and all the void html tags are in HTML_TAGS_VOID.
 
 ## TYPES
 

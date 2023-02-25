@@ -53,7 +53,7 @@ proc throw*(kind: typedesc, msg: string = "", parent: ref Exception = nil) =
 
 {.pop.}
 
-template tryIt*(code: untyped): bool =
+template tryIt*(code: untyped): bool {.used.} =
   ## Executes the provided code block into a try/except block and returns
   ## true if it executes successfully or false if it fails. On failure,
   ## errors will be ignored.

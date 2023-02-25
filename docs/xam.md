@@ -174,6 +174,26 @@ withIt newStringTable():
   echo it # {city: Monaco}
 ```
 
+### USED
+
+**SIGNATURE**
+
+`template used*(code: untyped)`
+
+**DESCRIPTION**
+
+*This template includes the push/pop pragmas to mark as used multiple symbols.*
+
+**USAGE**
+
+```nim
+used:
+  proc x*() =
+    echo "this proc is used!"
+  proc y*() =
+    echo "this proc is used too!"
+```
+
 ### INLINED
 
 **SIGNATURE**
@@ -182,7 +202,7 @@ withIt newStringTable():
 
 **DESCRIPTION**
 
-*This template includes the push/pop pragmas for inline multiple procs.*
+*This template includes the push/pop pragmas to mark as used multiple symbols.*
 
 **USAGE**
 

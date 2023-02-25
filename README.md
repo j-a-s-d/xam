@@ -54,6 +54,13 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 25-02-23 *[1.9.8]*
+	- added `xam` used template
+	- added `html` HTML_TAGS_COMMAND constant
+	- added `html` HTML_ALL_TAGS and HTML_VOID_TAGS constant sequences
+	- added `multiplatform` racket-like display and displayln output aliases
+	- added `multiplatform` haskell-like putStr output alias
+	- improved `multiplatform` print, println, writeln, putStrLn, puts and say aliases implementation
 * 21-02-23 *[1.9.7]*
 	- added `time` DATETIME_FORMAT_MMDDYYYY, DATETIME_FORMAT_HHMMSS, DATETIME_FORMAT_MMDDYYYY_HHMMSS, DATETIME_FORMAT_DDMMYYYY_HHMMSS and DATETIME_FORMAT_YYYYMMDD_HHMMSS constants
 	- added `files` stripFileExtension and extractFilenameWithoutExtension routines

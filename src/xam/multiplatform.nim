@@ -11,6 +11,7 @@
 #       you are testing for migration asap.
 
 include multiplatform_constants
+include multiplatform_output
 include multiplatform_operators
 include multiplatform_comments
 include multiplatform_introspection
