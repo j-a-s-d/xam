@@ -13,6 +13,7 @@
 include multiplatform_constants
 include multiplatform_output
 include multiplatform_operators
+include multiplatform_converters
 include multiplatform_comments
 include multiplatform_introspection
 include multiplatform_shutdown

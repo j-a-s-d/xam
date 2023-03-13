@@ -97,6 +97,11 @@ suite "test xam strings":
     check(extractInBetween("this \"is a \"test, \"hello world", '\"', '\"') == @["is a "])
     check(extractInBetween("hello world", 'x', 'x').len == 0)
     check(extractInBetween("", ' ', ' ').len == 0)
+  test "test getLastChar":
+    check(getLastChar("") == '\x00')
+    check(getLastChar("abc") == 'c')
+    check(getLastChar("123", '4') == '3')
+    check(getLastChar("", 'x') == 'x')
 
   test "test isNumericString":
     check(isNumericString("12345") == true)

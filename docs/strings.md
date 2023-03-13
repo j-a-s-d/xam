@@ -518,6 +518,27 @@ So you can use `STRINGS.EMPTY` as value equivalent to `STRINGS_EMPTY`, and so on
     echo "dropped!"
 ```
 
+### GETLASTCHAR
+
+**SIGNATURE**
+
+`func getLastChar*(s: string, default: char): char {.inline.}`
+
+**DESCRIPTION**
+
+*Returns the last char in the specified string. If the string is empty, it returns the provided default char. If no custom default char is provided, then '\x00' is returned.*
+
+**USAGE**
+
+```nim
+  if getLastChar("123") == '3':
+    echo "got the last character!"
+  if getLastChar("", '4') == '4':
+    echo "got the custom default!"
+  if getLastChar("") == '\x00':
+    echo "got the default value!"
+```
+
 ### EXTRACTINBETWEEN
 
 **SIGNATURE**

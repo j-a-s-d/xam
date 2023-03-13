@@ -502,9 +502,49 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 
 **DESCRIPTION**
 
-*Swift-like typealias*
+*Swift typealias-like alias*
 
 *NOTE: the generated type will be public.*
+
+### PASCAL-LIKE DEPRECATED
+
+**SIGNATURE**
+
+`template deprecated* {.used.}`
+
+**DESCRIPTION**
+
+*Pascal deprecated-like alias*
+
+### PASCAL-LIKE EXPERIMENTAL
+
+**SIGNATURE**
+
+`template experimental* {.used.}`
+
+**DESCRIPTION**
+
+*Pascal experimental-like alias*
+
+### PASCAL-LIKE PLATFORM
+
+**SIGNATURE**
+
+`template platform* {.used.}`
+
+**DESCRIPTION**
+
+*Pascal platform-like alias*
+
+### PASCAL-LIKE UNIMPLEMENTED
+
+**SIGNATURE**
+
+`template unimplemented* {.used.}`
+
+**DESCRIPTION**
+
+*Pascal unimplemented-like alias*
 
 ### STRINGS
 
@@ -633,3 +673,57 @@ This is the documentation of the multiplatform aliases (only harmless ones) modu
 **DESCRIPTION**
 
 *C/CPP/etc-like argc arguments vector alias*
+
+### CONVERTERS
+
+### JAVASCRIPT/PHP/C#/JAVA-LIKE INTEGER TO STRING
+
+**SIGNATURE**
+
+`converter integerToString*(x: SomeInteger): string {.used.}`
+
+**DESCRIPTION**
+
+*Javascript/PHP/C#/Java/etc-like integer to string converter*
+
+### JAVASCRIPT/PHP/C#/JAVA-LIKE FLOAT TO STRING
+
+**SIGNATURE**
+
+`converter floatToString*(x: SomeFloat): string {.used.}`
+
+**DESCRIPTION**
+
+*Javascript/PHP/C#/Java/etc-like float to string converter*
+
+### C/CPP/JAVASCRIPT/PHP-LIKE NUMBER TO BOOLEAN
+
+**SIGNATURE**
+
+`converter numberToBoolean*(x: SomeNumber): bool {.used.}`
+
+**DESCRIPTION**
+
+*C/Cpp/Javascript/PHP/etc-like number to boolean converter*
+
+*NOTE: this is more idomatic than the 'x != 0' present at https://nim-lang.org/docs/manual.html#converters*
+
+### C/CPP/JAVASCRIPT/PHP-LIKE BOOLEAN TO INTEGER
+
+**SIGNATURE**
+
+`converter booleanToInteger*(b: bool): int {.used.}`
+
+**DESCRIPTION**
+
+*C/Cpp/Javascript/PHP/etc-like boolean to integer converter*
+
+### C/CPP/JAVASCRIPT/PHP-LIKE BOOLEAN TO FLOAT
+
+**SIGNATURE**
+
+`converter booleanToFloat*(b: bool): float {.used.}`
+
+**DESCRIPTION**
+
+*C/Cpp/Javascript/PHP/etc-like boolean to float converter*

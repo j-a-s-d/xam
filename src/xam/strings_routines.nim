@@ -173,6 +173,12 @@ func stripRight*(s: string): string =
   ## Strips trailing whitespace characters from s and returns the resulting string.
   s.strip(leading = false)
 
+func getLastChar*(s: string, default: char = '\x00'): char {.inline.} =
+  ## Returns the last char in the specified string.
+  ## If the string is empty, it returns the provided default char.
+  ## If no custom default char is provided, then '\x00' is returned.
+  if len(s) > 0: s[^1] else: default
+
 {.pop.}
 
 proc extractInBetween*(s: string, start, ending: char): seq[string] =

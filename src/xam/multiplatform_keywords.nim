@@ -23,6 +23,22 @@ template unreachable*() {.used.} =
   echo "thread " & $getThreadId() & " panic: reached unreachable code"
 
 template typealias*(X, Y) {.used.} =
-  ## Swift-like typealias
+  ## Swift typealias-like alias
   ## NOTE: the generated type will be public.
   type X* = Y
+
+template unimplemented* {.used.} =
+  ## Pascal unimplemented-like alias
+  {.warning: "Symbol not implemented".}
+
+template deprecated* {.used.} =
+  ## Pascal deprecated-like alias
+  {.warning: "Symbol is deprecated".}
+
+template experimental* {.used.} =
+  ## Pascal experimental-like alias
+  {.warning: "Symbol is experimental".}
+
+template platform* {.used.} =
+  ## Pascal platform-like alias
+  {.warning: "Symbol is not portable".}

@@ -54,6 +54,11 @@ Also check my projects which use `xam` as a dependency:
 * [`preprod`](https://github.com/j-a-s-d/preprod), my customizable preprocessor for nim
 
 ## HISTORY
+* 13-03-23 *[1.9.9]*
+	- added `chars` hex value constants
+	- added `strings` getLastChar routine
+	- added `multiplatform` common native types converters
+	- added `multiplatform` pascal-like deprecated, experimental, platform and unimplemented templates
 * 25-02-23 *[1.9.8]*
 	- added `xam` used template
 	- added `html` HTML_TAGS_COMMAND constant
